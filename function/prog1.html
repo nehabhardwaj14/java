@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>FUNCTIONS</h1>
+    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+        <h4>1. Write a Java method to find the smallest number among three numbers.</h4>
+        <pre>
+            class SmallestNumber
+            {
+              static int findSmallest(int num1,int num2,int num3)
+                {
+                   int smallest=num1;
+                        if(num2&ltsmallest)  
+                         {
+                             smallest= num2;
+                          }
+                   if(num3&ltsmallest) 
+                        {
+                            smallest= num3;
+                         }
+                 return smallest;
+            }
+            
+              public static void main (String st[])
+               {
+                   int a=56;
+                   int b=34;
+                  int c=90;
+            
+                    int smallest = findSmallest(a, b, c);
+                
+                      System.out.println("Smallest number  is :\n"+smallest);     	
+               }
+            }
+                 
+                
+    
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+          Smallest number  is :
+          34
+        </pre>
+</body>
+</html>

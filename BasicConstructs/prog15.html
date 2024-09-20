@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>BASIC CONSTRUCTS</h1>
+    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+        <h4>15. Write a Java program to display the system time</h4>
+        <pre>
+            import java.time.LocalTime;
+            import java.time.format.DateTimeFormatter;
+            
+            class DisplayTime
+            {
+                public static void main(String st[])
+                  {
+                      LocalTime currentTime = LocalTime.now();
+                   DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+            System.out.println("Current system time: " + currentTime.format(formatter));
+            }
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Current system time: 22:52:35
+        </pre>
+</body>
+</html>

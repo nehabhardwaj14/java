@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>INHERITANCE</h1>
+    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+        <h4>13. Create a program, showing an example of method overriding</h4>
+        <pre>
+            class Animal
+            {
+                void Lion()
+            {
+              System.out.println("Lion is the king of jungle");
+            }
+            }
+            class Food extends Animal
+            {
+               void Lion()
+            {
+               System.out.println("Lion eats meet");
+            }
+            }
+            class main
+            {
+               public static void main(String st[])
+                 {
+                    Food obj=new Food();
+                            obj.Lion();
+                 }
+            }
+              
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Lion eats meet
+        </pre>
+</body>
+</html>

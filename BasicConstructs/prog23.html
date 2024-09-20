@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>BASIC CONSTRUCTS</h1>
+    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+        <h4>23. Write a Java program to compute the square root of an given integer</h4>
+        <pre>
+            import java.util.Scanner;
+
+            class SquareRootCalculator {
+               public static void main(String[] args) {
+                   Scanner scanner = new Scanner(System.in);
+           
+                 
+                   System.out.print("Enter an integer to compute its square root: ");
+                   int number = scanner.nextInt();
+           
+                  
+                   if (number &lt 0) {
+                       System.out.println("The square root of a negative number is not defined in real numbers.");
+                   } else {
+                       double squareRoot = Math.sqrt(number);
+                       System.out.println("The square root of " + number + " is: " + squareRoot);
+                   }
+           
+                 
+                   scanner.close();
+               }
+           }
+           
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Enter an integer to compute its square root: 67
+            The square root of 67 is: 8.18535277187245
+        </pre>
+</body>
+</html>

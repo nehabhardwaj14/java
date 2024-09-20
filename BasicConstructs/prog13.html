@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>BASIC CONSTRUCTS</h1>
+    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+        <h4>13. Write a Java program to print the ascii value of a given character</h4>
+        <pre>
+            import java.util.Scanner;
+
+            class AsciiValue
+           {
+              public static void main(String st[])
+               {
+                  Scanner str=new Scanner(System.in);
+                  System.out.println("enter a character:");
+                   char ch=str.next().charAt(0);
+                    int value=(int)ch;
+           System.out.println("The ASCII value of " +ch+":\n"+value);
+           }
+           }
+        </pre>
+
+        <h4>OUTPUT</h4>
+        <pre>
+            enter a character:
+            n
+            The ASCII value of n:
+            110
+        </pre>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>INHERITANCE</h1>
+    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+        <h4>6. Write a Java program to create a class called Animal with a method named move(). Create a subclass called Cheetah that overrides the move() method to run.</h4>
+        <pre>
+            class Animal
+            {
+                 void move()
+                  {
+                    System.out.println("Snake is moving");
+                   }
+            }
+            class Cheetah extends Animal
+            {
+                void move()
+                 {
+                    System.out.println("Cheetah is running");
+                  }
+            }
+            class main
+            {
+              public static void main(String st[])
+                {
+                   Cheetah obj=new Cheetah();
+                          obj.move();
+                  }
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+          Cheetah is running
+        </pre>
+</body>
+</html>

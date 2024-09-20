@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>OOPs</h1>
+    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+        <h4>2.Write a Java program to create a class called "Dog" with a name and breed attribute. Create two instances of the "Dog" class, set their attributes using the constructor and modify the attributes using the setter methods and print the updated values</h4>
+        <pre>
+            class Dog
+            {
+                private String Name;
+                private String Breed;
+            public Dog(String n,String b)
+              {
+                  Name=n;
+                  Breed=b;
+               }
+            String getName()
+              {
+                  return Name;
+               }
+            String getBreed()
+              {
+                   return Breed;
+               }
+            void setName(String n)
+               {
+                   Name=n;
+                }
+            void setBreed(String b)
+              {
+                  Breed=b;
+               }
+            void print()
+              {
+                   System.out.println("Name:"+Name);
+                   System.out.println("Breed:"+Breed);
+             }
+            
+            public static void main(String st[])
+             { 
+                  Dog obj=new Dog("tommy","Bulldog");
+                    Dog obj2=new Dog("Tuffey","German Shepherd");
+                  System.out.println("\nDog 1:");
+                              obj.print();
+                  System.out.println("\nDog 2:");
+                              obj2.print();
+                 System.out.println("\nUpdated values of Dog 1:");
+                       obj.setName("charlie");
+                       obj.setBreed("Maltese");
+                       obj.print();
+                 System.out.println("\nUpdated values of Dog 2:");
+                       obj2.setName("Julie");
+                       obj2.setBreed("Bulldog");
+                       obj2.print();
+            
+            
+             }
+            }            
+            
+        </pre>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>INTERFACE</h1>
+    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+        <h4>8. Write a Java program to create an interface Playable with a method play() that takes no arguments and returns void. Create three classes Football, Volleyball, and Basketball that implement the Playable interface and override the play() method to play the respective sports.</h4>
+        <pre>
+            interface Playable
+            { 
+               void play();
+            }
+           
+           class Football implements Playable
+             {
+                public void play()
+                   {
+                      System.out.println("children are playing football");
+                    }
+               }
+           class Vollyball implements Playable
+             {
+                 public void play()
+                   {
+                      System.out.println("children are playing vollyball");
+                    }
+               }
+           class Basketball implements Playable
+             {
+                 public void play()
+                   {
+                      System.out.println("children are playing basketball");
+                    }
+               }
+            
+           class main
+           {
+             public static void main(String st[])
+              {
+                 Playable obj=new Football();
+                 Playable obj1=new Vollyball();
+                 Playable obj2=new Basketball();
+                            obj.play();
+                            obj1.play();
+                            obj2.play();
+                }
+           }
+           
+        </pre>
+</body>
+</html>

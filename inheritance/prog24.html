@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>INHERITANCE</h1>
+    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+        <h4>24. Write a Java program to create an abstract class Shape2D with abstract methods draw() and resize(). Create subclasses Rectangle and Circle that extend the Shape2D class and implement the respective methods to draw and resize each shape</h4>
+        <pre>
+            abstract class Shape2D 
+            {
+                  abstract void draw();
+                  abstract void resize();
+            }
+             class Rectangle extends Shape2D 
+              {
+                    private double width;
+                    private double height;
+                public Rectangle(double w, double h)
+                  {
+                      width = w;
+                      height = h;
+                  }
+               void draw() 
+                 {
+                    System.out.println("\nDrawing a Rectangle with :-\nwidth:" + width +"\nheight :"+height);
+                 }
+              void resize()
+               {
+                    width *= 1.1; 
+                    height *= 1.2; 
+                    System.out.println("\nResized Rectangle to new:-\n width :"+width+"\nheight: "+ height);
+                }
+            }
+            class Circle extends Shape2D
+             {
+                  private double radius;
+                public Circle(double r)
+                  {
+                    radius = r;
+                 }
+               void draw()
+                  {
+                       System.out.println("\nDrawing a Circle with:-\n radius: " + radius );
+                  }
+              void resize()
+                {
+                    radius *= 1.2; 
+                    System.out.println("\nResized Circle to new :-\n radius :" + radius );
+                }
+            }
+            class main
+            {
+               public static void main(String st[])
+                {
+                          Shape2D obj = new Rectangle(3.0, 2.0);
+                          Shape2D obj1 = new Circle(4.0);
+                                            obj.draw();
+                                            obj.resize();
+                                             obj1.draw();
+                                            obj1.resize();
+                 }
+            }
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Drawing a Rectangle with :-
+            width:3.0
+            height :2.0
+            
+            Resized Rectangle to new:-
+             width :3.3000000000000003
+            height: 2.4
+            
+            Drawing a Circle with:-
+             radius: 4.0
+            
+            Resized Circle to new :-
+             radius :4.8
+            
+        </pre>
+</body>
+</html>

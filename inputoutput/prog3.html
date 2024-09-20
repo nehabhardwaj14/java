@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>2D-ARRAYS</h1>
+    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+        <h4> 3. Enter the integer from user using Scanner class</h4>
+        <pre>
+            import java.util.Scanner;
+
+            class Integ
+            {
+                public static void main(String st[])
+                  {
+                            int x;
+                      Scanner str=new Scanner(System.in);
+                  System.out.println("enter integer:");
+                    try
+                      { 
+                            x=str.nextInt();
+                          System.out.println("Entered Integer:"+x);
+                       }
+                     catch(java.util.InputMismatchException t)
+                      {
+                             System.out.println("\nPlease enter number");
+                             System.out.println(t.getClass());
+                       }
+                    catch(Throwable t)
+                      {
+                         System.out.println(t.getMessage());
+                        }
+                  }
+            }
+        </pre>
+</body>
+</html>

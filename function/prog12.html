@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>FUNCTIONS</h1>
+    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+        <h4> 12. Write a Java method that accepts three integers and returns true if one is the middle point between the other two integers, otherwise false</h4>
+        <pre>
+            class Integer
+            {
+                boolean  AcceptInt(int num,int num1,int num2)
+                 {
+                      if(num1>num && num1&ltnum2)
+                       {
+                          System.out.println("True");
+                           return true;
+                        }
+                      else 
+                      {
+                         System.out.println("False");
+                           return false;
+                        }
+                  }
+            }
+            class main
+            {
+              public static void main(String st[])
+               {
+                 Integer obj=new Integer();
+                        obj.AcceptInt(23,45,90);
+              }
+            }
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+          True
+        </pre>
+</body>
+</html>

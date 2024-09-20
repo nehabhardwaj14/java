@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>BASIC CONSTRUCTS</h1>
+    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+        <h4> 10. Write a Java program and compute the sum of the digits of an integer</h4>
+        <pre>
+            import java.util.Scanner;
+
+            class SumDigit
+            {
+             static int computeSum(int num)
+             {
+                  int sum=0;
+                   while(num>0)
+                    {
+                        sum +=num%10;
+                        num/=10;
+                    }
+               return sum;
+             }
+             public static void main(String st[])
+                 {
+                    Scanner str=new Scanner(System.in);
+                    System.out.println("Enter an integer:\n");
+                      int num=str.nextInt();
+                       int sum=computeSum(Math.abs(num));
+                     System.out.println("The sum of digit "+num+ " :\n"+sum);
+                 }
+            }
+        </pre>
+        <h4>output</h4>
+        <pre>
+            Enter an integer:
+            56
+            
+            The sum of digit 56 :
+            11
+        </pre>
+</body>
+</html>

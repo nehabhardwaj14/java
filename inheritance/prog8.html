@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>INHERITANCE</h1>
+    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+        <h4>8. Write a Java program to create a class called Shape with methods called getPerimeter() and getArea(). Create a subclass called Circle that overrides the getPerimeter() and getArea() methods to calculate the area and perimeter of a circle.</h4>
+        <pre>
+            class Shape
+            {   
+                      private double length; 
+                      private double width;
+            void setLength(double l)                   
+                 {
+                    length=l;
+                 }
+             void setWidth(double w)
+               {
+                  width=w;
+               }
+            
+            double getPerimeter()
+                 {       
+                             double perimeter=length+width;
+                        System.out.println("perimeter of rectangle"+perimeter);
+                    return perimeter;
+                 }
+            double getArea()
+                {
+                           double area=length*width;
+                       System.out.println("Area of rectangle"+area);
+                    return area;
+                }
+            }
+            class small extends Shape
+            {
+               double getPerimeter()
+                  {
+                          double pi=3.14d;
+                          double d=14.6d;
+                          double perimeter=pi*d;
+                       System.out.println("perimeter of circle"+perimeter);
+                    return perimeter;
+                 }
+              double getArea()
+                 {
+                          double pi=3.14d;
+                          double r=12.8d;
+                         double area1;
+                       area1=pi*r*r;
+                    System.out.println("Area of circle="+ area1);
+                 return area1;
+                 }
+            }
+            class main
+            {
+              public static void main(String st[])
+              {
+                 small obj=new small();
+                        obj.getPerimeter();
+                       obj.getArea();
+            
+               }
+            }
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+         perimeter of circle45.844
+         Area of circle=514.4576000000001
+        </pre>
+</body>
+</html>

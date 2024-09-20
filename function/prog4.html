@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>FUNCTIONS</h1>
+    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+        <h4>4. Write a Java method to count all the words in a string.</h4>
+        <pre>
+            class CountStr
+            {
+               int CountWord(  String str)
+                {
+                   
+                      if(str==null || str.trim().isEmpty())
+                         {
+                            return 0;
+                          }
+                      String[] word1=str.trim().split("\\s+");
+                   return word1.length;
+            }
+            }
+            class main
+            {
+               public static void main(String st[])
+                 {
+                       CountStr obj=new CountStr();
+                       System.out.println("number of characters are:"+obj.CountWord("this is a program"));
+            }
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            number of characters are:4
+        </pre>
+</body>
+</html>

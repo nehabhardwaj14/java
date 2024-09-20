@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>INHERITANCE</h1>
+    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+        <h4>26. Write a Java program to create an abstract class GeometricShape with abstract methods area() and perimeter(). Create subclasses Triangle and Square that extend the GeometricShape class and implement the respective methods to calculate the area and perimeter of each shape.</h4>
+        <pre>
+            abstract class GeometricShape
+            {
+                abstract double area() ;
+               abstract double perimeter();
+            }
+            class Triangle extends GeometricShape
+            {
+                 double area() 
+                  {
+                       double height=9.8;
+                     double base=9.7;
+                     double area=(height*base)/2;
+                   System.out.println("\nArea of triangle="+area);
+            return area;
+                }
+              double  perimeter()
+                {
+                       double a=6.1;
+                       double b=4.6;
+                       double c=3.9;
+                       double perimeter=a+b+c;
+                   System.out.println("Perimeter of triangle="+perimeter);
+            return perimeter;
+               }
+            }
+            class Square extends GeometricShape
+            {
+                  double area() 
+                  {
+                       double side=13;
+                       double area1=side*side;
+                       System.out.println("\nArea of square="+area1);
+            return area1;
+                   }
+                 double  perimeter()
+                   {
+                        double side=19;
+                        double perimeter1=4*side;
+                    System.out.println("perimeter of square="+perimeter1);
+            return perimeter1;
+                  }
+            }
+            class main
+            {
+              public static void main(String st[])
+                {
+                    GeometricShape obj=new Triangle();
+                                              obj.area();
+                                             obj.perimeter();
+                   GeometricShape obj1=new Square();
+                                              obj1.area();
+                                             obj1.perimeter();
+            
+              }
+            }
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+          Area of triangle=47.53
+Perimeter of triangle=14.6
+
+Area of square=169.0
+perimeter of square=76.0
+        </pre>
+</body>
+</html>

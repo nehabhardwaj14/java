@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>INHERITANCE</h1>
+    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+        <h4> 18. Write a Java program to create an abstract class Animal with abstract methods eat() and sleep(). Create subclasses Lion, Tiger, and Deer that extend the Animal class and implement the eat() and sleep() methods differently based on their specific behavior</h4>
+        <pre>
+            abstract class Animal
+            {
+               abstract void eat();
+               abstract void sleep();
+            }
+            class Lion extends Animal
+            {
+               void eat()
+                 {
+                     System.out.println("lion eats meat.");
+                  }
+              void sleep()
+                 {
+                     System.out.println("lion sleeps in the savannah.");
+                  }
+            }
+            class Tiger extends Animal
+            {
+               void eat()
+                 {
+                     System.out.println("tiger eats large prey.");
+                  }
+              void sleep()
+                 {
+                     System.out.println("tiger sleeps in the jungle.");
+                  }
+            }
+            class Deer extends Animal
+            {
+               void eat()
+                 {
+                     System.out.println("deer eats plants and leaves.");
+                  }
+              void sleep()
+                 {
+                     System.out.println("deer sleeps in the forest");
+                  }
+            }
+            class main
+            {
+              public static void main(String st[])
+                {
+                     Animal obj = new Lion();
+                    Animal obj1 = new Tiger();
+                    Animal obj2 = new Deer();
+                              obj.eat();
+                              obj.sleep();     
+                              obj1.eat();
+                              obj1.sleep();
+                              obj2.eat();
+                             obj2.sleep();
+                   }
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            lion eats meat.
+            lion sleeps in the savannah.
+            tiger eats large prey.
+            tiger sleeps in the jungle.
+            deer eats plants and leaves.
+            deer sleeps in the forest
+        </pre>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>FUNCTIONS</h1>
+    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+        <h4>6. Write a Java method to print characters between two characters (i.e. A to P).</h4>
+        <pre>
+            class Print
+            {
+               void PrintChar( char startC,char endC)
+               {
+                   if(startC > endC)
+                    {
+                       System.out.println("invalid range");
+                    }
+               for(char a=startC ; a&lt=endC ;  a++)
+                {
+                    System.out.println("all character: "+a);
+                 }
+            }
+            }
+            class main
+            {
+              public static void main(String st[])
+                {
+                      Print obj=new Print();
+                             obj.PrintChar('A','P');
+               }
+            }
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            all character: A
+            all character: B
+            all character: C
+            all character: D
+            all character: E
+            all character: F
+            all character: G
+            all character: H
+            all character: I
+            all character: J
+            all character: K
+            all character: L
+            all character: M
+            all character: N
+            all character: O
+            all character: P
+        </pre>
+</body>
+</html>

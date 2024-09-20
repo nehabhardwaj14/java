@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>BASIC CONSTRUCTS</h1>
+    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+        <h4>24. Write a Java program to check if a positive number is a palindrome or not</h4>
+        <pre>
+            import java.util.Scanner;
+
+            class PalindromeChecker {
+               public static void main(String[] args) {
+                   Scanner scanner = new Scanner(System.in);
+           
+                   // Prompt user for input
+                   System.out.print("Enter a positive number: ");
+                   int number = scanner.nextInt();
+           
+                 
+                   if (number < 0) {
+                       System.out.println("Please enter a positive number.");
+                   } else {
+                       // Check if the number is a palindrome
+                       if (isPalindrome(number)) {
+                           System.out.println(number + " is a palindrome.");
+                       } else {
+                           System.out.println(number + " is not a palindrome.");
+                       }
+                   }
+           
+                 
+               }
+           
+           
+              static boolean isPalindrome(int num) {
+                   int original = num;
+                   int reversed = 0;
+           
+                   while (num > 0) {
+                       int digit = num % 10; // Get the last digit
+                       reversed = reversed * 10 + digit; // Build the reversed number
+                       num /= 10; // Remove the last digit
+                   }
+           
+                   return original == reversed; // Check if original and reversed are equal
+               }
+           }
+           
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Enter a positive number: 101
+            101 is a palindrome.
+        </pre>
+</body>
+</html>

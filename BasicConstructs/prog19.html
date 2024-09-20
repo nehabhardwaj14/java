@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>BASIC CONSTRUCTS</h1>
+    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+        <h4>19. Write a Java program to convert seconds to hour, minute and seconds</h4>
+        <pre>
+            import java.util.Scanner;
+
+            class TimeConverter
+           {
+               public static void main(String st[])
+                  {
+                      Scanner str=new Scanner(System.in);
+                   System.out.println("enter time:");
+                         long seconds=str.nextLong();
+                         long hours = seconds / 3600;
+                        long minutes = (seconds % 3600) / 60;
+                       long tseconds =seconds % 60;
+                  System.out.println(seconds + " seconds is equal to " + hours + " hours, " + minutes + " minutes, and " + tseconds + " seconds.");
+           }
+           }
+           
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            enter time:
+            7896
+            7896 seconds is equal to 2 hours, 11 minutes, and 36 seconds.
+        </pre>
+</body>
+</html>

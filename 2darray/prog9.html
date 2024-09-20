@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>2D-ARRAYS</h1>
+    <div style="border: 2px solid #ccc; height: 1200px; width: 1000px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+        <h4>9. Program to find the sum of each row and each column of a matrix</h4>
+        <pre>
+            class Matrix
+            {
+              public static void main(String st[]) 
+               {
+                          int i;
+                            int matrix[][]={{1,7,8},{4,9,6},{7,4,9}};
+            
+                               System.out.println("Matrix:\n");
+                                   for( i=0;i&ltmatrix.length;i++){
+                                     for(int j=0;j&ltmatrix[i].length;j++){
+                                         System.out.print(matrix[i][j]+" ");
+                                       }
+                                         System.out.println();
+                                   }
+            
+                              int rSum[]=new int [matrix.length];
+                              int cSum[]=new int [matrix[0].length];
+            
+                             for( i=0;i&ltmatrix.length;i++)
+                                {
+                                     rSum[i]=0;
+                                }      
+                              for(int j=0;j&ltmatrix[0].length;j++)
+                                {
+                                     cSum[j]=0;
+                                }    
+            
+                         for ( i=0; i&ltmatrix.length;i++) {
+                        for (int j=0; j&ltmatrix[0].length;j++) {
+                                rSum[i] += matrix[i][j];
+                               cSum[j] += matrix[i][j];
+                        }
+                    }
+                          System.out.println("\nSum of each row:");
+                             for ( i = 0; i &ltmatrix.length; i++)
+                                {
+                                 System.out.println("Row " + (i + 1) + ": " + rSum[i]);
+                                 }
+                               System.out.println("\nSum of each column:");
+                                 for (int j = 0; j &lt matrix[0].length; j++) 
+                                   {
+                                      System.out.println("Column " + (j + 1) + ": " + cSum[j]);
+                                     }          
+            }
+            }
+            
+            
+        </pre>
+         <h4>OUTPUT</h4>
+         <pre>
+          Matrix:
+
+          1 7 8
+          4 9 6
+          7 4 9
+          
+          Sum of each row:
+          Row 1: 16
+          Row 2: 19
+          Row 3: 20
+          
+          Sum of each column:
+          Column 1: 12
+          Column 2: 20
+          Column 3: 23
+         </pre>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>INHERITANCE</h1>
+    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+        <h4>11. Create a program, showing an example of super keyword</h4>
+        <pre>
+            class Keyword
+            {
+              int x;
+            }
+            class Usage  extends Keyword
+            {
+                       int x;
+              void display()
+               {
+                         x=120;
+                      super.x=130;               
+                  System.out.println("subclass variable :" +x+ "\n superclass variable: " + super.x);
+               } 
+            }
+            class main
+            {
+             public static void main(String a[])
+               {
+                   Usage obj=new Usage();
+                         obj.display();
+                }
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            subclass variable :120
+            superclass variable: 130
+        </pre>
+</body>
+</html>

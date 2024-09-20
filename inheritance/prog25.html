@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>INHERITANCE</h1>
+    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+        <h4>25.Write a Java program to create an abstract class Bird with abstract methods fly() and makeSound(). Create subclasses Eagle and Hawk that extend the Bird class and implement the respective methods to describe how each bird flies and makes a sound.</h4>
+        <pre>
+            abstract class Bird 
+            {
+                  abstract void fly();
+                  abstract void makeSound();
+            }
+            class Eagle extends Bird 
+            {
+              void fly()
+                {
+                    System.out.println("\nEagle soars high in the sky with powerful wing strokes.");
+                 }
+               void makeSound()
+                  {
+                    System.out.println("Eagle makes a high-pitched, whistling sound.\n");
+                }
+            }
+            class Hawk extends Bird
+             {    
+              void fly()
+                {
+                    System.out.println("Hawk glides and swoops with precise control.");
+                }
+               void makeSound()
+                 {
+                    System.out.println("Hawk makes a sharp, piercing screech.");
+                 }
+            }
+             class main
+             {
+                public static void main(String st[]) 
+                 {
+                    Bird obj = new Eagle();
+                    Bird obj1 = new Hawk();
+                            obj.fly();
+                           obj.makeSound();
+                           obj1.fly();
+                          obj1.makeSound();
+                }
+            }
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+          Eagle soars high in the sky with powerful wing strokes.
+          Eagle makes a high-pitched, whistling sound.
+          
+          Hawk glides and swoops with precise control.
+          Hawk makes a sharp, piercing screech.
+             
+        </pre>
+</body>
+</html>

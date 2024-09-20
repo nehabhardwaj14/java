@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>BASIC CONSTRUCTS</h1>
+    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+        <h4>25. Write a Java program to add two numbers without using any arithmetic operators</h4>
+        <pre>
+            import java.util.Scanner;
+
+            class AddWithoutArithmetic
+            {
+               public static void main(String st[]) {
+                   Scanner scanner = new Scanner(System.in);
+           
+                        System.out.print("Enter the first number: ");
+                   int a = scanner.nextInt();
+                   
+                   System.out.print("Enter the second number: ");
+                   int b = scanner.nextInt();
+           
+                
+                   int sum = addWithoutArithmetic(a, b);
+           
+                 
+                   System.out.println("The sum of " + a + " and " + b + " is: " + sum);
+           
+                  
+               }
+           
+           
+               public static int addWithoutArithmetic(int a, int b) {
+                   while (b != 0) {
+                      
+                       int carry = a & b;
+           
+                 
+                       a = a ^ b;
+                   b=carry << 1;
+           
+               }
+           return a;
+           
+                     
+           }
+           }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Enter the first number: 45
+            Enter the second number: 23
+            The sum of 45 and 23 is: 68
+        </pre>
+</body>
+</html>

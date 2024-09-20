@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>INHERITANCE</h1>
+    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+      <h4>22. Write a Java program to create an abstract class Person with abstract methods eat() and exercise(). Create subclasses Athlete and LazyPerson that extend the Person class and implement the respective methods to describe how each person eats and exercises</h4>
+      <pre>
+        abstract class Person
+        {
+            abstract void eat();
+            abstract void exercise();
+       }
+      class Athlete extends Person
+       {
+          void eat() 
+            {
+              System.out.println("Athlete eats food with high protein and carbohydrates.");
+            }
+          void exercise() 
+            {
+              System.out.println("Athlete follows a training routine with strength and cardio exercises.\n");
+          }
+      }
+      class LazyPerson extends Person 
+      {
+          void eat() 
+            {
+                System.out.println("Lazy person prefers fast food and snacks.");
+            }
+          void exercise()
+            {
+                System.out.println("Lazy person avoids physical activity and prefers to jus lay on his bed.");
+          }
+      }
+      class main
+       {
+          public static void main(String[] st) 
+            {
+                 Person obj = new Athlete();
+                 Person obj1 = new LazyPerson();
+                               obj.eat();
+                               obj.exercise();
+                              obj1.eat();
+                              obj1.exercise();
+          }
+      }
+      
+      </pre>
+      <h4>OUTPUT</h4>
+      <pre>
+        Athlete eats food with high protein and carbohydrates.
+        Athlete follows a training routine with strength and cardio exercises.
+        
+        Lazy person prefers fast food and snacks.
+        Lazy person avoids physical activity and prefers to jus lay on his bed.
+      </pre>
+</body>
+</html>

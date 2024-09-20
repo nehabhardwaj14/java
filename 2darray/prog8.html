@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>2D-ARRAYS</h1>
+    <div style="border: 2px solid #ccc; height: 880px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+        <h4>8. Program to find the frequency of odd & even numbers in the given matrix</h4>
+        <pre>
+            class Frequency
+            {
+              public static void main(String st[])
+               {
+                     int matrix[][]={{4,5,8},{8,3,7},{2,9,6}};
+              
+                       int Counto=0;
+                      int Counte=0;
+              
+                    System.out.println("Matrix:\n");
+                       for(int i=0;i&ltmatrix.length;i++){
+                          for(int j=0;j&ltmatrix[i].length;j++){
+                             System.out.print(matrix[i][j]+" ");
+                           }
+                         System.out.println();
+                      }
+            
+            //to print frequency
+            
+                   for(int i=0;i&ltmatrix.length;i++){
+                     for(int j=0;j&ltmatrix[i].length;j++){
+                          if(matrix[i][j] % 2==0)
+                            {
+                               Counte++;
+                              }
+                            else
+                              {
+                                 Counto++;
+                               }
+                            }
+                         }
+            
+                System.out.println("\nFrequency of odd number in matrix is:"+Counto);
+               System.out.println("Frequency of even number in matrix is:"+Counte);
+             }
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+          Matrix:
+
+          4 5 8
+          8 3 7
+          2 9 6
+        </pre>
+</body>
+</html>

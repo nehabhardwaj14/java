@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>2D-ARRAYS</h1>
+    <div style="border: 2px solid #ccc; height: 600px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+        <h4> 7. Program to display the upper triangular matrix</h4>
+        <pre>
+            class Utriangle
+            {
+              public static void main(String st[])
+                  {
+                        int matrix[][]={{5,7,8},{9,7,5},{4,8,3}};
+            
+                        System.out.println("upper triangle matrix:\n");
+                            for(int i=0; i&lt matrix.length;i++){
+                              for(int j=0;j&ltmatrix[i].length;j++){
+                                 if(i&lt=j)
+                                   {
+                                      System.out.print(" "+matrix[i][j]);
+                                    }
+                                  else
+                                   {
+                                      System.out.print(" 0");
+                                   }
+                                }
+                             System.out.println();
+                       }
+                 }
+              }
+            
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+          Upper triangle matrix:
+
+          5 7 8
+          0 7 5
+          0 0 3
+        </pre>
+</body>
+</html>

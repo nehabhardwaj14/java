@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>BASIC CONSTRUCTS</h1>
+    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+        <h4>12. Write a Java program to count the letters, spaces, numbers and other characters of an input string</h4>
+        <pre>
+            import java.util.Scanner;
+
+            class CountCharacter
+            {
+               static void countCharacter(String str)
+                {
+                       int letters = 0;
+                       int spaces = 0;
+                       int numbers = 0;
+                       int others = 0;
+            
+                    for (char ch : str.toCharArray())
+                        {
+                        if (Character.isLetter(ch)) 
+                         {
+                            letters++;
+                         } 
+                  else if (Character.isDigit(ch)) 
+                     {
+                            numbers++;
+                        }
+                  else if (Character.isWhitespace(ch))
+                      {
+                            spaces++;
+                        }
+                     else {
+                            others++;
+                        }
+                    }
+                    System.out.println("Letters: " + letters);
+                    System.out.println("Spaces: " + spaces);
+                    System.out.println("Numbers: " + numbers);
+                    System.out.println("Other characters: " + others);
+              }
+            public static void main(String st[])
+              {
+                  Scanner str=new Scanner(System.in);
+                       System.out.print("Enter a string: ");
+                    String str1 = str.nextLine();
+                  countCharacter(str1);
+            }
+            }
+            
+        </pre>
+        <h4>OUTPUT</h4>
+       <pre>
+        Enter a string: hello world @
+        Letters: 10
+        Spaces: 2
+        Numbers: 0
+        Other characters: 1
+       </pre>
+</body>
+</html>

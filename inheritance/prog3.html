@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>INHERITANCE</h1>
+    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+        <h4> 3. Write a Java program to create a class called Shape with a method called getArea(). Create a subclass called Rectangle that overrides the getArea() method to calculate the area of a rectangle</h4>
+        <pre>
+            class Shape
+            {
+               void getArea()
+                {
+                     double pi=3.14;
+                          double r=12.8;
+                         double area1;
+                       area1=pi*r*r;
+                    System.out.println("Area of circle: "+ area1);
+                 }
+            }
+            class Rectangle extends Shape
+            {
+               public void getArea()
+                  {
+                          float height=8.6f;
+                          float width=7.9f;
+                          float area;
+                      area=height*width;
+                   System.out.println("area of rectangle is: "+ area);
+                 }
+            } 
+            class main
+            {
+             public static void main(String st[])
+              {
+                 Rectangle obj=new Rectangle();
+                                   obj.getArea();
+               }
+            }
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+         area of rectangle is: 67.94
+        </pre>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>2D-ARRAYS</h1>
+    <div style="border: 2px solid #ccc; height: 980px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+        <h4>11. Program to determine whether a given matrix is an identity matrix</h4>
+        <pre>
+            class Identity
+            {
+            
+            static boolean identityMatrix(int matrix[][])
+              {
+                      for(int i=0;i&ltmatrix.length;i++){
+                        if(matrix[i].length !=matrix.length){
+                          return false;
+                        }
+                     }
+                    for(int i=0;i&ltmatrix.length;i++){
+                       for(int j=0 ; j&ltmatrix.length;j++){
+                           if(i==j){
+                               if(matrix[i][j]!=1){
+                                  return false;
+                                  }
+                                }
+                              else{
+                                  if(matrix[i][j]!=0){
+                                     return false;
+                                    }
+                                   }
+                                }
+                             }
+                        return true;
+                }
+            
+               public static void main (String st[])
+                  {
+                               int matrix[][]={{1,0,0},{0,1,0},{0,0,1}};
+                              if(identityMatrix(matrix))
+                               {
+                                  System.out.println("Identity Matrix");
+                                }
+                             else
+                                 {
+                                      System.out.println("Not an Identity Matrix");
+                                  }
+                     }
+            }      
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+          Identity Matrix
+        </pre>
+</body>
+</html>

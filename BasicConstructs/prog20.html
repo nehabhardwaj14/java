@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>BASIC CONSTRUCTS</h1>
+    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+        <h4>20. Write a Java program to compute the sum of the first 100 prime numbers</h4>
+        <pre>
+            class SumofPrime
+            {
+                static Boolean computePrime(int num)
+                   {
+                        if(num&lt=1)
+                         {
+                             return false;
+                         }
+                    for(int i=2;i&lt=Math.sqrt(num); i++)
+                     {
+                          if(num%i==0)
+                            {
+                               return false;
+                            }
+                         }
+                     return true;
+                    }
+            public static void main(String st[])
+               {
+                   int count=0;
+                   int sum=0;
+                    int num=2;
+                 
+                 while(count&lt100)
+                  {
+                      if(computePrime( num))
+                         {
+                            sum+=num;
+                            count++;
+                          }
+                         num++;
+                    }
+                System.out.println("The sum of the first 100 prime numbers is: " + sum);
+                }
+            }
+            
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            The sum of the first 100 prime numbers is: 24133
+        </pre>
+</body>
+</html>

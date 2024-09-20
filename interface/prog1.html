@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>INTERFACE</h1>
+    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+        <h4>1. Write a Java program to create an interface Shape with the getArea() method. Create three classes Rectangle, Circle, and Triangle that implement the Shape interface. Implement the getArea() method for each of the three classes.</h4>
+        <pre>
+            interface Shape
+            {
+               void getArea();
+           }
+            class Rectangle implements Shape
+           {
+               public void getArea()
+                 {
+                         double height=20.34d;
+                         double width=67.98d;
+                         double area;
+                     area=height*width;
+                  System.out.println("area of rectangle is="+ area);
+                }
+           } 
+           class Circle implements Shape
+           {
+             public void getArea()
+                {
+                         double pi=3.14;
+                         double r=12.8;
+                        double area1;
+                      area1=pi*r*r;
+                   System.out.println("Area of circle="+ area1);
+                }
+           }
+           class Triangle implements Shape
+           {
+             public void getArea()
+                {
+                    double height=10.45;
+                    double base=9.7;
+                    double area2=(height*base)/2;
+                  System.out.println("Area of triangle="+area2);
+               }
+           }
+           
+           class main
+           {
+             public static void main(String st[])
+             {
+                Shape obj=new Rectangle();
+                          obj.getArea();
+                 Shape obj1=new Circle();
+                          obj1.getArea();
+                Shape obj2=new Triangle();
+                          obj2.getArea();
+           
+           
+           }
+           }
+        </pre>
+</body>
+</html>

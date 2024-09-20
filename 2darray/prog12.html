@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>2D-ARRAYS</h1>
+    <div style="border: 2px solid #ccc; height: 800px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+        <h4>12.Program to determine whether a given matrix is a sparse matrix</h4>
+        <pre>
+            class Sparsh
+            {
+              static Boolean sparshMatrix(int matrix[][])
+                {
+                  int totalElements=matrix.length*matrix[0].length;
+                  int zeroCount=0;
+            
+                      for(int i=0;i&ltmatrix.length;i++){
+                          for(int j=0;j&ltmatrix[0].length;j++){
+                             if(matrix[i][j]==0){
+                               zeroCount++;
+                              }
+                            }
+                          }
+                       return zeroCount > totalElements/2; 
+                  }  
+            
+               public static void main(String st[])
+                  {
+                               int matrix[][]={{2,0,0},{0,7,0},{3,0,0}};
+                       if(sparshMatrix(matrix))
+                         {
+                             System.out.println(" It is a Sparsh Matrix");
+                          }
+                         else
+                           {
+                               System.out.println(" It is not a Sparsh Matrix");
+                            }
+                       }
+               }
+                       
+        </pre>
+        <h4>OUTPUT</h4>
+         <pre>
+          It is a Sparsh Matrix
+         </pre>
+</body>
+</html>

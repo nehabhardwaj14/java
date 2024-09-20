@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>BASIC CONSTRUCTS</h1>
+    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+        <h4>18. Write a Java program to convert a string to an integer</h4>
+        <pre>
+            import java.util.Scanner;
+  
+            class ConvertString
+             {
+                 public static void main(String st[])
+                  {
+                         Scanner str=new Scanner(System.in);
+                            System.out.print("Enter a string representing an integer: ");
+                        String str1 = str.nextLine();
+                     try {
+                                int num = Integer.parseInt(str1);
+                            System.out.println("The integer value is: " + num);
+                          } 
+                   catch (NumberFormatException e) {
+                        System.out.println("Invalid input. Please enter a valid integer string.");
+                    }
+            }
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Enter a string representing an integer: 7895
+            The integer value is: 7895
+        </pre>
+</body>
+</html>

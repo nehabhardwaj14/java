@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>BASIC CONSTRUCTS</h1>
+    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+        <h4>5. Write a Java program that takes five numbers as input to calculate and print the average of the numbers</h4>
+        <pre>
+            import java.util.Scanner;
+            class Average
+            {
+              public static void main(String st[])
+                {
+                      
+                              int a,b,c,d,e;
+                      Scanner str=new Scanner(System.in);
+                  System.out.println("enter five numbers:");
+                       a=str.nextInt();
+                       b=str.nextInt();
+                       c=str.nextInt();
+                        d=str.nextInt();
+                       e=str.nextInt();
+                      int sum=a+b+c+d+e;
+                     int average=sum/5;
+                System.out.println("Average of five  number:"+average);
+              }
+            }
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            enter five numbers:
+            6 7 8 56 90 4
+            Average of five  number:33
+        </pre>
+</body>
+</html>

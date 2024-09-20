@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>INHERITANCE</h1>
+    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;">
+        <h4>23. Write a Java program to create an abstract class Instrument with abstract methods play() and tune(). Create subclasses for Glockenspiel and Violin that extend the Instrument class and implement the respective methods to play and tune each instrument.</h4>
+        <pre>
+            abstract class Instrument
+            {
+                  abstract void play();
+                 abstract void tune();
+            }
+           class Glockenspiel extends Instrument
+            {
+               void play()
+                 {
+                      System.out.println("Playing the Glockenspiel. ");
+                }
+              void tune()
+                {
+                   System.out.println("Tuning the Glockenspiel .\n");
+               }
+           }
+           class Violin extends Instrument 
+           {
+               void play()
+                 {
+                    System.out.println("Playing the Violin with a bow.");
+                }
+               void tune()
+               {
+                   System.out.println("Tuning the Violin by adjusting the pegs and fine tuners.");
+               }
+           }
+            class main {
+               public static void main(String[] st)
+                  {
+                   Instrument obj= new Glockenspiel();
+                   Instrument obj1= new Violin();
+                                      obj.play();
+                                      obj.tune();
+                                      obj1.play();
+                                     obj1.tune();
+                }
+           }
+           
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Playing the Glockenspiel.
+            Tuning the Glockenspiel .
+            
+            Playing the Violin with a bow.
+            Tuning the Violin by adjusting the pegs and fine tuners.
+        </pre>
+</body>
+</html>
