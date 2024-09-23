@@ -4,27 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
 </head>
 <body>
     <h1>ARRAYS</h1>
-    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;overflow: scroll;">
+    <div class="box">
+        <h4>1. Program to copy all elements of one array into another array</h4>
         <pre>
-            class a
+            class CopyArray
             {
-                 public static void main(String st[])
-            {
-                 int x[];                                    //declaration of array
-                  x=new int[5];                             //memory allocation
-                x[0]=10;
-                 x[1]=20;
-                 x[2]=30;
-                 x[3]=40;
-                 x[4]=50;
-              for(int i=0;i&lt5;i++)
-            {
-                System.out.println(x[0]);
-            }}
-            }
+               public static void main(String st[])
+                {
+                        int arr1[]={2,4,5,6};
+                        int copy[]=new int[arr1.length];
+               
+                           for(int i=0;i&ltarr1.length;i++){
+                             copy[i]=arr1[i];
+                           }
+                               System.out.print(" Copied Array: ");
+                                  for( int i=0;i&ltcopy.length;i++){
+                                    System.out.print(copy[i]);
+                                      if( i &lt copy.length-1){
+                                        System.out.print(",");
+                                       }
+                                    }
+                                System.out.println();
+                             
+                    }
+             }
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Copied Array: 2,4,5,6
+            
         </pre>
     </div>
 </body>

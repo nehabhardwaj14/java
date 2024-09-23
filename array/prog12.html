@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>ARRAYS</h1>
+    <div class="box">
+        <h4>12. Program to print the sum of all the items of the array</h4>
+        <pre>
+            class  SumCalculator
+            {
+                static int calculateSum(int arr[])
+                  {
+                             int sum=0;
+                              for(int num:arr){
+                                sum+=num;
+                              }
+                            return sum;
+                    }
+              public static void main(String st[])
+                 {
+                       int arr1[]={10,34,56,78,90};
+                        System.out.println("Sum of Array elements:"+calculateSum(arr1));
+                  }
+            }
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Sum of Array elements:268
+        </pre>
+    </div>
+</body>
+</html>

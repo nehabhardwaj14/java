@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>ARRAYS</h1>
+    <div class="box">
+        <h4>17. Program to Find 2nd Largest Number in an array</h4>
+        <pre>
+            class SecondLargest
+            {
+                static int findLargest(int array[])
+                 {
+                        int largest = Integer.MIN_VALUE;
+                       int secondLargest = Integer.MIN_VALUE;
+            
+                    for (int number : array) {
+                        if (number > largest) {
+                            secondLargest = largest;
+                            largest = number;
+                        } else if (number > secondLargest && number &lt largest) {
+                            secondLargest = number;
+                        }
+                    }
+            
+                    return secondLargest;
+                
+                 }
+              static void print(int arr[])
+                  {
+                        for(int num:arr){
+                           System.out.print(num+" ");
+                         }
+                       System.out.println();
+                 }
+            public static void main(String st[])
+              {
+                        int arr[]={67,23,90,40,10,60};
+                         System.out.println("Original array:");
+                           print(arr);
+                               System.out.println("\nSecond Largest number:"+findLargest(arr));
+                                
+                }
+            }
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Original array:
+            67 23 90 40 10 60
+            
+            Second Largest number:67
+            
+        </pre>
+    </div>
+</body>
+</html>

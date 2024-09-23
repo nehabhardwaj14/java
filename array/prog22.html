@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>ARRAYS</h1>
+    <div class="box">
+        <h4>22. Program to Print Odd and Even Numbers from an array</h4>
+        <pre>
+            class OddEvenNumbers
+            {
+               static void evenElements(int arr[])
+                {
+                 System.out.println("\nEven Numbers:");
+                     for(int i=0; i&ltarr.length;i++){
+                        if(i%2==0){
+                          System.out.println(arr[i]);
+                         }
+                       }
+                  }
+            static void oddElements(int arr[])
+                {
+                 System.out.println("\nOdd Numbers:");
+                     for(int i=0; i&ltarr.length;i++){
+                        if(i%2!=0){
+                          System.out.println(arr[i]);
+                         }
+                       }
+                  }
+            static void print(int arr[])
+                  {
+                        for(int num:arr){
+                           System.out.print(num+" ");
+                         }
+                        System.out.println();
+                 }
+            
+             public static void main(String st[])
+               {
+                     int arr[]={10,20,30,40,50};
+                      System.out.println("Original array:");
+                           print(arr);
+                       evenElements(arr);
+                       oddElements(arr);
+            
+               }
+            }
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Original array:
+            10 20 30 40 50
+            
+            Even Numbers:
+            10
+            30
+            50
+            
+            Odd Numbers:
+            20
+            40
+            
+        </pre>
+    </div>
+</body>
+</html>

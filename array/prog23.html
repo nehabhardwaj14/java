@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>ARRAYS</h1>
+    <div class="box">
+        <h4>23. How to Sort an Array in Java</h4>
+        <pre>
+            import java.util.Arrays;
+  
+            class SortArray
+            {
+              static void print(int arr[])
+                  {
+                        for(int num:arr){
+                           System.out.print(num+" ");
+                         }
+                        System.out.println();
+                 }
+            public static void main(String st[])
+              {
+                        int arr[]={67,23,90,25,15,89};
+                      System.out.println("Original array:");
+                                print(arr);
+                          Arrays.sort(arr);
+                     System.out.println("\nSorted Array:");
+                            print(arr);
+                }
+            }
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Original array:
+            67 23 90 25 15 89
+            
+            Sorted Array:
+            15 23 25 67 89 90
+        </pre>
+    </div>
+</body>
+</html>

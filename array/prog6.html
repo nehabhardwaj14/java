@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>ARRAYS</h1>
+    <div class="box">
+        <h4>6. Program to print the elements of an array in reverse order</h4>
+        <pre>
+            class ReverseElements
+            {
+               static void printReverseArray(int arr[])
+                 { 
+                     System.out.println("Array elements:");
+                       for(int i=arr.length-1;i>=0;i--){
+                         System.out.println(arr[i]);
+                         }
+                    }
+              public static void main(String st[])
+               {
+                         int num[]={10,20,30,40,50};
+                           printReverseArray(num);
+               }
+            } 
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Array elements:
+            50
+            40
+            30
+            20
+            10
+        </pre>
+    </div>
+</body>
+</html>

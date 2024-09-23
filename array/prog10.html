@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>ARRAYS</h1>
+    <div class="box">
+        <h4>10. Program to print the smallest element in an array</h4>
+        <pre>
+            class SmallestElement
+            {
+              static int printSmallest(int arr[])
+               {
+                      int smallest=arr[0];
+                       for(int i=1;i&ltarr.length;i++){
+                         if( arr[i] &lt smallest){
+                           smallest=arr[i];
+                          }
+                       }
+                    return smallest;
+                 }
+            public static void main(String st[])
+             {
+                       int num[]={10,20,25,90,50};
+                    System.out.println("Smallest element in the array is:"+ printSmallest(num));
+                   
+              }
+            }
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Smallest element in the array is:10
+
+        </pre>
+    </div>
+</body>
+</html>

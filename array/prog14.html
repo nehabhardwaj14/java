@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>ARRAYS</h1>
+    <div class="box">
+        <h4>14. Program to sort the elements of an array in ascending order</h4>
+        <pre>
+            import java.util.Arrays;
+            class SortArrayAsc
+            {
+                  static void print(int arr[])
+                  {
+                        for(int num:arr){
+                           System.out.print(num+" ");
+                         }
+                       System.out.println();
+                 }
+            public static void main(String st[])
+              {
+                        int arr[]={67,23,90,40,10,60};
+                      System.out.println("Original array:");
+                                print(arr);
+                          Arrays.sort(arr);
+                     System.out.println("\nArray after sorting in ascending order:");
+                            print(arr);
+                }
+            }
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Original array:
+            67 23 90 40 10 60
+            
+            Array after sorting in ascending order:
+            10 23 40 60 67 90
+            
+        </pre>
+    </div>
+</body>
+</html>

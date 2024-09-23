@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>ARRAYS</h1>
+    <div class="box">
+        <h4>4. Program to print the duplicate elements of an array</h4>
+        <pre>
+            class DuplicateElements
+            {
+               static void printDublicate(int arr[])
+                { 
+                      boolean d=false; 
+                    for(int i=0;i&ltarr.length;i++){
+                      for(int j=i+1;j&ltarr.length;j++){
+                          if(arr[i]==arr[j]){
+                            System.out.println("Duplicate element found :"+arr[i]);
+                             d=true;
+                              break;
+                             }
+                          }
+                       }
+                    if(!d){
+                      System.out.println("No duplicate element found");
+                    }
+                }
+            public static void main(String st[])
+            {
+                    int arr[]={1,2,3,4,5,3,4,5};
+                     System.out.println("Original array:");
+                       for(int num:arr){
+                         System.out.println( num+" ");
+                       }
+                     printDublicate(arr);
+              }
+            }
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Original array:
+            1
+            2
+            3
+            4
+            5
+            3
+            4
+            5
+            Duplicate element found :3
+            Duplicate element found :4
+            Duplicate element found :5
+        </pre>
+    </div>
+</body>
+</html>

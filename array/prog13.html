@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>ARRAYS</h1>
+    <div class="box">
+        <h4>13. Program to right rotate the elements of an array</h4>
+        <pre>
+            class RightRotate
+            {
+                static void rightRotate(int arr[],int position)
+                  {
+                       position=position % arr.length;
+                        int arr1[]=new int[arr.length];
+                          for(int i=0;i&ltarr.length;i++){
+                            arr1[(i+position)% arr.length]=arr[i];
+                           }
+                          System.arraycopy(arr1,0,arr,0,arr.length);
+                    }
+                static void print(int arr[])
+                  {
+                        for(int num:arr){
+                           System.out.print(num+" ");
+                         }
+                       System.out.println();
+                 }
+            
+            public static void main(String st[])
+              {
+                        int arr[]={10,20,30,40,50,60};
+                         int rotate=2;
+                      System.out.println("Original array:");
+                                print(arr);
+                          rightRotate(arr, rotate);
+                     System.out.println("\nArray after right rotate:");
+                            print(arr);
+                }
+            }
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Original array:
+            10 20 30 40 50 60
+            
+            Array after right rotate:
+            50 60 10 20 30 40
+            
+        </pre>
+    </div>
+</body>
+</html>

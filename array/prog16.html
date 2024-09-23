@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>ARRAYS</h1>
+    <div class="box">
+        <h4>16. Program to Find 3rd Largest Number in an array</h4>
+        <pre>
+            import java.util.Arrays;
+            class ThirdLargest
+            {
+                static int findLargest(int arr[])
+                 {
+                        Arrays.sort(arr);
+                          return arr[arr.length-3];
+                 }
+              static void print(int arr[])
+                  {
+                        for(int num:arr){
+                           System.out.print(num+" ");
+                         }
+                       System.out.println();
+                 }
+            public static void main(String st[])
+              {
+                        int arr[]={67,23,90,40,10,60};
+                         System.out.println("Original array:");
+                           print(arr);
+                               System.out.println("\nThird Largest number:"+findLargest(arr));
+                                
+                }
+            }
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Original array:
+            67 23 90 40 10 60
+            
+            Third Largest number:60
+            
+        </pre>
+    </div>
+</body>
+</html>
