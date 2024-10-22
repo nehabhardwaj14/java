@@ -3,49 +3,39 @@
     padding: 0%;
     border: 0%;
 }
-.logo{
-    width:120%;
-    display: flex;
-    justify-content: right;
-    align-items: right;
-}
-.logo img{
-    width: 100%;
-    border: 2px solid black;
-    border-radius: 30px;
-}
+
 header{
-    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(pexels-arts-1214011.jpg);
-    
+   background: url(pexels-arts-1214011.jpg);
+   /* background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(pexels-arts-1214011.jpg); */
     background-position: center;
+    height: 100vh;
+    background-size: cover;
     min-height: 100px;
 }
 .navbar{
-    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(pexels-arts-1214011.jpg);
-    color: #f1f1f1;
-    padding: 0;
-    font-family: 'Source Sans Pro Topnav', sans-serif;
-    font-size: 0;
-    width: 100%;
-    white-space: nowrap;
-    overflow: auto;
-    scrollbar-width: none;
+    display: flex;
+    justify-content: end;
+    position: sticky;
+    top: 0;
 }
 .nav-list{
-    width: 10%;
     display: flex;
-    align-items: center;
-}
+    margin-top: 30px;
+    margin-right: 60px;
+    
+ }
 .nav-list li{
-    font-size: 15px;
+    font-size: 20px;
     list-style: none;
-     padding: 26px 30px;
- 
-}
-.nav-list li a{
+     padding: 5px 20px;
+     
+ }
+    .nav-list li a{
     text-decoration: none;
     color:white;
-}
+    padding: 8px 10px;
+   
+    }
 .nav-list li a:hover{
     background-color: white;
     color:black;
@@ -53,16 +43,29 @@ header{
 .navbar background{
 width: 100%;
 }
-.frame{
+
+.title{
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.title h1{
+    color: white;
+    font-size: 70px;
+}
+footer {
     display: flex;
-    height:200%;
-    width:100%;
-    margin:10px 0px;
-    
+   
+    justify-content: space-evenly;
+    margin-top: 5vh;
+     background-color:rgb(20, 19, 19); 
+    color: white;
+    padding: 30px;
+}
+section{
+    display: block;
+    unicode-bidi: isolate;
 }
 
-.frame .right{
-   width: 150%;
-   background-color:whitesmoke;
-}
 

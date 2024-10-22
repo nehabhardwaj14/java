@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>BASIC CONSTRUCTS</h1>
+    <div class="box">
+        <h4>4. Create a Java program to access the java.util.Date class through qualified way and print the current date of the system but inherit the Date class.</h4>
+        <pre>  
+            class Main extends java.util.Date
+            {
+               void display()
+                {
+                      System.out.println("Today :" +toString());
+                }
+            public static void main(String[] args)
+               {
+                    new Main().display();
+                   }
+            }
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Today :Sat Oct 12 21:31:31 IST 2024
+        </pre>
+    </div>
+</body>
+</html>
