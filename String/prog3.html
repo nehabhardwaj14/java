@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>STRINGS</h1>
+    <div class="box">
+        <h4>Program to prove String is immutable programmatically?</h4>
+        <pre>
+            class Main{
+                public static void main(String[] args){
+                    String str = "Hello";
+                    String strN = str + " World";
+                    if(str == strN){
+                        System.out.println("Both object are same i.e Mutable Objects");
+                    }
+                    else{
+                        System.out.println("Both object are different i.e Immutable Objects");
+                    }
+                }
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Both object are different i.e Immutable Objects
+        </pre>
+    </div>
+</body>
+</html>

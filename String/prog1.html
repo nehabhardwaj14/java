@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>STRINGS</h1>
+    <div class="box">
+        <h4>1. Program to Check if a String contains only digits?</h4>
+        <pre>
+            class Main
+            {
+                static boolean hasDigitsOnly(String str){
+                    for(int i = 0; i &lt str.length(); i++){
+                        char ch = str.charAt(i);
+                        if(ch &lt '0' || ch > '9'){
+                            return false;
+                        }
+                    }
+                    return true;
+                }
+                public static void main(String[] args){
+                    System.out.println("String Value : 389294");
+                    System.out.println((hasDigitsOnly("389294")) ? "String Contain Only Digits" : "String Does not have digits only");
+            
+                    System.out.println("String Value : 393aje");
+                    System.out.println((hasDigitsOnly("393aje")) ? "String Contain Only Digits" : "String Does not have digits only");
+                }
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            String Value : 389294
+            String Contain Only Digits
+            String Value : 393aje
+            String Does not have digits only
+        </pre>
+    </div>
+</body>
+</html>

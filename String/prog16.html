@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>STRINGS</h1>
+    <div class="box">
+        <h4>16. Program to count the total number of vowels and consonants in a string</h4>
+        <pre>
+            class Main{
+                public static void main(String[] args){
+                    String str = "Hello World";
+                    int vowel = 0, cons = 0;
+                    for(int i = 0; i &lt str.length(); i++){
+                        char ch = str.charAt(i);
+                        if(Character.isLetter(ch)){
+                            switch(ch){
+                                case 'a' :
+                                case 'A' :
+                                case 'e' :
+                                case 'E' :
+                                case 'i' :
+                                case 'I' :
+                                case 'o' :
+                                case 'O' :
+                                case 'u' :
+                                case 'U' : vowel++; break;
+                                default : cons++;
+                            }
+                        }
+                    }
+                    System.out.println("Number of Vowels : " + vowel);
+                    System.out.println("Number of Consonents : " + cons);
+            
+                }
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Number of Vowels : 3
+            Number of Consonents : 7
+        </pre>
+    </div>
+</body>
+</html>

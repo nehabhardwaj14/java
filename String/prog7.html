@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>STRINGS</h1>
+    <div class="box">
+        <h4>7. Program to Add Characters to a String</h4>
+        <pre>
+            class Main{
+                static String addChar(int index, char ch, String str){
+                    String newstr = "";
+                    int i;
+                    if(index > str.length() || index &lt 0){	
+                        System.out.println("Maximum index should be "+str.length()+" and minimum should be 0");
+                        return null;
+                    }
+                    for(i = 0; i &lt index; i++){
+                        newstr += str.charAt(i);
+                    }
+                    newstr += ch;
+                    for(i = index; i &lt str.length(); i++){
+                        newstr+= str.charAt(i);
+                    }
+                    return newstr;
+                }
+                public static void main(String[] args){
+                    String str = "hell";
+                    System.out.println("String : " + str);
+                    System.out.println("Adding o at 4th index : " + addChar(4, 'o', str));
+                    System.out.println("Adding J at 0th index : " + addChar(0, 'J', str));
+                    System.out.println("Adding f at 2th index : " + addChar(2, 'f', str));
+                }
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            String : hell
+            Adding o at 4th index : hello
+            Adding J at 0th index : Jhell
+            Adding f at 2th index : hefll
+        </pre>
+    </div>
+</body>
+</html>

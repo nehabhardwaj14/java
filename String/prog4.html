@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>STRINGS</h1>
+    <div class="box">
+        <h4>4. Program to remove all occurrences of a given character from input String?</h4>
+        <pre>
+            lass Main{
+                static String removeChar(String str, char ch){
+                    String newstr = "";
+                    char c;
+                    for(int i = 0; i &lt str.length(); i++){
+                        c = str.charAt(i);
+                        if(c != ch){
+                            newstr += c;
+                        }
+                    }
+                    return newstr;
+                }
+                public static void main(String[] args){
+                    System.out.println("Removing p from apple");
+                    System.out.println(removeChar("apple", 'p'));
+                }
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Removing p from apple
+            ale
+        </pre>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>STRINGS</h1>
+    <div class="box">
+        <h4>10. Program to check whether a string is a Palindrome</h4>
+        <pre>
+            class Main{
+                static boolean isPallindrome(String str){
+                    for(int i = 0, j = (str.length()-1); i &lt j; i++, j--){
+                        if(str.charAt(i) != str.charAt(j)){
+                            return false;
+                        }
+                    }
+                    return true;
+                }
+                public static void main(String[] args){
+                    System.out.println((isPallindrome("abc11cba")) ? "abc11cba is pallindrome" : "abc11cba is not pallindrome");
+                    System.out.println((isPallindrome("call")) ? "39d is pallindrome" : "39d is not pallindrome");
+                }
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            abc11cba is pallindrome
+            call is not pallindrome
+        </pre>
+    </div>
+</body>
+</html>

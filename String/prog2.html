@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>STRINGS</h1>
+    <div class="box">
+        <h4>2. Program to perform Deep Copy for String?</h4>
+        <pre>
+            class Main{
+                static String strDeepCopy(String str){
+                    String newstr = "";
+                    for(int i = 0; i &lt str.length(); i++){
+                        newstr += str.charAt(i);
+                    }
+                    return newstr;
+                }
+                public static void main(String[] args){
+                    String str = "Hello Everyone";
+                    String cpystr = strDeepCopy(str);
+                    System.out.println("Orignal String : " + str);
+                    System.out.println("Copied String : " + cpystr);
+                }
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Orignal String : Hello Everyone
+            Copied String : Hello Everyone
+        </pre>
+    </div>
+</body>
+</html>
