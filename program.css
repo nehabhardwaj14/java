@@ -52,8 +52,8 @@ width: 100%;
 }
 .frame{
     display: flex;
-    height:200%;
-    width:190%;
+    height:100%;
+    width:100%;
     margin:10px 0px;
     
 }
