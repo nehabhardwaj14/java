@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>INPUT/OUTPUT</h1>
+    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;overflow: scroll;box-shadow:0 0 rgba(204, 233, 232),
+                0 0 10px rgba(204, 233, 232);">
+        <h4>10.Get all characters from the file, count number of lines, words, characters and display on the screen</h4>
+        <pre>
+            class GetFile{
+                public static void main(String st[]) throws java.io.IOException, java.io.FileNotFoundException
+                       {
+                    java.io.InputStreamReader isr = new java.io.FileReader("note.txt");
+                    int ch = 5, numoflines = 0, numofchars = 0, wordcount = 0;
+                    System.out.println("Content of note.txt is below : \n");
+                    while((ch = isr.read()) != -1)
+                              {
+                        numofchars++;
+                        System.out.print((char)ch);
+                        if(Character.isLetterOrDigit(((char)ch)))
+                                        {
+                            while((ch = isr.read()) != -1 && ((char)ch) != '\n' && ((char)ch) != ' '){
+                                numofchars++;
+                                System.out.print((char)ch);
+                            }
+                            wordcount++;
+                        }
+                        if(((char)ch) == '\n')
+                                      {
+                            numoflines++;
+                            System.out.print((char)ch);
+                        }
+                        if(((char)ch) == ' ')
+                                      {
+                            System.out.print((char)ch);
+                          }
+                    }
+                    System.out.println("\nNumber of Lines : " + ++numoflines);
+                    System.out.println("Number of Characters : " + numofchars);
+                    System.out.println("Number of Words : " + wordcount);
+                }
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Content of note.txt is below :
+
+            Secularism is the very soul of Indian society and the democracy.
+            
+            
+            India has a tradition of co-existence, tolerance, cooperation, and mutual respect between all
+            
+            
+            its social and religious groups. Islam came to India with Muslim conquerors. A large number
+            
+            
+            of natives turned Muslims over the period and presently they make up the second-largest
+            
+            
+            
+            community of our nation.
+            Number of Lines : 9
+            Number of Characters : 320
+            Number of Words : 57
+        </pre>
+    </div>
+</body>
+</html>

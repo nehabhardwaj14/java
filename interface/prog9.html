@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>INTERFACE</h1>
+    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;overflow: scroll;box-shadow:0 0 rgba(204, 233, 232),
+                0 0 10px rgba(204, 233, 232);">
+        <h4> 9. Write a Java program to create an interface Searchable with a method search(String keyword) that searches for a given keyword in a text document. Create two classes Document and WebPage that implement the Searchable interface and provide their own implementations of the search() method</h4>
+        <pre>
+            interface Searchable
+            {
+               boolean search(String keyword);
+            }
+           class Document implements Searchable
+           {
+               String content, filename;
+               Document(String name, String filecontent)
+                    {
+                   filename = name;
+                   content = filecontent;
+                      }
+               public boolean search(String keyword)
+                     {
+                   System.out.println("Searching " + keyword + " in " + filename);
+                   return content.contains(keyword);
+               }
+           }
+           class WebPage implements Searchable
+             {
+               String content, url;
+               WebPage(String pageurl, String filecontent){
+                   url = pageurl;
+                   content = filecontent;
+               }
+               public boolean search(String keyword)
+                    {
+                   System.out.println("Searching " + keyword + " in " + url);
+                   return content.contains(keyword);
+               }
+           }
+           
+           class Main
+           {
+               public static void main(String[] args)
+                 {
+                   Searchable obj = new Document("note.txt", "My name is neha");
+                   System.out.println(obj.search("My") ? "Document contain My" : "Document does not contain Hello");
+                   System.out.println(obj.search("No") ? "Document contain No" : "Document does not contain No");
+                   obj = new WebPage("my.html", "Trees are very important aspect for our life ...");
+                   System.out.println(obj.search("life") ? "Webpage contain life" : "Webpage does not contain life");
+                   System.out.println(obj.search("very") ? "Webpage contain very" : "Webpage does not contain No");
+               }
+           }                  
+           
+           
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Searching My in note.txt
+            Document contain My
+            Searching No in note.txt
+            Document does not contain No
+            Searching life in my.html
+            Webpage contain life
+            Searching very in my.html
+            Webpage contain No
+        </pre>
+    </div>
+</body>
+</html>

@@ -9,9 +9,78 @@
     <h1>INTERFACE</h1>
     <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;overflow: scroll;box-shadow:0 0 rgba(204, 233, 232),
                 0 0 10px rgba(204, 233, 232);">
-        <h4></h4>
+        <h4>7.Write a Java program to create an interface Sortable with a method sort() that sorts an array of integers in ascending order. Create two classes BubbleSort and SelectionSort that implement the Sortable interface and provide their own implementations of the sort() method.</h4>
         <pre>
+            interface Sortable
+            {
+              void sort(int arr[]);
+             }
+           class BubbleSort implements Sortable
+              {
+                 public void sort(int arr[])
+                  {      
+                     System.out.println("Bubble Sort");
+                      for (int i=0;i&ltarr.length;i++)
+                       {
+                         for (int j= 0; j &lt(arr.length-i-1); j++)
+                          {
+                            if (arr[j]>arr[j+1])
+                             {
+                                 int  temp=arr[j];
+                                 arr[j]=arr[j+1];
+                                 arr[j+1]=temp;
+                             }    
+                          }
+                      } 
+                }
+          }
+          class SelectionSort implements Sortable
+            {
+               public void sort(int arr[])
+                 {
+                    System.out.println("Selection Sort");
+          
+                    for(int i=0;i&ltarr.length;i++)
+                     {
+                        for(int j=i+1;j&ltarr.length;j++)
+                        {
+                           if(arr[i]>arr[j])
+                             {
+                                 int temp=arr[i];
+                                 arr[i]=arr[j];
+                            }
+                         }
+                      }
+                  }
+              }
+           class Main
+             {
+                public static void main(String st[])
+                 {
+                     int arr[]={56,90,67,12,56};
+                    Sortable obj=new BubbleSort();
+                    Sortable obj1=new SelectionSort();
+                   System.out.println("Original Array :"+java.util.Arrays.toString(arr));
+                        obj.sort(arr);
+                   System.out.println("Sorted Array:"+java.util.Arrays.toString(arr));
+                         obj1.sort(arr);
+                   System.out.println("Sorted Array :"+java.util.Arrays.toString(arr));
+                        
+                      
+             }
+          }
+          
+          
           
         </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Original Array :[56, 90, 67, 12, 56]
+            Bubble Sort
+            Sorted Array:[12, 56, 56, 67, 90]
+            Selection Sort
+            Sorted Array :[12, 56, 56, 67, 90]
+        </pre>
+        
 </body>
 </html>
