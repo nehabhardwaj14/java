@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>BASIC CONSTRUCTS</h1>
+    <div class="box">
+        <h4>82. Write a Java program to sum values of an array</h4>
+        <pre>
+            class ArraySum {
+                public static void main(String[] args) {
+                    int[] numbers = {1, 2, 3, 4, 5}; 
+                    int sum = sumArray(numbers);
+            
+                    System.out.println("The sum of the array values is: " + sum);
+                }
+            
+                static int sumArray(int[] array) {
+                    int sum = 0;
+            
+                    for (int i = 0; i &lt array.length; i++) {
+                        sum += array[i]; 
+                    }
+            
+                    return sum;
+                }
+            }
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            The sum of the array values is: 15
+        </pre>
+    </div>
+</body>
+</html>

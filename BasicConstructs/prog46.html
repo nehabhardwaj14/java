@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>BASIC CONSTRUCTS</h1>
+    <div class="box">
+        <h4>46. Java Program To Calculate CGPA Percentage</h4>
+        <pre>
+            class Main{
+                public static void main(String[] args){
+                    double marks[] = {90, 80, 70, 80, 90};
+                    double sumofgrades = 0;
+                    for(int i = 0; i &lt marks.length; i++){
+                        sumofgrades += (marks[i]/10);
+                    }
+                    double cgpa = sumofgrades/marks.length;
+                    double cgpapercent = cgpa * 9.5;
+                    System.out.println("CGPA Percentage of Marks : " + java.util.Arrays.toString(marks) + " is " + cgpapercent);
+                }
+            }
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            CGPA Percentage of Marks : [90.0, 80.0, 70.0, 80.0, 90.0] is 77.89999999999999
+        </pre>
+    </div>
+</body>
+</html>

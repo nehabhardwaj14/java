@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>BASIC CONSTRUCTS</h1>
+    <div class="box">
+        <h4>81. Write a java program to count total number of lines from a string</h4>
+        <pre>
+            class LineCounter {
+                public static void main(String[] args) {
+                    String text = "This is line one.\nThis is line two.\nThis is line three."; 
+                    int lineCount = countLines(text);
+            
+                    System.out.println("The total number of lines is: " + lineCount);
+                }
+            
+                static int countLines(String text) {
+                    int count = 0;
+                    boolean isPreviousCharNewLine = true; 
+            
+                    for (int i = 0; i &lt text.length(); i++) {
+                        char currentChar = text.charAt(i);
+                        if (currentChar == '
+            ') {
+                            isPreviousCharNewLine = true; 
+                        } else {
+                            if (isPreviousCharNewLine) {
+                                count++; 
+                            }
+                            isPreviousCharNewLine = false; 
+                        }
+                    }
+            
+                    if (text.length() > 0 && text.charAt(text.length() - 1) != '
+            ') {
+                        count++;
+                    }
+            
+                    return count;
+                }
+            }
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            The total number of lines is: 3 
+        </pre>
+    </div>
+</body>
+</html>

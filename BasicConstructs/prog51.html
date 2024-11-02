@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>BASIC CONSTRUCTS</h1>
+    <div class="box">
+        <h4>51. Java Program To Calculate Power Of Number</h4>
+        <pre>
+            import java.util.Scanner;
+             class main50 
+             { 
+                public static void main(String st[])
+                 { 
+                    Scanner obj= new Scanner(System.in); 
+                    System.out.println("Enter base number:\n"); 
+                    double base=obj.nextDouble(); 
+                    System.out.println("Enter exponent:\n"); 
+                    int exp=obj.nextInt();
+                     double rs=calculatePower(base,exp); 
+                     System.out.println(base + "raised to the powerof" + exp + "=" + rs); 
+                    } 
+                    public static double calculatePower(double base,int exp)
+                     { 
+                        double rs=1;
+                         for(int i=0;i&ltexp;i++) 
+                         {
+                             rs=rs*base;
+                         } 
+                            return rs;
+                         } }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Enter base number: 
+            2 
+            Enter exponent: 
+            2 
+            2 raised to the power of 2=4.0
+        </pre>
+    </div>
+</body>
+</html>

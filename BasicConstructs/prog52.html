@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>BASIC CONSTRUCTS</h1>
+    <div class="box">
+        <h4>52. Write a Java program to take three numbers from the user and print the greatest number</h4>
+        <pre>
+            class GreatestNum {
+                public static void main(String st[]) {
+                    java.util.Scanner scanner = new java.util.Scanner(System.in);
+                    System.out.print("Enter the first digit : ");
+                    int num1 = scanner.nextInt();
+                    System.out.print("Enter the second digit : ");
+                    int num2 = scanner.nextInt();
+                    System.out.print("Enter the third digit : ");
+                    int num3 = scanner.nextInt();
+            
+                    int greatest = greatest(num1, num2, num3);
+                    System.out.println("The Greatest Number is : " + greatest);
+                }
+            
+                static int greatest(int num1, int num2, int num3) {
+                    if (num1 >= num2 && num1 >= num3) {
+                        return num1;
+                    } else if (num2 >= num1 && num2 >= num3) {
+                        return num2;
+                    } else {
+                        return num3;
+                    }
+                }
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Enter the first digit : 4
+            Enter the second digit : 5
+            Enter the third digit : 6
+            The Greatest Number is : 6
+        </pre>
+    </div>
+</body>
+</html>

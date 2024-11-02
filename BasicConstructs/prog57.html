@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>BASIC CONSTRUCTS</h1>
+    <div class="box">
+        <h4>57. Write a Java program to input 5 numbers from keyboard and find their sum and average</h4>
+        <pre>
+            class SumAndAverage {
+                public static void main(String st[]) {
+                    java.util.Scanner scanner = new java.util.Scanner(System.in);
+            
+                    int sum = 0;
+                    int count = 0;
+            
+                    while (count &lt 5) {
+                        System.out.print("Number " + (count + 1) + ": ");
+                        sum += scanner.nextInt();
+                        count++;
+                    }
+            
+                    int average = sum / count;
+            
+                    System.out.println("Sum: " + sum);
+                    System.out.println("Average: " + average);
+                }
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Number 1: 34
+            Number 2: 34
+            Number 3: 8
+            Number 4: 4
+            Number 5: 2
+            Sum: 82
+            Average: 16
+        </pre>
+    </div>
+</body>
+</html>

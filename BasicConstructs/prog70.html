@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>BASIC CONSTRUCTS</h1>
+    <div class="box">
+        <h4>70. Write a Java program to convert all characters in a string to lowercase</h4>
+        <pre>
+            class ToLowercase {
+                public static void main(String[] args) {
+                    java.util.Scanner scanner = new java.util.Scanner(System.in);
+            
+                    System.out.print("Enter a string: ");
+                    String str = scanner.nextLine();
+            
+                    String lowercase = str.toLowerCase();
+                    System.out.println("Lowercase string : " + lowercase);
+                }
+                }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Enter a string: HELLO
+            Lowercase string : hello
+        </pre>
+    </div>
+</body>
+</html>

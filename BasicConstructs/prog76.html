@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>BASIC CONSTRUCTS</h1>
+    <div class="box">
+        <h4>76. Write a java program to print current date and time in the specified format</h4>
+        <pre>
+            class Main{
+                public static void main(String[] args){
+            
+                        java.time.LocalDateTime now = java.time.LocalDateTime.now();
+                           java.time.format.DateTimeFormatter formatter = 	java.time.format.DateTimeFormatter.ofPattern("'Date : 'dd-MM-yyyy 'Time : 'HH:mm:ss");
+            
+                        String formattedDateTime = now.format(formatter);
+                        System.out.println("Current date and time: " + formattedDateTime);
+            
+                }
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Current date and time: Date : 24-10-2024 Time : 20:30:36
+        </pre>
+    </div>
+</body>
+</html>

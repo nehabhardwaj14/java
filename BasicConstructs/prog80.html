@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>BASIC CONSTRUCTS</h1>
+    <div class="box">
+        <h4>80. Write a java program to remove html tags from a string</h4>
+        <pre>
+            class Main{
+                static String removeHtmlTags(String str){
+                    String st = "";
+                    for(int i = 0; i &lt str.length(); i++){
+                        if(str.charAt(i) == '&lt'){
+                            while(i &lt str.length() && str.charAt(i) != '>'){
+                                i++;
+                            }
+                        }
+                        else{
+                            st += str.charAt(i);
+                        }
+                    }
+                    return st;
+                }
+            
+                public static void main(String[] args){
+                    String str = "hello world";
+                    System.out.println("Html Code : " + str);
+                    System.out.println("Html Code without Tag: " + removeHtmlTags(str));
+            
+                }
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Html Code : hello world
+            Html Code without Tag: hello world 
+        </pre>
+    </div>
+</body>
+</html>

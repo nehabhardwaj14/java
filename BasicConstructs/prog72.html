@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>BASIC CONSTRUCTS</h1>
+    <div class="box">
+        <h4>72. Write a Java program to trim a string(remove whitespaces)</h4>
+        <pre>
+            class Main{
+                static String strTrim(String str){
+                    String st = "";
+                    for(int i = 0; i &lt str.length(); i++){
+                        char ch = str.charAt(i);
+                        if(ch != ' '){
+                            st += ch;
+                        }
+                    }
+                    return st;
+                }
+                public static void main(String[] args){
+                    String str = "hello world";
+                    System.out.println(strTrim(str));
+                }
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>helloworld</pre>
+    </div>
+</body>
+</html>

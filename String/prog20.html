@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>STRINGS</h1>
+    <div class="box">
+        <h4>20. Program to find all subsets of a string</h4>
+        <pre>
+            class Main {
+                static void generateSubsets(String str) {
+                    int n = str.length();
+                    int subsetCount = (int) Math.pow(2, n);
+            
+                    for (int i = 0; i &lt subsetCount; i++) {
+                        String subset = "";
+                        for (int j = 0; j &lt n; j++) {
+                            if ((i / (int) Math.pow(2, j)) % 2 == 1) {
+                                subset += str.charAt(j);
+                            }
+                        }
+                        System.out.println(subset);
+                    }
+                }
+                public static void main(String[] args) {
+                    String inputString = "abcd";
+                    generateSubsets(inputString);
+                }
+            }
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            a
+            b
+            ab
+            c
+            ac
+            bc
+            abc
+            d
+            ad
+            bd
+            abd
+            cd
+            acd
+            bcd
+            abcd
+        </pre>
+    </div>
+</body>
+</html>

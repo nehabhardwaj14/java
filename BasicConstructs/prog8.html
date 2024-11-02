@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>BASIC CONSTRUCTS</h1>
+    <div class="box">
+        <h4>8. Write a Java program to convert a binary number to decimal number</h4>
+        <pre>
+            class BinaryToDecimal {
+                public static void main(String[] args) {
+                    String binaryString = "1011"; 
+                    int decimal = 0;
+                    int base = 1;
+                    boolean isValid = true;
+            
+                    for (int i = binaryString.length() - 1; i >= 0; i--) {
+                        char bit = binaryString.charAt(i);
+                        if (bit == '1') {
+                            decimal += base;
+                        } else if (bit == '0') {
+                            
+                        } else {
+                            System.out.println("Invalid binary number.");
+                            isValid = false;
+                            break;
+                        }
+                        base *= 2; 
+                    }
+            
+                    if (isValid) {
+                        System.out.println("The decimal of " + binaryString + " is: " + decimal);
+                    }
+                }
+            }
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            The decimal of 1011 is: 11
+        </pre>
+    </div>
+</body>
+</html>

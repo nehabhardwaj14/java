@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>BASIC CONSTRUCTS</h1>
+    <div class="box">
+        <h4>85. Write a Java program to test if an array contains a specific value</h4>
+        <pre>
+            class ArrayContains {
+                public static void main(String[] args) {
+                    int[] array = {5, 10, 15, 20, 25};
+                    int target = 15;
+                    boolean contains = containsValue(array, target);
+                    if (contains) {
+                        System.out.println("The array contains the value: " + target);
+                    } else {
+                        System.out.println("The array does not contain the value: " + target);
+                    }
+                }
+            
+                static boolean containsValue(int[] array, int target) {
+                    for (int value : array) {
+                        if (value == target) {
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+            }
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            The array contains the value: 15
+        </pre>
+    </div>
+</body>
+</html>

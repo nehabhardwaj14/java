@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>BASIC CONSTRUCTS</h1>
+    <div class="box">
+        <h4>79. Write a java program to reverse a String</h4>
+        <pre>
+            class ReverseString {
+                public static void main(String[] args) {
+                    java.util.Scanner scanner = new java.util.Scanner(System.in);
+            
+                    System.out.print("Enter a string: ");
+                    String str = scanner.nextLine();
+                    char charArr[] = str.toCharArray();
+                    String reversed = "";
+                    for (int i = charArr.length - 1; i >= 0; i--) {
+                        reversed += charArr[i];
+                    }
+                    System.out.println("Reversed string : " + reversed);
+            
+                }
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Enter a string: yoo
+            Reversed string : ooy
+        </pre>
+    </div>
+</body>
+</html>

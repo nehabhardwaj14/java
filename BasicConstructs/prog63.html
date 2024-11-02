@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>BASIC CONSTRUCTS</h1>
+    <div class="box">
+        <h4>63. Write a Java program that reads an integer and check whether it is negative, zero, or positive</h4>
+        <pre>
+            class Main {
+                public static void main(String st[]) {
+                    java.util.Scanner scanner = new java.util.Scanner(System.in);
+                    System.out.print("Enter a Number : ");
+                    int num = scanner.nextInt();
+            
+                    if (num > 0) {
+                        System.out.println(num + " is a positive number.");
+                    } else if (num &lt 0) {
+                        System.out.println(num + " is negative");
+                    } else {
+                        System.out.println(num + " is zero");
+                    }
+                }
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Enter a Number : 5
+            5 is a positive number.
+        </pre>
+    </div>
+</body>
+</html>

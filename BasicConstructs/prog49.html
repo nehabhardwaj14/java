@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>BASIC CONSTRUCTS</h1>
+    <div class="box">
+        <h4>49. Java Pogram to Calculate Commission Percentage</h4>
+        <pre>
+            import java.util.Scanner;
+
+            class main49
+            {
+            public static void main(String st[])
+            {
+            Scanner obj= new Scanner(System.in);
+            System.out.println("Enter sales amount:");
+            double sales=obj.nextDouble();
+            
+            System.out.println("Enter commission rate(in %):");
+            double commissionRate=obj.nextDouble();
+            
+            double commission=calculateCommission(sales,commissionRate);
+            System.out.println("Commission:" + commission);
+            System.out.println("Commission percentage:" + commissionRate + "%");
+            
+            
+            }
+            
+            public static double  calculateCommission(double sales, double commissionRate)
+            {
+            return sales*(commissionRate/100);
+            }
+            
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Enter sales amount:
+            10000
+            Enter commission rate(in %):
+            5
+            Commission:500.0
+            Commission percentage:5.0%
+        </pre>
+    </div>
+</body>
+</html>

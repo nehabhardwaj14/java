@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>BASIC CONSTRUCTS</h1>
+    <div class="box">
+        <h4>73. Write a Java program to get a substring of a given string between two specified positions</h4>
+        <pre>
+            class Main{
+                static String strSubstring(String str, int startInx, int endInx){
+                    String st = "";
+                    if(startInx >= str.length() || startInx < 0){
+                        System.out.println("Invalid Starting Index");
+                        return st;
+                    }
+                    else if(endInx >= str.length() || endInx < 0){
+                        System.out.println("Invalid Ending Index");
+                        return st;
+                    }
+                    for(int i = startInx; i &lt endInx; i++){
+                        st += str.charAt(i);
+                    }
+                    return st;
+                }
+                public static void main(String[] args){
+                    String str = "hello world";		System.out.println(strSubstring(str, 6, 10));
+                }
+            } 
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            worl
+        </pre>
+    </div>
+</body>
+</html>

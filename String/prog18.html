@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>STRINGS</h1>
+    <div class="box">
+        <h4>18. Program to determine whether one string is a rotation of another</h4>
+        <pre>
+            class Main{
+                static boolean isRotation(String s1, String s2){
+                    int count = 0;
+                    if(s1.length() != s2.length()){
+                        return false;
+                    }
+                    String temp = s1+s1;
+                    for(int i = 0; i &lt (temp.length() - s2.length() + 1); i++){
+                        count = 0;
+                        while(count &lt s2.length() && temp.charAt(i) == s2.charAt(count)){
+                            count++;
+                            i++;
+                        }
+                        if(count == s2.length()){
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+                public static void main(String[] args){
+                    System.out.println((isRotation("ABCD", "DABC")) ? "String is rotated" : "String is not rotated");
+                }
+            }
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>String is rotated</pre>
+    </div>
+</body>
+</html>
+

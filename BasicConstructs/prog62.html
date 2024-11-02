@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>BASIC CONSTRUCTS</h1>
+    <div class="box">
+        <h4>62. Write a Java program to display the multiplication table of a given integer</h4>
+        <pre>
+            class MultiplicationTable {
+                public static void main(String[] args) {
+                    java.util.Scanner scanner = new java.util.Scanner(System.in);
+            
+                    System.out.print("Enter a number: ");
+                    int number = scanner.nextInt();
+            
+                    System.out.println("Multiplication Table of " + number + ":");
+                    
+            
+                    
+                    for (int i = 1; i &lt= 10; i++) {
+                        System.out.println(number + " x " + i + " = " + (number * i));
+                    }
+                }
+            }
+        
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Enter a number: 3
+            Multiplication Table of 3:
+            3 x 1 = 3
+            3 x 2 = 6
+            3 x 3 = 9
+            3 x 4 = 12
+            3 x 5 = 15
+            3 x 6 = 18
+            3 x 7 = 21
+            3 x 8 = 24
+            3 x 9 = 27
+            3 x 10 = 30
+        </pre>
+    </div>
+</body>
+</html>

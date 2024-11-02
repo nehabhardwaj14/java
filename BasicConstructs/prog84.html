@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>BASIC CONSTRUCTS</h1>
+    <div class="box">
+        <h4>84. Write a Java program to calculate the average value of array elements</h4>
+        <pre>
+            class AverageCalculator {
+                public static void main(String[] args) {
+                    int[] array = {10, 20, 30, 40, 50};
+                    double average = calculateAverage(array);
+                    System.out.println("The average value of the array elements is: " + average);
+                }
+            
+                static double calculateAverage(int[] array) {
+                    int sum = 0;
+                    for (int number : array) {
+                        sum += number;
+                    }
+                    return (double) sum / array.length;
+                }
+            }
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            The average value of the array elements is: 30.0
+        </pre>
+    </div>
+</body>
+</html>
