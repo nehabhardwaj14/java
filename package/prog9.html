@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>PACKAGES</h1>
+    <div class="box">
+        <h4> 9.Create a Java program to create a nested package i.e. c4.sample with public class and protected members to be accessed in another class.</h4>
+        <pre>
+            package c4.sample;
+
+            public class Myclas
+            {
+            protected int var1=10;
+            protected void method()
+            {
+            System.out.println("protected method called");
+            }
+            }
+        
+            package c4.sample;
+        public class Aclass extends Myclas
+        {
+        public static void main(String st[])
+        {
+         Aclass obj= new Aclass();
+        System.out.println("protected var1:" + obj.var1);
+        obj.method();
+        }
+        }
+        
+        import c4.sample.Myclas;
+        
+        public class outside extends Myclas
+        {
+        public static void main(String st[])
+        {
+        outside obj= new outside();
+        System.out.println("protected var1:" + obj.var1);
+        obj.method();
+        }
+        }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            protected var1=10
+            protected method called
+        </pre>
+    </div>
+</body>
+</html>

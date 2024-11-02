@@ -4,14 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../array/ques.css">
 </head>
 <body>
     <h1>INHERITANCE</h1>
-    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;overflow: scroll;box-shadow:0 0 rgba(204, 233, 232),
-                0 0 10px rgba(204, 233, 232);">
-        <h4></h4>
+    <div class="box">
+        <h4>17. Write a Java program to create an abstract class BankAccount with abstract methods deposit() and withdraw(). Create subclasses: SavingsAccount and CurrentAccount that extend the BankAccount class and implement the respective methods to handle deposits and withdrawals for each account type.</h4>
         <pre>
-          
+            abstract class BankAccount {
+                double balance;
+            
+                BankAccount(double initialBalance) {
+                    balance = initialBalance;
+                }
+            
+                abstract void deposit(double amount);
+            
+                abstract void withdraw(double amount);
+            
+                double getBalance() {
+                    return balance;
+                }
+            }
+            
+            class SavingsAccount extends BankAccount {
+                private double interestRate;
+            
+                SavingsAccount(double initialBalance, double ir) {
+                    super(initialBalance);
+                    interestRate = ir;
+                }
+            
+                void deposit(double amount) {
+                    if (amount >= 100) {
+                        balance += amount;
+                        System.out.println("Deposited " + amount + " into Savings Account. New Balance: " + balance);
+                    } else {
+                        System.out.println("Minimum Deposit Amount is 100");
+                    }
+                }
+            
+                void withdraw(double amount) {
+                    if (amount > 0 && balance >= amount) {
+                        balance -= amount;
+                        System.out.println("Withdrew " + amount + " from Savings Account. New Balance: " + balance);
+                    } else {
+                        System.out.println("Invalid withdrawal amount or insufficient funds.");
+                    }
+                }
+            
+                void calculateInterest() {
+                    double interest = balance * (interestRate / 100);
+                    balance += interest;
+                    System.out.println("Interest of " + interest + " added to Savings Account. New Balance: " + balance);
+                }
+            }
+            
+            class CurrentAccount extends BankAccount {
+                private double overdraftLimit;
+            
+                CurrentAccount(double initialBalance, double draftLmt) {
+                    super(initialBalance);
+                    overdraftLimit = draftLmt;
+                }
+            
+                void deposit(double amount) {
+                    if (amount > 0) {
+                        balance += amount;
+                        System.out.println("Deposited " + amount + " into Current Account. New Balance: " + balance);
+                    } else {
+                        System.out.println("Invalid deposit amount.");
+                    }
+                }
+            
+                void withdraw(double amount) {
+                    if (amount > 0 && (balance + overdraftLimit) >= amount) {
+                        balance -= amount;
+                        System.out.println("Withdrew " + amount + " from Current Account. New Balance: " + balance);
+                    } else {
+                        System.out.println("Invalid withdrawal amount or exceeded overdraft limit.");
+                    }
+                }
+            }
+            
+            class Main {
+                public static void main(String[] args) {
+                    SavingsAccount savingsAccount = new SavingsAccount(1000, 5);
+                System.out.println("Saving Account : Initial Amount " + savingsAccount.getBalance());
+                    savingsAccount.deposit(200);
+                    savingsAccount.withdraw(150);
+                    savingsAccount.calculateInterest();
+            
+            
+                    CurrentAccount currentAccount = new CurrentAccount(500, 300);
+                System.out.println("Current Account : Initial Amount " + currentAccount.getBalance());
+                    currentAccount.deposit(100);
+                    currentAccount.withdraw(700); 
+                    currentAccount.withdraw(200); 
+                }
+            }
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Saving Account : Initial Amount 1000.0
+            Deposited 200.0 into Savings Account. New Balance: 1200.0
+            Withdrew 150.0 from Savings Account. New Balance: 1050.0
+            Interest of 52.5 added to Savings Account. New Balance: 1102.5
+            Current Account : Initial Amount 500.0
+            Deposited 100.0 into Current Account. New Balance: 600.0
+            Withdrew 700.0 from Current Account. New Balance: -100.0
+            Withdrew 200.0 from Current Account. New Balance: -300.0
         </pre>
 </body>
 </html>

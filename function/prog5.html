@@ -4,14 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
 </head>
 <body>
     <h1>2D-ARRAYS</h1>
-    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;overflow: scroll;box-shadow:0 0 rgba(204, 233, 232),
-                0 0 10px rgba(204, 233, 232);">
-        <h4></h4>
+    <div class="box">
+        <h4>5. Write a Java method to compute the future investment value at a given interest rate for a specified number of years.</h4>
         <pre>
-          
+            class Main
+            {
+                static double getFutureValue(double amt, double roi, int time){
+                    double fv = amt*Math.pow((1+(roi/100)), time);
+                    return fv;
+                }
+                public static void main(String[] args){
+                    System.out.println("Amount = 15000");
+                    System.out.println("Rate of Interest = 10");
+                    System.out.println("Years = 6");
+                    System.out.printf("Your Future Value is %.2f" , getFutureValue(15000.0, 10.0, 6));
+                }
+            }
+        </pre>
+        <h4>OUTPUT:</h4>
+        <pre>
+            Amount = 15000
+            Rate of Interest = 10
+            Years = 6
+            Your Future Value is 26573.42
         </pre>
 </body>
 </html>

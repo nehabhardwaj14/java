@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../array/ques.css">
+</head>
+<body>
+    <h1>INHERITANCE</h1>
+    <div class="box">
+        <h4>10. Write a Java program that creates a class hierarchy for employees of a company. The base class should be Employee, with subclasses Manager, Developer, and Programmer. Each subclass should have properties such as name, address, salary, and job title. Implement methods for calculating bonuses, generating performance reports, and managing projects.</h4>
+        <pre>
+            abstract class Employee {
+                private String name;
+                private String address;
+                private double salary;
+                private String jobTitle;
+            
+                Employee(String name, String address, double salary, String jobTitle) {
+                    this.name = name;
+                    this.address = address;
+                    this.salary = salary;
+                    this.jobTitle = jobTitle;
+                }
+            
+                abstract double calculateBonus();
+            
+                abstract void generatePerformanceReport();
+            
+                abstract void manageProjects();
+            
+                String getName() {
+                    return name;
+                }
+            
+                String getAddress() {
+                    return address;
+                }
+            
+                double getSalary() {
+                    return salary;
+                }
+            
+                String getJobTitle() {
+                    return jobTitle;
+                }
+            }
+            
+            class Manager extends Employee {
+                private int teamSize;
+            
+                Manager(String name, String address, double salary, String jobTitle, int team){
+                    super(name, address, salary, jobTitle);
+                    teamSize = team;
+                }
+            
+                double calculateBonus() {
+                    return getSalary() * 0.10;
+                }
+            
+                void generatePerformanceReport() {
+                    System.out.println("Manager " + getName() + " has successfully managed a team of " + teamSize + " members.");
+                }
+            
+                void manageProjects() {
+                    System.out.println("Manager " + getName() + " is overseeing project progress and team performance.");
+                }
+            
+                int getTeamSize() {
+                    return teamSize;
+                }
+            }
+            
+            class Developer extends Employee {
+                private String programmingLanguage;
+            
+                Developer(String name, String address, double salary, String jobTitle, String language) {
+                    super(name, address, salary, jobTitle);
+                    programmingLanguage = language;
+                }
+            
+                double calculateBonus() {
+                    return getSalary() * 0.08; 
+                }
+            
+                void generatePerformanceReport() {
+                    System.out.println("Developer " + getName() + " is proficient in " + programmingLanguage + ".");
+                }
+            
+                void manageProjects() {
+                    System.out.println("Developer " + getName() + " is working on coding tasks and software development.");
+                }
+            
+                String getProgrammingLanguage() {
+                    return programmingLanguage;
+                }
+            }
+            
+            class Programmer extends Employee {
+                private String projectAssigned;
+            
+                Programmer(String name, String address, double salary, String jobTitle, String project) {
+                    super(name, address, salary, jobTitle);
+                    projectAssigned = project;
+                }
+            
+                double calculateBonus() {
+                    return getSalary() * 0.07;
+                }
+            
+                void generatePerformanceReport() {
+                    System.out.println("Programmer " + getName() + " is working on project: " + projectAssigned + ".");
+                }
+            
+                void manageProjects() {
+                    System.out.println("Programmer " + getName() + " is focusing on tasks related to project: " + projectAssigned + ".");
+                }
+            
+                String getProjectAssigned() {
+                    return projectAssigned;
+                }
+            }
+            
+            class Main {
+                public static void main(String[] args) {
+                    Manager manager = new Manager("Alice", "123 Elm St", 90000, "Team Manager", 10);
+                    Developer developer = new Developer("Bob", "456 Oak St", 80000, "Senior Developer", "Java");
+                    Programmer programmer = new Programmer("Charlie", "789 Pine St", 70000, "Junior Programmer", "Inventory System");
+            
+                    System.out.println("Manager:");
+                    System.out.println("Name: " + manager.getName());
+                    System.out.println("Address: " + manager.getAddress());
+                    System.out.println("Salary: " + manager.getSalary());
+                    System.out.println("Job Title: " + manager.getJobTitle());
+                    System.out.println("Team Size: " + manager.getTeamSize());
+                    System.out.println("Bonus: " + manager.calculateBonus());
+                manager.generatePerformanceReport();
+                    manager.manageProjects();
+            
+                    System.out.println("\nDeveloper:");
+                    System.out.println("Name: " + developer.getName());
+                    System.out.println("Address: " + developer.getAddress());
+                    System.out.println("Salary: " + developer.getSalary());
+                    System.out.println("Job Title: " + developer.getJobTitle());
+                    System.out.println("Programming Language: " + 	developer.getProgrammingLanguage());
+                    System.out.println("Bonus: " + developer.calculateBonus());
+                    developer.generatePerformanceReport();
+                    developer.manageProjects();
+            
+                    System.out.println("\nProgrammer:");
+                    System.out.println("Name: " + programmer.getName());
+                    System.out.println("Address: " + programmer.getAddress());
+                    System.out.println("Salary: " + programmer.getSalary());
+                    System.out.println("Job Title: " + programmer.getJobTitle());
+                    System.out.println("Project Assigned: " + programmer.getProjectAssigned());
+                    System.out.println("Bonus: " + programmer.calculateBonus());
+                    programmer.generatePerformanceReport();
+                    programmer.manageProjects();
+                }
+            }
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Manager:
+            Name: Alice
+            Address: 123 Elm St
+            Salary: 90000.0
+            Job Title: Team Manager
+            Team Size: 10
+            Bonus: 9000.0
+            Manager Alice has successfully managed a team of 10 members.
+            Manager Alice is overseeing project progress and team performance.
+            
+            Developer:
+            Name: Bob
+            Address: 456 Oak St
+            Salary: 80000.0
+            Job Title: Senior Developer
+            Programming Language: Java
+            Bonus: 6400.0
+            Developer Bob is proficient in Java.
+            Developer Bob is working on coding tasks and software development.
+            
+            Programmer:
+            Name: Charlie
+            Address: 789 Pine St
+            Salary: 70000.0
+            Job Title: Junior Programmer
+            Project Assigned: Inventory System
+            Bonus: 4900.000000000001
+            Programmer Charlie is working on project: Inventory System.
+            Programmer Charlie is focusing on tasks related to project: Inventory System.
+        </pre>
+</body>
+</html>

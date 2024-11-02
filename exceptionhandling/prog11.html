@@ -10,9 +10,28 @@
     <h1>EXCEPTION HANDLING</h1>
     <div class="box">
         <h4>11.Write a Java program to show an example of throws Keyword.</h4>
-        <pre></pre>
+        <pre>
+            class ThrowKey
+            {
+            int get() throws java.io.IOException
+            {
+             return System.in.read();
+            }
+            }
+            
+            class Main
+            {
+            public static void main(String st[]) throws java.io.IOException
+            {
+            System.out.println(new ThrowKey().get());
+            }
+            }
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <pre>
+            a
+            97
+        </pre>
     </div>
 </body>
 </html>

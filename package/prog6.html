@@ -7,12 +7,77 @@
     <link rel="stylesheet" href="ques.css">
 </head>
 <body>
-    <h1>BASIC CONSTRUCTS</h1>
+    <h1>PACKAGES</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>6.Create a Java program to create a package with 4 public classes, create the object in another file and call the function created in those classes.</h4>
+        <pre>
+            package mypac;
+            public class A
+            {
+            public void display()
+            {
+            System.out.println("A called");
+            }
+            }
+        
+            
+            package mypac;
+        public class B
+        {
+        public void display()
+        {
+        System.out.println("B called");
+        }
+        }
+        
+        
+        package mypac;
+        public class C
+        {
+        public void display()
+        {
+        System.out.println("C called");
+        }
+        }
+        
+        
+        package mypac;
+        public class D
+        {
+        public void display()
+        {
+        System.out.println("D called");
+        }
+        }
+        
+        
+        import mypac.A;
+        import mypac.B;
+        import mypac.C;
+        import mypac.D;
+        
+        public class main12
+        {
+        public static void main(String st[])
+        {
+         claA obj=new A();
+        obj.diplay();
+        claB obj1=new B();
+        obj1.diplay();
+        claC obj2=new C();
+        obj2.diplay();
+        claD obj3=new D();
+        obj3.diplay();
+        }
+        }
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <pre>
+            A called
+            B called
+            C called
+            D called
+        </pre>
     </div>
 </body>
 </html>

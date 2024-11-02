@@ -4,14 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../array/ques.css">
 </head>
 <body>
     <h1>INHERITANCE</h1>
-    <div style="border: 2px solid #ccc; height: 400px; width: 900px; padding: 10px; background-color: #f9f9f9; font-size: 19px;overflow: scroll;box-shadow:0 0 rgba(204, 233, 232),
-                0 0 10px rgba(204, 233, 232);">
-        <h4></h4>
+    <div class="box">
+        <h4>5. Write a Java program to create a class known as "BankAccount" with methods called deposit() and withdraw(). Create a subclass called SavingsAccount that overrides the withdraw() method to prevent withdrawals if the account balance falls below one hundred.</h4>
         <pre>
-          
+            class BankAccount {
+                private double balance;
+            
+                BankAccount(double amt) {
+                    balance = amt;
+                }
+            
+                void deposit(double amount) {
+                    if (amount > 0) {
+                        balance += amount;
+                        System.out.println("Deposited: " + amount);
+                    } else {
+                        System.out.println("Invalid deposit amount.");
+                    }
+                }
+            
+                void withdraw(double amount) {
+                    if (amount > 0 && amount &lt= balance) {
+                        balance -= amount;
+                        System.out.println("Withdrawn: " + amount);
+                    } else {
+                        System.out.println("Invalid or insufficient funds for withdrawal.");
+                    }
+                }
+            
+                double getBalance() {
+                    return balance;
+                }
+            }
+            
+            class SavingsAccount extends BankAccount {
+                SavingsAccount(double startAmt) {
+                    super(startAmt);     
+                }
+            
+                void withdraw(double amount) {
+                System.out.println("Processing withdraw of "+amount+"Rs");
+                    if (getBalance() - amount >= 100) {
+                        super.withdraw(amount);
+                    } else {
+                        System.out.println("Withdrawal denied. Account balance cannot fall below 100.");
+                    }
+                }
+            }
+            
+            class Main {
+                public static void main(String[] args) {
+                    SavingsAccount myAcct = new SavingsAccount(500.0);
+                System.out.println("Initial Balance: " +myAcct.getBalance());
+                    myAcct.deposit(200.0); 
+                    System.out.println("Balance after deposit: " + myAcct.getBalance()); 
+            
+                    myAcct.withdraw(300.0); 
+                    System.out.println("Balance after withdrawal: " + myAcct.getBalance()); 
+            
+                    myAcct.withdraw(350.0); 
+                    System.out.println("Final balance: " + myAcct.getBalance()); 
+                }
+            }
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Initial Balance: 500.0
+            Deposited: 200.0
+            Balance after deposit: 700.0
+            Processing withdraw of 300.0Rs
+            Withdrawn: 300.0
+            Balance after withdrawal: 400.0
+            Processing withdraw of 350.0Rs
+            Withdrawal denied. Account balance cannot fall below 100.
+            Final balance: 400.0
         </pre>
 </body>
 </html>

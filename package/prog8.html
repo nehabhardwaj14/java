@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>PACKAGES</h1>
+    <div class="box">
+        <h4>8.Create a Java program to create a package with public class and protected members to be accessed in another class.</h4>
+        <pre>
+            package mypac1;
+            public class First
+            {
+            protected int x=10;
+            protected void printMessage()
+            {
+            System.out.println("hello first class");
+            }
+            }
+          
+        
+            //in another file
+            package mypac1;
+            public class Second extends First
+            {
+        
+                protected void accessProtected()
+            {
+              System.out.println("x= " + x);
+               printMessage();
+              }
+            
+            }
+              import mypackage.Second;
+        
+              class main
+              {
+              public static void main(String st[])
+              {
+              Second obj=new Second();
+              obj.accessProtected();
+              }
+              }
+          
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            x=10
+            hello first class
+        </pre>
+    </div>
+</body>
+</html>

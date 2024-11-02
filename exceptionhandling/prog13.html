@@ -10,9 +10,66 @@
     <h1>EXCEPTION HANDLING</h1>
     <div class="box">
         <h4>13.Write a Java program to show an example of nested try block.</h4>
-        <pre></pre>
+        <pre>
+            class NestedTry
+            {
+           
+              
+               public static void main(String st[])
+               {
+           
+            
+                  int num = 17; // Replace with your number
+           
+            
+                  try
+                   {
+             
+                      System.out.println("Number: " + num);
+            
+                       try 
+                         {
+            
+                           if (num % 2 == 0)
+                            {
+             
+                             System.out.println(num + " is even.");
+           
+                           } else
+                             {
+             
+                              System.out.println(num + " is odd.");
+           
+                           }
+            
+                          }
+                       catch (ArithmeticException e)
+                         {
+             
+           
+                           System.out.println("Cannot divide by zero.");
+              
+                       }
+            
+                       } 
+                  catch (Exception e)
+                 {
+               
+           
+                       System.out.println("An error occurred: " + e.getMessage());
+           
+                   }
+            
+              }
+           
+           }
+        
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <pre>
+            Number:17
+            17 is odd.
+        </pre>
     </div>
 </body>
 </html>
