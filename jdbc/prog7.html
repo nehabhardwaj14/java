@@ -9,10 +9,36 @@
 <body>
     <h1>JDBC</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>7. Create a Scrollable Readonly Resultset and ask the row number from the user and display that row on the screen.</h4>
+        <pre>
+            import java.io.*;
+            import java.sql.*;
+            class jdbc7
+            {
+               public static void main(String st[]) throws ClassNotFoundException,SQLException,java.io.IOException
+                {
+                   Class.forName("com.mysql.cj.jdbc.Driver"); 
+            Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/collage","root","neha14");
+             Statement a=c.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_READ_ONLY);
+            
+            BufferedReader scan=new BufferedReader(new InputStreamReader(System.in)); 
+                  System.out.print("Enter row number for the data to display:");
+                  int row=Integer.parseInt(scan.readLine());
+                  ResultSet view=a.executeQuery("select * from student ");
+                  view.absolute(row);
+                  System.out.print(" Displaying  Row"+view.getString(1)+" :");
+                  System.out.println (view.getString(2));
+                  }}
+            
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <pre>
+            D:\programs\jdbc>javac prog7.java
+
+            D:\programs\jdbc>java jdbc7
+            Enter row number for the data to display:6
+             Displaying  Row6 :Misbah
+        </pre>
     </div>
 </body>
 </html>

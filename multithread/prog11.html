@@ -9,10 +9,56 @@
 <body>
     <h1>MULTITHREADING</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>11. Create the program to create multiple threads, show an example of synchronization keyword.</h4>
+        <pre>
+            class Table{
+                public synchronized void printTable(int n){
+                for(int i=1;i<=5;i++){
+                System.out.println(n*i);
+                }}}
+                
+                class MyThread1 extends Thread{
+                Table t;
+                MyThread1(Table t){
+                this.t=t;
+                }
+                public void run(){
+                t.printTable(5);
+                }}
+                
+                class MyThread2 extends Thread{
+                Table t;
+                MyThread2(Table t){
+                this.t=t;
+                }
+                public void run(){
+                t.printTable(7);
+                }}
+                
+                class Main{
+                public static void main(String[] args){
+                Table obj=new Table();
+                MyThread1 m1=new MyThread1(obj);
+                MyThread2 m2=new MyThread2(obj);
+                m1.start();
+                m2.start();
+                }}
+                
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <pre>
+            5
+            10
+            15
+            20
+            25
+            7
+            14
+            21
+            28
+            35
+            
+        </pre>
     </div>
 </body>
 </html>

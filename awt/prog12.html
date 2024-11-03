@@ -9,10 +9,42 @@
 <body>
     <h1>AWT</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>12. Create a simple AWT application that displays a CheckboxGroup with FlowLayout manager.</h4>
+        <pre>
+            import java.awt.*;
+            import java.awt.event.*;
+            class MyFrame extends Frame
+            {
+                Checkbox cb1 = new Checkbox();
+                Checkbox cb2 = new Checkbox();
+                CheckboxGroup cbg = new CheckboxGroup();
+                MyFrame()
+                {
+                    setBounds(100,100,400,400);
+                    setLayout(new FlowLayout(FlowLayout.LEFT));
+                    cb1.setLabel("Male");
+                    cb2.setLabel("Female");
+                    cb1.setCheckboxGroup(cbg);
+                    cb2.setCheckboxGroup(cbg);
+                    add(cb1);
+                    add(cb2);
+                    addWindowListener(new WindowAdapter() {
+                        public void windowClosing(WindowEvent e)
+                        {
+                            System.exit(1);
+                        }
+                    });
+                    setVisible(true);
+                }
+            } 
+             class Main {
+                public static void main(String[] args) {
+                    new MyFrame();
+                }
+            }
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <img src="../awtimg/Radio.png" alt="checkboxgroup">
     </div>
 </body>
 </html>

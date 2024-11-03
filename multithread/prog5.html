@@ -9,10 +9,75 @@
 <body>
     <h1>MULTITHREADING</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>5. Write a Java program that calculates the sum of all prime numbers up to a given limit using multiple threads.</h4>
+        <pre>
+            class PrimeSumThread extends Thread {
+                private final int start; // Start of the range
+                private final int end;   // End of the range
+                private int sum;         // Sum of primes in this range
+              
+                public PrimeSumThread(int start, int end) {
+                    this.start = start;
+                    this.end = end;
+                    this.sum = 0;
+                }
+                public void run() {
+                    for (int i = start; i &lt end; i++) {
+                        if (isPrime(i)) {
+                            sum += i; // Add to sum if prime
+                        }
+                    }
+                }
+              
+                public int getSum() {
+                    return sum; // Return the calculated sum
+                }
+              
+                private boolean isPrime(int number) {
+                    if (number &lt= 1) return false;
+                    for (int i = 2; i &lt= Math.sqrt(number); i++) {
+                        if (number % i == 0) {
+                            return false;
+                        }
+                    }
+                    return true;
+                }
+              }
+              
+              class MultiThreadedPrimeSum {
+                public static void main(String[] args) {
+                    int limit = 30; // Change this limit as needed
+                    int numThreads = 4; // Number of threads to use
+                    int range = limit / numThreads; // Range for each thread
+              
+                    PrimeSumThread[] threads = new PrimeSumThread[numThreads];
+              
+                    // Create and start threads
+                    for (int i = 0; i &lt numThreads; i++) {
+                        int start = i * range;
+                        int end = (i == numThreads - 1) ? limit : start + range; // Handle last thread
+                        threads[i] = new PrimeSumThread(start, end);
+                        threads[i].start();
+                    }
+              
+                    // Wait for all threads to finish and calculate total sum
+                    int totalSum = 0;
+                    try {
+                        for (PrimeSumThread thread : threads) {
+                            thread.join();
+                            totalSum += thread.getSum(); // Get sum from each thread
+                        }
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+              
+                    // Print the total sum of prime numbers
+                    System.out.println("Sum of all prime numbers up to " + limit + " is: " + totalSum);
+                }
+              }
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <pre>Sum of all prime numbers up to 30 is: 129</pre>
     </div>
 </body>
 </html>

@@ -9,10 +9,23 @@
 <body>
     <h1>APPLETS</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>9. Create an applet in Java to draw a oval.</h4>
+        <pre>
+            import java.applet.Applet;
+            import java.awt.Graphics;
+            
+            public class Oval extends Applet {
+                public void paint(Graphics g)
+                {
+                    g.drawOval(100, 100, 100, 50);
+                }
+            }
+            /*
+             <applet code = "Oval.class" width = "300" height= "500"></applet>
+             */
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+       <img src="../appletimage/oval.png" alt="oval">
     </div>
 </body>
 </html>

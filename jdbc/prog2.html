@@ -9,10 +9,45 @@
 <body>
     <h1>JDBC</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>2. Create the table in the database from Java API.</h4>
+        <pre>
+            import java.sql.*;
+            class jdbc2
+            {
+               public static void main(String st[]) throws ClassNotFoundException,SQLException
+                {
+                   Class.forName("com.mysql.cj.jdbc.Driver"); 
+            Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/collage","root","neha14");
+             Statement a=c.createStatement();
+            System.out.println(a.executeUpdate("create table stud( rollno int,name varchar(20),marks int)"));
+            
+            }
+            }
+            
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <pre>
+            D:\programs\jdbc>javac prog2.java
+
+            D:\programs\jdbc>java jdbc2
+            0
+            
+            mysql> show tables ;
+            +-------------------+
+            | Tables_in_collage |
+            +-------------------+
+            | agent             |
+            | customer          |
+            | sample            |
+            | st1               |
+            | st2               |
+            | stud              |
+            | student           |
+            | vstudent          |
+            +-------------------+
+            8 rows in set (0.00 sec)
+            
+        </pre>
     </div>
 </body>
 </html>

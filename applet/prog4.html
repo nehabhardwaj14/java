@@ -9,10 +9,24 @@
 <body>
     <h1>APPLETS</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>4. Create an applet in Java to draw a polygon.</h4>
+        <pre>
+            import java.applet.Applet;
+            import java.awt.*;
+            public class polygon extends Applet {
+                public void paint(Graphics g)
+                {
+                    int x[]={100,200,300,400};
+                    int y[]={200,200,300,400};
+                    g.drawPolygon(x, y,4);
+                }
+            }
+            /*
+             <applet code = "polygon.class" width = "300" height= "500"></applet>
+             */
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+       <img src="../appletimage/polygon.png" alt="polygon">
     </div>
 </body>
 </html>

@@ -9,10 +9,21 @@
 <body>
     <h1>APPLETS</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>2. Create an applet showing the string "Hello World" which is executed by an appletviewer.</h4>
+        <pre>
+            import java.awt.*;
+            public class HelloWorld extends Applet{
+                public void paint(Graphics g)
+                {
+                    g.drawString("Hello World!", 100, 100);
+                }
+            }
+            /*
+             <applet code = "HelloWorld.class" width = "300" height= "500"></applet>
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <img src="../appletimage/HW.png" alt="HelloWorld">
+        */
     </div>
 </body>
 </html>

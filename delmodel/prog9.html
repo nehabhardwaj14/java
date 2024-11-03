@@ -9,10 +9,69 @@
 <body>
     <h1>DELEGATION MODEL</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>9. Java Program to Create and Switch between Frames using Buttons</h4>
+        <pre>
+            import java.awt.*;
+            import java.awt.event.*;
+            class Frame1 extends Frame
+                {
+                    private Button btn = new Button("Change Frame");
+                    Label l = new Label("This is 1st Frame.");
+                    Frame1()
+                    {
+                        setBounds(100,100,400,400);
+                        setLayout(new FlowLayout(FlowLayout.LEFT));
+                        add(l);
+                        add(btn);
+                        btn.addMouseListener(new MouseAdapter() {
+                            public void mouseClicked(MouseEvent e)
+                            {
+                                new Frame2();
+                            }
+                        });
+                        addWindowListener(new WindowAdapter() {
+                            public void windowClosing(WindowEvent e)
+                            {
+                                System.exit(0);
+                            }
+                        });
+                        setVisible(true);
+                    }
+                }
+                class Frame2 extends Frame
+                {
+                    private Button btn = new Button("Change Frame");
+                    Label l = new Label("This is 2nd Frame.");
+                    Frame2()
+                    {
+                        setBounds(100,100,400,400);
+                        setLayout(new FlowLayout(FlowLayout.LEFT));
+                        add(l);
+                        add(btn);
+                        btn.addMouseListener(new MouseAdapter() {
+                            public void mouseClicked(MouseEvent e)
+                            {
+                                new Frame1();
+                            }
+                        });
+                        addWindowListener(new WindowAdapter() {
+                            public void windowClosing(WindowEvent e)
+                            {
+                                System.exit(0);
+                            }
+                        });
+                        setVisible(true);
+                    }
+                }
+            class Main
+                {
+                    public static void main(String[] args) {
+                        new Frame1();
+                    }
+                }
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <img src="../delmodelimage/changeframe.png" alt="changeframe">
     </div>
 </body>
 </html>

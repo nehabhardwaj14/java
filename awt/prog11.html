@@ -9,10 +9,43 @@
 <body>
     <h1>AWT</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>11. Create a simple AWT application that displays a Choice with Custom Layout.</h4>
+        <pre>
+            package awt10;
+            import java.awt.*;
+            import java.awt.event.*;
+            class MyFrame extends Frame
+            {
+                Choice ch = new Choice();
+                MyFrame()
+                {
+                    setBounds(100,100,400,400);
+                    setLayout(null);
+                    ch.setBounds(100,100,100,50);
+                    ch.addItem("Apple");
+                    ch.addItem("Mango");
+                    ch.addItem("Orange");
+                    ch.addItem("Grapes");
+                    ch.addItem("Pear");
+                    ch.addItem("Coconut");
+                    add(ch);
+                    addWindowListener(new WindowAdapter() {
+                        public void windowClosing(WindowEvent e)
+                        {
+                            System.exit(1);
+                        }
+                    });
+                    setVisible(true);
+                }
+            } 
+             class Main {
+                public static void main(String[] args) {
+                    new MyFrame();
+                }
+            }
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <img src="../awtimg/ChoiceC.png" alt="choice custom">
     </div>
 </body>
 </html>

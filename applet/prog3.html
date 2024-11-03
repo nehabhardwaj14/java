@@ -9,10 +9,22 @@
 <body>
     <h1>APPLETS</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>3. Create an applet in Java to draw a circle.</h4>
+        <pre>
+            import java.applet.*;
+            import java.awt.*;
+            public class Circle extends Applet{
+                public void paint(Graphics g)
+                {
+                    g.drawOval(100, 100, 100, 100);
+                }
+            }
+            /*
+             <applet code = "Circle.class" width = "300" height= "500"></applet>
+             */
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <img src="../appletimage/circle.png" alt="a circle">
     </div>
 </body>
 </html>

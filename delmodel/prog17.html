@@ -9,10 +9,51 @@
 <body>
     <h1>DELEGATION MODEL</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>17. Java Program to Change the Applet Background Colour when Button Clicked</h4>
+        <pre>
+            import java.awt.*;
+            public class ButtonWithBorderApp extends Frame {
+            
+                public ButtonWithBorderApp() {
+                    // Set up the frame
+                    setTitle("Button with Border Example");
+                    setSize(300, 200);
+                    setLayout(new FlowLayout());
+            
+                    // Create a Panel to act as a border for the button
+                    Panel buttonPanel = new Panel();
+                    buttonPanel.setLayout(new FlowLayout());
+                    buttonPanel.setBackground(Color.BLACK); // Border color
+                    buttonPanel.setSize(100, 50);
+            
+                    // Create the Button
+                    Button button = new Button("Push Me");
+                    button.setBackground(Color.LIGHT_GRAY);
+                    button.setPreferredSize(new Dimension(80, 30)); // Inner button size
+            
+                    // Add the button to the panel (creates a border effect)
+                    buttonPanel.add(button);
+            
+                    // Add the panel (with button inside) to the frame
+                    add(buttonPanel);
+            
+                    // Set up close operation
+                    addWindowListener(new java.awt.event.WindowAdapter() {
+                        public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                            System.exit(0);
+                        }
+                    });
+                }
+            
+                public static void main(String[] args) {
+                    // Create and show the frame
+                    ButtonWithBorderApp app = new ButtonWithBorderApp();
+                    app.setVisible(true);
+                }
+            }
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+       <img src="../delmodelimage/push.png" alt="push">
     </div>
 </body>
 </html>

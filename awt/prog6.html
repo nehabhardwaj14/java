@@ -9,10 +9,35 @@
 <body>
     <h1>AWT</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>6. Create a simple AWT application that displays a Checkbox with FlowLayout manager.</h4>
+        <pre>
+            import java.awt.*;
+            import java.awt.event.*;
+            class MyFrame extends Frame
+            {
+                Checkbox cb = new Checkbox();
+                MyFrame()
+                {
+                    setBounds(100,100,400,400);
+                    setLayout(new FlowLayout(FlowLayout.LEFT));
+                    add(cb);
+                    addWindowListener(new WindowAdapter() {
+                        public void windowClosing(WindowEvent e)
+                        {
+                            System.exit(1);
+                        }
+                    });
+                    setVisible(true);
+                }
+            } 
+             class Main {
+                public static void main(String[] args) {
+                    new MyFrame();
+                }
+            }
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <img src="../awtimg/Checkbox.png" alt="checkbox">
     </div>
 </body>
 </html>

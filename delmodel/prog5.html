@@ -9,10 +9,52 @@
 <body>
     <h1>DELEGATION MODEL</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>5. Java Program to Handle KeyBoardEvent</h4>
+        <pre>
+            import java.awt.*;
+            import java.awt.event.*;
+            class KeyBoardEvent extends Frame
+                {
+                    TextField tf = new TextField(10);
+                    private Label l = new Label();
+                    KeyBoardEvent()
+                    {
+                        setBounds(100,100,400,400);
+                        setLayout(new FlowLayout(FlowLayout.LEFT));
+                        add(tf);
+                        add(l);
+                        tf.addKeyListener(new KeyListener() {
+                            public  void keyTyped(java.awt.event.KeyEvent e)
+                            {
+                                l.setText("Key Typed");
+                            }
+                            public  void keyPressed(java.awt.event.KeyEvent e)
+                            {
+                                l.setText("Key Pressed");
+                            }
+                            public  void keyReleased(java.awt.event.KeyEvent e)
+                            {
+                                l.setText("Key Released");
+                            }
+                        });
+                        addWindowListener(new WindowAdapter() {
+                            public void windowClosing(WindowEvent e)
+                            {
+                                System.exit(0);
+                            }
+                        });
+                        setVisible(true);
+                    }
+                }
+            class Main
+                {
+                    public static void main(String[] args) {
+                        new KeyBoardEvent();
+                    }
+                }
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <img src="../delmodelimage/KeyboardEvent.png" alt="keyrealese">
     </div>
 </body>
 </html>

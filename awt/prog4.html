@@ -9,10 +9,36 @@
 <body>
     <h1>AWT</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>4. Create a simple AWT application that displays a TextField with FlowLayout manager.</h4>
+        <pre>
+            import java.awt.*;
+            import java.awt.event.*;
+            class MyFrame extends Frame
+            {
+                TextField tf = new TextField();
+                MyFrame()
+                {
+                    setBounds(100,100,400,400);
+                    setLayout(new FlowLayout(FlowLayout.CENTER));
+                    tf.setBounds(100, 100, 500, 50);;
+                    add(tf);
+                    addWindowListener(new WindowAdapter() {
+                        public void windowClosing(WindowEvent e)
+                        {
+                            System.exit(1);
+                        }
+                    });
+                    setVisible(true);
+                }
+            } 
+             class Main {
+                public static void main(String[] args) {
+                    new MyFrame();
+                }
+            }
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <img src="../awtimg/TextField .png" alt="textfield">
     </div>
 </body>
 </html>

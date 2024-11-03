@@ -9,10 +9,89 @@
 <body>
     <h1>MULTITHREADING</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>3. Write a Java program that sorts an array of integers using multiple threads.</h4>
+        <pre>
+            class MatrixMultiplicationThread extends Thread {
+                private final int[][] A; // First matrix
+                private final int[][] B; // Second matrix
+                private final int[][] C; // Result matrix
+                private final int row;    // Row index for the result matrix
+              
+                public MatrixMultiplicationThread(int[][] A, int[][] B, int[][] C, int row) {
+                    this.A = A;
+                    this.B = B;
+                    this.C = C;
+                    this.row = row;
+                }
+              
+                @Override
+                public void run() {
+                    int colsB = B[0].length;
+                    for (int j = 0; j &lt colsB; j++) {
+                        C[row][j] = 0; // Initialize the result cell
+                        for (int k = 0; k &lt A[0].length; k++) {
+                            C[row][j] += A[row][k] * B[k][j]; // Perform multiplication and addition
+                        }
+                    }
+                }
+              }
+              class MultiThreadedMatrixMultiplication {
+                public static void main(String[] args) {
+                    int[][] A = {
+                        {1, 2, 3},
+                        {4, 5, 6},
+                        {7, 8, 9}
+                    };
+              
+                    int[][] B = {
+                        {9, 8, 7},
+                        {6, 5, 4},
+                        {3, 2, 1}
+                    };
+              
+                    int rowsA = A.length;
+                    int colsB = B[0].length;
+                    int[][] C = new int[rowsA][colsB]; // Result matrix
+              
+                    // Create and start threads for each row of the result matrix
+                    Thread[] threads = new Thread[rowsA];
+                    for (int i = 0; i &lt rowsA; i++) {
+                        threads[i] = new MatrixMultiplicationThread(A, B, C, i);
+                        threads[i].start();
+                    }
+              
+                    // Wait for all threads to finish
+                    try {
+                        for (int i = 0; i &lt rowsA; i++) {
+                            threads[i].join();
+                        }
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+              
+                    // Print the result matrix
+                    System.out.println("Resultant Matrix:");
+                    printMatrix(C);
+                }
+              
+                private static void printMatrix(int[][] matrix) {
+                    for (int[] row : matrix) {
+                        for (int value : row) {
+                            System.out.print(value + " ");
+                        }
+                        System.out.println();
+                    }
+                }
+              }
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <pre>
+            Resultant Matrix:
+            30 24 18
+            84 69 54
+            138 114 90
+              
+        </pre>
     </div>
 </body>
 </html>

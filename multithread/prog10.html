@@ -9,10 +9,34 @@
 <body>
     <h1>MULTITHREADING</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>10. Create the program to create multiple threads, set its name and its priority.</h4>
+        <pre>
+            class Th10 extends Thread{
+                public void run() {
+              System.out.println("Thread : "+Thread.currentThread().getName()+" Priority  "+Thread.currentThread().getPriority());
+                }
+                public static void main(String[] args) {
+                    Th10 t1 = new Th10();
+                    t1.start();
+                    t1.setName("ABC");
+                    t1.setPriority(2);
+                    Th10 t2 = new Th10();
+                    t2.start();
+                    t2.setName("XYZ");
+                    t2.setPriority(3);
+                    Th10 t3 = new Th10();
+                    t3.start();
+                    t3.setPriority(1);
+                    t3.setName("PQR");
+                }}
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <pre>
+            Thread : ABC Priority  2
+            Thread : PQR Priority  1
+            Thread : XYZ Priority  3
+              
+        </pre>
     </div>
 </body>
 </html>

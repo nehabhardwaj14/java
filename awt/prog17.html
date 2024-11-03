@@ -9,10 +9,36 @@
 <body>
     <h1>AWT</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>17. Create a simple AWT application that displays a TextArea with Custom Layout.</h4>
+        <pre>
+            import java.awt.*;
+            import java.awt.event.*;
+            class MyFrame extends Frame
+            {
+                TextArea ta = new TextArea(5, 20);
+                MyFrame()
+                {
+                    setBounds(100,100,400,400);
+                    setLayout(null);
+                    ta.setBounds(100,100,100,50);
+                    add(ta);
+                    addWindowListener(new WindowAdapter() {
+                        public void windowClosing(WindowEvent e)
+                        {
+                            System.exit(1);
+                        }
+                    });
+                    setVisible(true);
+                }
+            } 
+             class Main {
+                public static void main(String[] args) {
+                    new MyFrame();
+                }
+            }
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+       <img src="../awtimg/TextAreaC.png" alt="textarea">
     </div>
 </body>
 </html>

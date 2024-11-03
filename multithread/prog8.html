@@ -9,10 +9,31 @@
 <body>
     <h1>MULTITHREADING</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>8. Create the program to create multiple threads by using Runnbale interface</h4>
+        <pre>
+            class Th8 implements Runnable{
+                public void run() {
+                    System.out.println("Thread : "+Thread.currentThread().getName());
+                }
+                public static void main(String[] args) {
+                    Th8 t1 = new Th8();
+                    Thread th1=new Thread(t1);
+                    th1.start();
+                    Th8 t2 = new Th8();
+                    Thread th2=new Thread(t2);
+                    th2.start();
+                    Th8 t3 = new Th8();
+                    Thread th3=new Thread(t3);
+                    th3.start();
+                }}
+            
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <pre>
+            Thread : Thread-0
+            Thread : Thread-1
+            Thread : Thread-2
+        </pre>
     </div>
 </body>
 </html>

@@ -9,10 +9,37 @@
 <body>
     <h1>JDBC</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>3. Insert the row in the table in the database from Java API.</h4>
+        <pre>
+            import java.sql.*;
+            class jdbc3
+            {
+               public static void main(String st[]) throws ClassNotFoundException,SQLException
+                {
+                   Class.forName("com.mysql.cj.jdbc.Driver"); 
+            Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/collage","root","neha14");
+             Statement a=c.createStatement();
+            System.out.println(a.executeUpdate("insert into stud values( 4211,'neha',98)"));
+            }
+            }
+            
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <pre>
+            D:\programs\jdbc>javac prog3.java
+
+            D:\programs\jdbc>java jdbc3
+            1
+            mysql> select*from stud;
+          +--------+------+-------+
+          | rollno | name | marks |
+          +--------+------+-------+
+          |   4211 | neha |    98 |
+          +--------+------+-------+
+          1 row in set (0.01 sec)
+          
+            
+        </pre>
     </div>
 </body>
 </html>

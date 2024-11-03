@@ -9,10 +9,79 @@
 <body>
     <h1>DELEGATION MODEL</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>10. Java Program to Create and Set Border to Push Buttons</h4>
+        <pre>
+            import java.awt.*;
+            import java.awt.event.ActionEvent;
+            import java.awt.event.ActionListener;
+            
+            public class MultiSelectListBoxApp extends Frame {
+            
+                private List itemList;
+                private TextArea displayArea;
+            
+                public MultiSelectListBoxApp() {
+                    // Set up the frame
+                    setTitle("Multi-Select List Box Example");
+                    setSize(400, 400);
+                    setLayout(new FlowLayout());
+            
+                    // Initialize the List with multiple selection enabled
+                    itemList = new List(5, true); // 5 visible rows, multiple selection enabled
+                    itemList.add("Item 1");
+                    itemList.add("Item 2");
+                    itemList.add("Item 3");
+                    itemList.add("Item 4");
+                    itemList.add("Item 5");
+            
+                    // Add a button to display selected items
+                    Button displayButton = new Button("Display Selected Items");
+                    displayButton.addActionListener(new ActionListener() {
+                        
+                        public void actionPerformed(ActionEvent e) {
+                            displaySelectedItems();
+                        }
+                    });
+            
+                    // TextArea to show selected items
+                    displayArea = new TextArea(5, 30);
+                    displayArea.setEditable(false);
+            
+                    // Add components to the frame
+                    add(itemList);
+                    add(displayButton);
+                    add(displayArea);
+            
+                    // Set up close operation
+                    addWindowListener(new java.awt.event.WindowAdapter() {
+                        
+                        public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                            System.exit(0);
+                        }
+                    });
+                }
+            
+                private void displaySelectedItems() {
+                    // Get selected items and display them in the TextArea
+                    String[] selectedItems = itemList.getSelectedItems();
+                    StringBuilder sb = new StringBuilder("Selected Items:
+            ");
+                    for (String item : selectedItems) {
+                        sb.append(item).append("
+            ");
+                    }
+                    displayArea.setText(sb.toString());
+                }
+            
+                public static void main(String[] args) {
+                    // Create and show the frame
+                    MultiSelectListBoxApp app = new MultiSelectListBoxApp();
+                    app.setVisible(true);
+                }
+            }
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+       <img src="../delmodelimage/MultiList.png" alt="multilist">
     </div>
 </body>
 </html>

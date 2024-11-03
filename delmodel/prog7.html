@@ -9,10 +9,49 @@
 <body>
     <h1>DELEGATION MODEL</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>7. Java Program to Get and Set State and Get Label of a Check Box</h4>
+        <pre>
+            package checkbox;
+            //Get and Set State and Get Label of a Check Box
+            import java.awt.*;
+            import java.awt.event.*;
+            class SetCheckbox extends Frame
+                {
+                    TextField tf = new TextField(10);
+                    private Checkbox cb = new Checkbox();
+                    private Button btn = new Button("Set Label");
+                    SetCheckbox()
+                    {
+                        setBounds(100,100,400,400);
+                        setLayout(new FlowLayout(FlowLayout.LEFT));
+                        add(tf);
+                        add(btn);
+                        add(cb);
+                        btn.addMouseListener(new MouseAdapter() {
+                            public void mouseClicked(MouseEvent e)
+                            {
+                                String label = tf.getText();
+                                cb.setLabel(label);
+                            }
+                        });
+                        addWindowListener(new WindowAdapter() {
+                            public void windowClosing(WindowEvent e)
+                            {
+                                System.exit(0);
+                            }
+                        });
+                        setVisible(true);
+                    }
+                }
+            class Main
+                {
+                    public static void main(String[] args) {
+                        new SetCheckbox();
+                    }
+                }
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+       <img src="../delmodelimage/checkbox.png" alt="label">
     </div>
 </body>
 </html>

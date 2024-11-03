@@ -10,10 +10,44 @@
 <body>
     <h1>DELEGATION MODEL</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>4. Java Program to Create 2 Radio Buttons and Display Selected Button Label</h4>
+        <pre>
+            package radio;
+            import java.awt.*;
+            import java.awt.event.*;
+            class Radio extends Frame
+                {
+                    private Label l = new Label("Gender");
+                    private Checkbox cb1 = new Checkbox("Male");
+                    private Checkbox cb2 = new Checkbox("Female");
+                    private CheckboxGroup cbg = new CheckboxGroup();
+                    Radio()
+                    {
+                        setBounds(100,100,400,400);
+                        setLayout(new FlowLayout(FlowLayout.LEFT));
+                        add(l);
+                        cb1.setCheckboxGroup(cbg);
+                        cb2.setCheckboxGroup(cbg);
+                        add(cb1);
+                        add(cb2);
+                        setVisible(true);
+                        addWindowListener(new WindowAdapter() {
+                            public void windowClosing(WindowEvent e)
+                            {
+                                System.exit(0);
+                            }
+                        });
+                    }
+                }
+            class Main
+                {
+                    public static void main(String[] args) {
+                        new Radio();
+                    }
+                }
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <img src="../delmodelimage/radio.png" alt="radio">
     </div>
 </body>
 </html>

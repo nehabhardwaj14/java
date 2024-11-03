@@ -9,10 +9,30 @@
 <body>
     <h1>APPLETS</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>15. Java Program to Draw a Smiling Face using Graphics Class Methods</h4>
+        <pre>
+            import java.applet.Applet;
+            import java.awt.Graphics;
+            
+            /**
+             * SmileFace
+             */
+            public class SmileFace extends Applet{
+                public void paint(Graphics g)
+                {
+                    g.drawOval(100, 100, 200, 200);
+                    g.drawOval(150, 150, 20, 20);
+                    g.drawOval(230, 150, 20, 20);
+                    g.drawArc(150, 200, 100, 50, 200, 150);
+                }
+            }
+            /*
+             <applet code = "smileface.SmileFace.class" width = "300" height= "500"></applet>
+             */
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <img src="../appletimage/smile.png" alt="smiley">
+        
     </div>
 </body>
 </html>

@@ -9,10 +9,35 @@
 <body>
     <h1>AWT</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>1. Create a simple AWT application that displays a button with FlowLayout manager.</h4>
+        <pre>
+            import java.awt.*;
+            import java.awt.event.*;
+            class MyFrame extends Frame
+            {
+                Button b1 = new Button("Click me");
+                MyFrame()
+                {
+                    setBounds(100,100,400,400);
+                    setLayout(new FlowLayout(FlowLayout.CENTER));
+                    add(b1);
+                    setVisible(true);
+                    addWindowListener(new WindowAdapter() {
+                        public void windowClosing(WindowEvent e)
+                        {
+                            System.exit(1);
+                        }
+                    });
+                }
+            } 
+             class Main {
+                public static void main(String[] args) {
+                    new MyFrame();
+                }
+            }
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <img src="../awtimg/FButton.png" alt="button">
     </div>
 </body>
 </html>

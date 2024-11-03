@@ -9,10 +9,70 @@
 <body>
     <h1>APPLETS</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>14. Create an applet to display a digital clock.</h4>
+        <pre>
+            import java.applet.*;
+            import java.awt.*;
+            public class DigitalClock2 extends Applet implements Runnable{
+            Label hh;
+            Label mm;
+            Label ss;
+            Thread t;
+                public void init()
+                {
+                    int x=20,y=150;
+                    setLayout(null);
+                     hh = new Label("00");
+                     mm = new Label("00");
+                     ss = new Label("00");
+                     hh.setBounds(x, y, 30, 50);
+                     mm.setBounds(x += 40, y, 30, 50);
+                     ss.setBounds(x += 40, y, 30, 50);
+                    add(hh);
+                    add(mm);
+                    add(ss);
+                    t = new Thread(this);
+                    t.start();
+                   }
+                public void paint(Graphics g)
+                {
+                    g.drawRect(10, 130, 150, 70);
+                    
+                }
+                public void run()
+                {
+                    int h=12,m=34,s=45;
+                    while (true) {
+                        s++;
+                        if (s==60) {
+                            s=0;
+                            m++;
+                        }
+                        if (m==60) {
+                            m=0;
+                            h++;
+                        }
+                        hh.setText(String.format("%02d", h));
+                        mm.setText(String.format("%02d", m));
+                        ss.setText(String.format("%02d", s));
+                        try
+                        {
+                            Thread.sleep(1000);
+                        }
+                        catch(InterruptedException e)
+                        {
+                            System.out.println(e.getMessage());
+                        }
+                    }
+                }
+            }
+            
+            
+             
+            
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <img src="../appletimage/clock.png" alt="clock">
     </div>
 </body>
 </html>

@@ -9,10 +9,58 @@
 <body>
     <h1>DELEGATION MODEL</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>18. Java Program to Display Several Dots on the Screen Continuously</h4>
+        <pre>
+            import java.awt.*;
+            import java.awt.event.*;
+            
+            public class NumericTextFieldApp extends Frame {
+            
+                private TextField numberField;
+            
+                public NumericTextFieldApp() {
+                    // Set up the frame
+                    setTitle("Numeric Text Field Validation");
+                    setSize(300, 150);
+                    setLayout(new FlowLayout());
+            
+                    // Create a TextField
+                    numberField = new TextField(20);
+                    
+                    // Add KeyListener to the TextField
+                    numberField.addKeyListener(new KeyAdapter() {
+                        
+                        public void keyTyped(KeyEvent e) {
+                            char c = e.getKeyChar();
+                            // Check if the input is not a digit and is not a control character
+                            if (!Character.isDigit(c) && c != KeyEvent.VK_BACK_SPACE && c != KeyEvent.VK_DELETE) {
+                                e.consume(); // Consume the event to prevent the character from being typed
+                            }
+                        }
+                    });
+            
+                    // Add components to the frame
+                    add(new Label("Enter numbers only:"));
+                    add(numberField);
+            
+                    // Set up close operation
+                    addWindowListener(new WindowAdapter() {
+                        
+                        public void windowClosing(WindowEvent windowEvent) {
+                            System.exit(0);
+                        }
+                    });
+                }
+            
+                public static void main(String[] args) {
+                    // Create and show the frame
+                    NumericTextFieldApp app = new NumericTextFieldApp();
+                    app.setVisible(true);
+                }
+            }
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <img src="../delmodelimage/number.png" alt="numbers">
     </div>
 </body>
 </html>

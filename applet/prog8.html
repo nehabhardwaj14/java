@@ -9,10 +9,21 @@
 <body>
     <h1>APPLETS</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>8. Create an applet in Java to draw a line.</h4>
+        <pre>
+            import java.awt.*;
+            public class Line extends Applet{
+                public void paint(Graphics g)
+                {
+                    g.drawLine(100, 100, 100, 200);
+                }
+            }
+            /*
+             <applet code = "Line.class" width = "300" height= "500"></applet>
+             */
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+       <img src="../appletimage/line.png" alt="a line">
     </div>
 </body>
 </html>

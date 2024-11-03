@@ -9,10 +9,37 @@
 <body>
     <h1>AWT</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>2. Create a simple AWT application that displays a button with Custom Layout.</h4>
+        <pre>
+            import java.awt.*;
+            import java.awt.event.*;
+            class MyFrame extends Frame
+            {
+                Button b1 = new Button("Click me");
+                MyFrame()
+                {
+                    setBounds(100,100,400,400);
+                    setLayout(null);
+                    b1.setBounds(100,100,50,30);
+                    add(b1);
+                    
+                    addWindowListener(new WindowAdapter() {
+                        public void windowClosing(WindowEvent e)
+                        {
+                            System.exit(1);
+                        }
+                    });
+                    setVisible(true);
+                }
+            } 
+             class Main {
+                public static void main(String[] args) {
+                    new MyFrame();
+                }
+            }
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <img src="../awtimg/CButton.png" alt="cbutton">
     </div>
 </body>
 </html>

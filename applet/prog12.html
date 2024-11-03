@@ -9,10 +9,23 @@
 <body>
     <h1>APPLETS</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>12. Create an applet in Java to draw rounded rectangle.</h4>
+        <pre>
+            import java.applet.Applet;
+            import java.awt.Graphics;
+            
+            public class RoundedRect extends Applet {
+            
+                public void paint(Graphics g) {
+                    g.drawRoundRect(50, 50, 200, 100, 30, 30);  
+            }
+            }
+            /*
+             <applet code = "RoundedRect.class" width = "300" height= "300"></applet>
+             */
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <img src="../appletimage/roundrect.png" alt="roundedrectangle">
     </div>
 </body>
 </html>

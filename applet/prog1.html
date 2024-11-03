@@ -9,10 +9,25 @@
 <body>
     <h1>APPLETS</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>1. Create an applet showing the string "Hello World" which is embedded in the HTML page.</h4>
+        <pre>
+            import java.applet.*;
+            import java.awt.*;
+            public class HelloWorld extends Applet{
+                public void paint(Graphics g)
+                {
+                    g.drawString("Hello World!", 100, 100);
+                }
+            }
+            
+             /* 
+             <applet code = "HelloWorld.class" width = "300" height= "500"></applet>
+            */
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <pre>
+            <img src="../appletimage/HW.png" alt="hello world">
+        </pre>
     </div>
 </body>
 </html>

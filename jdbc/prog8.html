@@ -9,10 +9,113 @@
 <body>
     <h1>JDBC</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4> 8. Create a Scrollable Updateable Resultset and insert a new row, update an existing row and delete the row from Resultset and also the changes should be made to the database also. The values should be inserted, updated and deleted by the user only.</h4>
+        <pre>
+            import java.sql.*;
+            import java.io.*;
+            class jdbc8{
+                private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+                private static Connection c;
+                private static PreparedStatement st;
+                private static ResultSet view;
+                public static void main(String[] args) {
+                    try {
+            Class.forName("com.mysql.cj.jdbc.Driver"); 
+       c=DriverManager.getConnection("jdbc:mysql://localhost:3306/collage","root","neha14");
+       Statement a=c.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
+        System.out.println("Choose:\n1. Insert\n2. Update\n3. Delete");
+                        int choice = Integer.parseInt(reader.readLine());
+                        switch (choice) {
+                            case 1:
+                                insert();
+                                break;
+                            case 2:
+                                update();
+                                break;
+                            case 3:
+                                delete();
+                                break;
+                            default:
+                                System.out.println("Invalid choice.");
+                        }
+            
+                    } catch (ClassNotFoundException | SQLException | IOException e) {
+                        e.printStackTrace();
+                    } finally {
+                        try {
+                            if (view != null) view.close();
+                            if (st != null) st.close();
+                            if (c != null) c.close();
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            
+                private static void insert() throws SQLException, IOException {
+                    String sql = "INSERT INTO student (rollno,name) VALUES (?, ?)";
+                    st = c.prepareStatement(sql);
+                    System.out.println("Give RollNo and Name (leave blank for null) : ");
+                    System.out.print("RollNo: ");
+                    int rollno = Integer.parseInt(reader.readLine());
+                    System.out.print("Name: ");
+                    String name = reader.readLine();
+                    st.setInt(1,rollno);
+                    st.setString(2,name);
+                    int res = st.executeUpdate();
+                    System.out.println(res + " record(s) added.");
+                }
+                private static void update() throws SQLException, IOException {
+                    System.out.print("Enter the RollNo of the record to update: ");
+                    int rollno = Integer.parseInt(reader.readLine());
+                    String sql = "UPDATE student SET Name = ? WHERE Roll_no = ?";
+                    st = c.prepareStatement(sql);
+                    System.out.print("New Name: ");
+                    String name = reader.readLine();
+                    st.setInt(2, rollno);
+                    st.setString(1,name);
+                    
+                    int res = st.executeUpdate();
+                    System.out.println(res + " record(s) updated.");
+                }
+            
+                private static void delete() throws SQLException, IOException {
+                    System.out.print("Enter the RollNo of the record to delete: ");
+                    int rollno = Integer.parseInt(reader.readLine());
+                    String sql = "DELETE FROM student WHERE Roll_no = ?";
+                    st = c.prepareStatement(sql);
+                    st.setInt(1, rollno);
+                    int res = st.executeUpdate();
+                    System.out.println(res + " record(s) deleted.");
+                }
+            }
+      
+      
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <pre>
+            D:\programs\jdbc>javac prog8.java
+
+            D:\programs\jdbc>java jdbc8
+            Choose:
+            1. Insert
+            2. Update
+            3. Delete
+            2
+            Enter the RollNo of the record to update: 7
+            New Name: Ritu
+            1 record(s) updated.
+              
+            D:\programs\jdbc>java jdbc8
+            Choose:
+            1. Insert
+            2. Update
+            3. Delete
+            3
+            Enter the RollNo of the record to delete: 9
+            1 record(s) deleted.
+            
+        </pre>
     </div>
 </body>
 </html>

@@ -9,10 +9,51 @@
 <body>
     <h1>APPLETS</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>11. Create an applet in Java to change the background color.</h4>
+        <pre>
+            import java.applet.*;
+            import java.awt.*;
+            import java.awt.event.MouseAdapter;
+            import java.awt.event.MouseEvent;
+            public class BgColor extends Applet{
+                public void init()
+                {
+                    setBackground(Color.red);
+                    Button r = new Button("red");
+                    Button g = new Button("green");
+                    Button b = new Button("blue");
+                    add(b);
+                    add(g);
+                    add(r);
+                    r.addMouseListener(new MouseAdapter()
+                    {
+                        public void mouseClicked(MouseEvent e)
+                        {
+                            setBackground(Color.red);
+                        }
+                    });
+                    g.addMouseListener(new MouseAdapter()
+                    {
+                        public void mouseClicked(MouseEvent e)
+                        {
+                            setBackground(Color.green);
+                        }
+                    });
+                    b.addMouseListener(new MouseAdapter()
+                    {
+                        public void mouseClicked(MouseEvent e)
+                        {
+                            setBackground(Color.blue);
+                        }
+                    });
+                }
+            }
+            /*
+             <applet code = "BgColor.class" width = "300" height= "300"></applet>
+             */
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <img src="../appletimage/bgcolor.png" alt="background color changing">
     </div>
 </body>
 </html>

@@ -9,10 +9,44 @@
 <body>
     <h1>AWT</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>13. Create a simple AWT application that displays a CheckboxGroup with Custom Layout.</h4>
+        <pre>
+            import java.awt.*;
+            import java.awt.event.*;
+            class MyFrame extends Frame
+            {
+                Checkbox cb1 = new Checkbox();
+                Checkbox cb2 = new Checkbox();
+                CheckboxGroup cbg = new CheckboxGroup();
+                MyFrame()
+                {
+                    setBounds(100,100,400,400);
+                    setLayout(null);
+                    cb1.setBounds(100,100,50,20);
+                    cb2.setBounds(150,100,50,20);
+                    cb1.setLabel("Male");
+                    cb2.setLabel("Female");
+                    cb1.setCheckboxGroup(cbg);
+                    cb2.setCheckboxGroup(cbg);
+                    add(cb1);
+                    add(cb2);
+                    addWindowListener(new WindowAdapter() {
+                        public void windowClosing(WindowEvent e)
+                        {
+                            System.exit(1);
+                        }
+                    });
+                    setVisible(true);
+                }
+            } 
+             class Main {
+                public static void main(String[] args) {
+                    new MyFrame();
+                }
+            }
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+       <img src="../awtimg/RadioC.png" alt="checkbox">
     </div>
 </body>
 </html>

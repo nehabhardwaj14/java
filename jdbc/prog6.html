@@ -9,10 +9,45 @@
 <body>
     <h1>JDBC</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>6. Select multiple rows from the database table in Java API and show the result on the screen.</h4>
+        <pre>
+            import java.sql.*;
+            class jdbc6
+            {
+               public static void main(String st[]) throws ClassNotFoundException,SQLException
+                {
+                   Class.forName("com.mysql.cj.jdbc.Driver"); 
+            Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/collage","root","neha14");
+             Statement a=c.createStatement();
+            ResultSet rs=a.executeQuery("select *from student");
+            while(rs.next())
+            {
+               int Roll_no=rs.getInt("Roll_no");
+             String Name=rs.getString("Name");
+             System.out.println("Roll No :"+Roll_no+ "  |   Name:"+Name);
+             }
+            rs.close();
+            a.close();
+            c.close();
+            }}
+            
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <pre>
+            D:\programs\jdbc>javac prog6.java
+
+            D:\programs\jdbc>java jdbc6
+            Roll No :1  |   Name:Neha
+            Roll No :2  |   Name:Abhishek
+            Roll No :3  |   Name:Asha
+            Roll No :4  |   Name:Riya
+            Roll No :5  |   Name:Priya
+            Roll No :6  |   Name:Misbah
+            Roll No :7  |   Name:Anil
+            Roll No :8  |   Name:Aman
+            Roll No :9  |   Name:Pawan
+            
+        </pre>
     </div>
 </body>
 </html>

@@ -10,10 +10,65 @@
 <body>
     <h1>DELEGATION MODEL</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>3. Java Program to Create a Button and Display Image in the Frame when Clicked</h4>
+        <pre>
+            package image;
+
+            import java.awt.*;
+            import java.awt.event.MouseAdapter;
+            import java.awt.event.MouseEvent;
+            import java.awt.event.WindowAdapter;
+            import java.awt.event.WindowEvent;
+            
+            
+            class MyLabel extends Frame{
+                private Button btn = new Button("Show Image");
+                private Image image;
+                private boolean showImage = false;
+               
+                MyLabel()
+                {
+                    super("Label");
+                    setBounds(100,100,400,400);
+                    setLayout(new FlowLayout(FlowLayout.LEFT,10,10));
+                    image = Toolkit.getDefaultToolkit().getImage("../../JAVAWEB/img/java.webp");
+                    add(btn);
+                    btn.addMouseListener(new MouseAdapter() {
+                        public void mouseClicked(MouseEvent e)
+                        {
+                            showImage = true;
+                            repaint(); 
+                        }
+                    });
+                    
+                    addWindowListener(new WindowAdapter() {
+                       public void windowClosing(WindowEvent e)
+                       {
+                        System.exit(1);
+                       }
+                    });
+                    setVisible(true);
+                }
+                public void paint(Graphics g) {
+                    super.paint(g);
+                    // Draw the image if showImage is true
+                    if (showImage && image != null) {
+                        // Scale the image to fit the frame
+                        g.drawImage(image, 50, 100, getWidth() - 100, getHeight() - 150, this);
+                    }
+                }
+            }
+            
+             class Main {
+            
+                public static void main(String[] args) {
+                    new MyLabel();
+                }
+            
+            }
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <img src="../delmodelimage/img.png" alt="sow img">
     </div>
 </body>
 </html>

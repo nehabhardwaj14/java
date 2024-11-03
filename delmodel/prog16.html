@@ -9,10 +9,53 @@
 <body>
     <h1>DELEGATION MODEL</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>16. Java Program to Change Frame Background Color as Cyan</h4>
+        <pre>
+            import java.applet.Applet;
+            import java.awt.*;
+            import java.awt.event.ActionEvent;
+            import java.awt.event.ActionListener;
+            import java.util.Random;
+            
+            public class ColorChangeApplet extends Applet {
+            
+                private Button colorButton;
+                private Random random;
+            
+                
+                public void init() {
+                    // Initialize button and random generator
+                    colorButton = new Button("Change Background Color");
+                    random = new Random();
+            
+                    // Set layout and add button
+                    setLayout(new FlowLayout());
+                    add(colorButton);
+            
+                    // Add action listener to button
+                    colorButton.addActionListener(new ActionListener() {
+                        
+                        public void actionPerformed(ActionEvent e) {
+                            changeBackgroundColor();
+                        }
+                    });
+                }
+            
+                private void changeBackgroundColor() {
+                    // Generate random color
+                    Color randomColor = new Color(random.nextInt(256), random.nextInt(256), random.nextInt(256));
+                    
+                    // Set the applet's background color
+                    setBackground(randomColor);
+            
+                    // Repaint to apply the color change immediately
+                    repaint();
+                }
+            }
+            
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <img src="../delmodelimage/color.png" alt="color">
     </div>
 </body>
 </html>

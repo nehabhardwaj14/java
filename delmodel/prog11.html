@@ -9,10 +9,72 @@
 <body>
     <h1>DELEGATION MODEL</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>11. Java Program to Create a List Box to Select Multiple Items and Display it in the Frame</h4>
+        <pre>
+            import java.awt.*;
+            import java.awt.event.ActionEvent;
+            import java.awt.event.ActionListener;
+            
+            public class MessageFrameApp extends Frame {
+            
+                public MessageFrameApp() {
+                    // Set up the main frame
+                    setTitle("Main Frame");
+                    setSize(300, 200);
+                    setLayout(new FlowLayout());
+            
+                    // Button to open the message frame
+                    Button showMessageButton = new Button("Show Message");
+                    showMessageButton.addActionListener(new ActionListener() {
+                        
+                        public void actionPerformed(ActionEvent e) {
+                            openMessageFrame();
+                        }
+                    });
+            
+                    // Add button to the main frame
+                    add(showMessageButton);
+            
+                    // Set up close operation
+                    addWindowListener(new java.awt.event.WindowAdapter() {
+                        
+                        public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                            System.exit(0);
+                        }
+                    });
+                }
+            
+                private void openMessageFrame() {
+                    // Create a new frame to display the message
+                    Frame messageFrame = new Frame("Message Frame");
+                    messageFrame.setSize(250, 150);
+                    messageFrame.setLayout(new FlowLayout());
+            
+                    // Label to display the message
+                    Label messageLabel = new Label("Hello, this is your message!");
+                    messageFrame.add(messageLabel);
+            
+                    // Set up close operation for the message frame
+                    messageFrame.addWindowListener(new java.awt.event.WindowAdapter() {
+                        
+                        public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                            messageFrame.dispose();  // Close only the message frame
+                        }
+                    });
+            
+                    // Make the message frame visible
+                    messageFrame.setVisible(true);
+                }
+            
+                public static void main(String[] args) {
+                    // Create and show the main frame
+                    MessageFrameApp app = new MessageFrameApp();
+                    app.setVisible(true);
+                }
+            }
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+       <img src="../delmodelimage/message.png" alt="message">
     </div>
 </body>
 </html>

@@ -9,10 +9,47 @@
 <body>
     <h1>DELEGATION MODEL</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>1. Java Program to Display Some Text in the Frame using Labels</h4>
+        <pre>
+            import java.awt.*;
+            import java.awt.event.WindowAdapter;
+            import java.awt.event.WindowEvent;
+            
+            class MyLabel extends Frame{
+                Label l= new Label("Hello AWT");
+                Label l1= new Label("Name");
+                Label l2= new Label("Class");
+                Label l3= new Label("Roll No");
+                MyLabel()
+                {
+                    super("Label");
+                    setBounds(100,100,400,400);
+                    setLayout(new FlowLayout(FlowLayout.LEFT,10,10));
+                    add(l);
+                    add(l3);
+                    add(l1);
+                    add(l2);
+            
+                    addWindowListener(new WindowAdapter() {
+                       public void windowClosing(WindowEvent e)
+                       {
+                        System.exit(1);
+                       }
+                    });
+                    setVisible(true);
+                }
+            }
+            
+             class Main {
+            
+                public static void main(String[] args) {
+                    new MyLabel();
+                }
+            
+            }
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <img src="../delmodelimage/Label.png" alt="label">
     </div>
 </body>
 </html>

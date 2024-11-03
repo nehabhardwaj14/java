@@ -9,10 +9,30 @@
 <body>
     <h1>MULTITHREADING</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>9. Create the program to create multiple threads by using Thread class</h4>
+        <pre>
+            class Th9 extends Thread {
+                public void run() {
+                    System.out.println("Thread : "+Thread.currentThread().getName());
+                }
+                public static void main(String[] args) {
+                    Th9 t1 = new Th9();
+                    Th9 t2 = new Th9();
+                    Th9 t3 = new Th9();
+                    t1.start();
+                    t2.start();
+                    t3.start();    
+            }}
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <pre>
+               
+    Thread : Thread-0
+    Thread : Thread-1
+    Thread : Thread-2
+       
+          
+        </pre>
     </div>
 </body>
 </html>

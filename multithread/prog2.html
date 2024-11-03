@@ -9,10 +9,66 @@
 <body>
     <h1>MULTITHREADING</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>
+            2. Write a Java program that creates two threads to find and print even and odd numbers from 1 to 20.
+        </h4>
+        <pre>
+            class EvenNumbersThread extends Thread {
+                public void run() {
+                    System.out.println("Even Numbers:");
+                    for (int i = 1; i &lt= 10; i++) {
+                        if (i % 2 == 0) {
+                            System.out.println(i);
+                        }
+                    }
+                }
+              }
+              
+              class OddNumbersThread extends Thread {
+                public void run() {
+                    System.out.println("Odd Numbers:");
+                    for (int i = 1; i &lt= 10; i++) {
+                        if (i % 2 != 0) {
+                            System.out.println(i);
+                        }
+                    }
+                }
+              }
+              class EvenOddThreads {
+                public static void main(String[] args) {
+                    
+                    EvenNumbersThread evenThread = new EvenNumbersThread();
+                    OddNumbersThread oddThread = new OddNumbersThread();
+                    
+                    evenThread.start();
+                    oddThread.start();
+                    
+                    try {
+                        evenThread.join();
+                        oddThread.join();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+              }
+              
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <pre>
+            Even Numbers:
+            2
+            4
+            6
+            8
+            10
+            Odd Numbers:
+            1
+            3
+            5
+            7
+            9
+        </pre>
+       
     </div>
 </body>
 </html>

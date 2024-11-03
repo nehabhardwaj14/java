@@ -9,10 +9,25 @@
 <body>
     <h1>APPLETS</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>7. Create an applet in Java to draw a 4 concentric circles.</h4>
+        <pre>
+            import java.applet.*;
+            import java.awt.*;
+            public class Circles extends Applet{
+                public void paint(Graphics g)
+                {
+                    g.drawOval(100, 100, 100, 100);
+                    g.drawOval(250, 100, 100, 100);
+                    g.drawOval(400, 100, 100, 100);
+                    g.drawOval(550, 100, 100, 100);
+                }
+            }
+            /*
+             <applet code = "Circles.class" width = "300" height= "500"></applet>
+             */
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+       <img src="../appletimage/circles.png" alt="4concentric circles">
     </div>
 </body>
 </html>

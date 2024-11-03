@@ -9,10 +9,38 @@
 <body>
     <h1>DELEGATION MODEL</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>12. Java Program to Display a Message in a New Frame</h4>
+        <pre>
+            package close;
+            //Get and Set State and Get Label of a Check Box
+            import java.awt.*;
+            import java.awt.event.*;
+            class Close extends Frame
+                {
+                   Label l = new Label("Close frame using Window Adaptor!");
+                    Close()
+                    {
+                        setBounds(100,100,400,400);
+                        setLayout(new FlowLayout(FlowLayout.LEFT));
+                        add(l);
+                        addWindowListener(new WindowAdapter() {
+                            public void windowClosing(WindowEvent e)
+                            {
+                                System.exit(0);
+                            }
+                        });
+                        setVisible(true);
+                    }
+                }
+            class Main
+                {
+                    public static void main(String[] args) {
+                        new Close();
+                    }
+                }
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <img src="../delmodelimage/close.png" alt="close">
     </div>
 </body>
 </html>

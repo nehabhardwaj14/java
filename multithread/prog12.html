@@ -9,10 +9,87 @@
 <body>
     <h1>MULTITHREADING</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>12. Create the program to create multiple threads, show an example of notify, notifyall, wait, resume, sleep methods.</h4>
+        <pre>
+            class Countdown {
+                private int count;
+                public Countdown(int count) {
+                    this.count = count;
+                }
+            
+                public synchronized void startCountdown() throws InterruptedException {
+                    while (count > 0) {
+                        System.out.println("Countdown: " + count);
+                        Thread.sleep(1000);
+                        count--;
+                        notifyAll(); 
+                    }
+                    System.out.println("Countdown finished!");
+                    notifyAll();
+                }
+            
+                public synchronized void waitForCountdown() throws InterruptedException {
+                    while (count > 0) {
+                        System.out.println(Thread.currentThread().getName() + " is waiting for countdown to finish...");
+                        wait(); 
+                    }
+                    System.out.println(Thread.currentThread().getName() + " proceeds after countdown!");
+                }}
+            
+            class CountdownThread extends Thread {
+                private final Countdown countdown;
+                public CountdownThread(Countdown countdown) {
+                    this.countdown = countdown;
+                }
+                public void run() {
+                    try {
+                        countdown.waitForCountdown();
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }}}
+            
+            class CountdownExample {
+            public static void main(String[] args) {
+                    Countdown countdown = new Countdown(5);
+                    Thread thread1 = new CountdownThread(countdown);
+                    Thread thread2 = new CountdownThread(countdown);
+                    Thread thread3 = new CountdownThread(countdown);
+                    thread1.start();
+                    thread2.start();
+                    thread3.start();
+                    try {
+                        countdown.startCountdown();
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
+                    try {
+                        thread1.join();
+                        thread2.join();
+                        thread3.join();
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
+            
+                    System.out.println("All threads have finished execution.");
+                }}
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <pre>
+            Thread-0 is waiting for countdown to finish...
+            Thread-2 is waiting for countdown to finish...
+            Thread-1 is waiting for countdown to finish...
+            Countdown: 5
+            Countdown: 4
+            Countdown: 3
+            Countdown: 2
+            Countdown: 1
+            Countdown finished!
+            Thread-1 proceeds after countdown!
+            Thread-2 proceeds after countdown!
+            Thread-0 proceeds after countdown!
+            All threads have finished execution.
+          
+        </pre>
     </div>
 </body>
 </html>

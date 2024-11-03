@@ -10,10 +10,45 @@
 <body>
     <h1>DELEGATION MODEL</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>2. Java Program to Create Text Area and Password Field</h4>
+        <pre>
+            import java.awt.*;
+            import java.awt.event.*;
+            
+            public class TextAreaPassword extends Frame {
+            
+                private TextArea textArea;
+                private TextField passwordField;
+            
+                public TextAreaPassword() {
+                    setTitle("Text Area and Password Field");
+                    setSize(400, 400);
+                    setLayout(new FlowLayout(FlowLayout.LEFT));
+            
+                    textArea = new TextArea("Enter text here...", 5, 30);
+                    add(textArea);
+            
+                    passwordField = new TextField(20);
+                    passwordField.setEchoChar('*');  // Mask input with '*'
+                    add(passwordField);
+            
+                    // Set up a window listener to close the application
+                    addWindowListener(new WindowAdapter() {
+                        public void windowClosing(WindowEvent e) {
+                            System.exit(0);
+                        }
+                    });
+                }
+            
+                public static void main(String[] args) {
+                    // Create and show the frame
+                    TextAreaPassword app = new TextAreaPassword();
+                    app.setVisible(true);
+                }
+            }
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <img src="../delmodelimage/textpass.png" alt="textpassword">
     </div>
 </body>
 </html>

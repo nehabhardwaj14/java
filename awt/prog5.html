@@ -9,10 +9,36 @@
 <body>
     <h1>AWT</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>5. Create a simple AWT application that displays a TextField with Custom Layout.</h4>
+        <pre>
+            import java.awt.*;
+            import java.awt.event.*;
+            class MyFrame extends Frame
+            {
+                TextField tf = new TextField();
+                MyFrame()
+                {
+                    setBounds(100,100,400,400);
+                    setLayout(null);
+                    tf.setBounds(100,100,500,100);
+                    add(tf);
+                    addWindowListener(new WindowAdapter() {
+                        public void windowClosing(WindowEvent e)
+                        {
+                            System.exit(1);
+                        }
+                    });
+                    setVisible(true);
+                }
+            } 
+             class Main {
+                public static void main(String[] args) {
+                    new MyFrame();
+                }
+            }
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <img src="../awtimg/CTextField.png" alt="custom field">
     </div>
 </body>
 </html>

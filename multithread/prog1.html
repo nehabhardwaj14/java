@@ -9,10 +9,22 @@
 <body>
     <h1>MULTITHREADING</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>1. Write a Java program to create a basic Java thread that prints "Hello, World!" when executed.</h4>
+        <pre>
+            class Mythred extends Thread {
+                public void run() {
+                    System.out.println("Hello, World!");
+                }
+                public static void main(String[] args) {
+                    Mythread thread = new Mythread();
+                    thread.start();
+                }}
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <pre>
+            Hello, World!
+        </pre>
+        
     </div>
 </body>
 </html>

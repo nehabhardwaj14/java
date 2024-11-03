@@ -9,10 +9,23 @@
 <body>
     <h1>APPLETS</h1>
     <div class="box">
-        <h4></h4>
-        <pre></pre>
+        <h4>10. Create an applet in Java to draw a arc.</h4>
+        <pre>
+            import java.applet.*;
+            import java.awt.*;
+            public class Arc extends Applet{
+                public void paint(Graphics g)
+                {
+                    g.drawArc(100, 100, 100, 100, 30, 180);
+                }
+            }
+            
+            /*
+             <applet code = "Arc.class" width = "300" height= "500"></applet>
+             */
+        </pre>
         <h4>OUTPUT</h4>
-        <pre></pre>
+        <img src="../appletimage/Arc.png" alt=" an arc">
     </div>
 </body>
 </html>
