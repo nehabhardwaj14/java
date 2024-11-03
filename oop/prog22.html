@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>OOPs</h1>
+    <div class="box">
+        <h4>22. Create a class showing an example of copy constructor.</h4>
+        <pre>
+            class My{
+                int x;
+                My(int val){
+                    x = val;
+                    System.out.println("Parametrized Constructor");		
+                }
+                My(My obj){
+                    x = obj.x;
+                    System.out.println("Copy Constructor");		
+                }
+                void displayX(){
+                    System.out.println("x = " + x);
+                }
+            }
+            
+            class Main{
+                public static void main(String[] args){
+                    My obj, cpobj;
+                    obj = new My(500);
+                    obj.displayX();
+                    cpobj = new My(obj);
+                    cpobj.displayX();
+                }
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Parametrized Constructor
+            x = 500
+            Copy Constructor
+            x = 500
+        </pre>
+    </div>
+</body>
+</html>

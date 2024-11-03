@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>OOPs</h1>
+    <div class="box">
+        <h4>13. Write a Java program to create a class called "Inventory" with a collection of products and methods to add and remove products, and to check for low inventory.</h4>
+        <pre>
+            class Products{
+                String productname;
+                int quantity;
+                Products(String name, int quant){
+                    productname = name;
+                    quantity = quant;
+                }
+            }
+            
+            class Inventory{
+                java.util.List products;
+                Inventory(){
+                    products = new java.util.ArrayList<>();
+                }
+                
+                boolean addProducts(String product, int quantity){
+                    for(int i = 0; i &lt products.size(); i++){
+                        if(products.get(i).productname == product){
+                            products.get(i).quantity += quantity;
+                            return true;
+                        }
+                    }
+                    Products obj = new Products(product, quantity);
+                    return products.add(obj);
+                }
+            
+                boolean removeProducts(String product, int quantity){
+                    for(int i = 0; i &lt products.size(); i++){
+                        if(products.get(i).productname == product){
+                            if((products.get(i).quantity-quantity) >= 0){
+                                products.get(i).quantity -= quantity;
+                                return true;
+                            }
+                            return false;
+                        }
+                    }
+                    return false;
+                }
+            
+                void checkInventory(String product){
+                    for(int i = 0; i &lt products.size(); i++){
+                        if(products.get(i).productname == product){
+                            if(products.get(i).quantity == 0){
+                                System.out.println(product + " is out of stock");
+                            }
+                            else if(products.get(i).quantity <= 100){
+                                System.out.println(product + " is soon out of stock");
+                            }
+                            else{
+                                System.out.println(product + " is full of stock");
+                            }
+                        }
+                    }
+                }
+                void displayProducts(){
+                    if(products.isEmpty()){
+                        System.out.println("No Products in Collection");
+                        return;
+                    }
+                    for(int i = 0; i &lt products.size(); i++){
+                        System.out.println("Product No : " + (i+1));
+                        System.out.println("Product Name : " + products.get(i).productname);
+                        System.out.println("Quantity : " + products.get(i).quantity + "\n");
+                    }
+                }
+            }
+            class Main{
+                public static void main(String[] args){
+                    Inventory stationary = new Inventory();
+                    stationary.displayProducts();
+                    stationary.addProducts("Pen", 10); 
+                    stationary.addProducts("Pencil", 0);
+                    stationary.addProducts("Scale", 500);
+                    stationary.addProducts("Eraser", 100);
+                    stationary.displayProducts();
+                    stationary.addProducts("Eraser", 300);
+                    stationary.removeProducts("Scale", 450);
+                    stationary.displayProducts();
+                    stationary.checkInventory("Scale");
+                    stationary.checkInventory("Pencil");
+                }
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            No Products in Collection
+            Product No : 1
+            Product Name : Pen
+            Quantity : 10
+            
+            Product No : 2
+            Product Name : Pencil
+            Quantity : 0
+            
+            Product No : 3
+            Product Name : Scale
+            Quantity : 500
+            
+            Product No : 4
+            Product Name : Eraser
+            Quantity : 100
+            
+            Product No : 1
+            Product Name : Pen
+            Quantity : 10
+            
+            Product No : 2
+            Product Name : Pencil
+            Quantity : 0
+            
+            Product No : 3
+            Product Name : Scale
+            Quantity : 50
+            
+            Product No : 4
+            Product Name : Eraser
+            Quantity : 400
+            
+            Scale is soon out of stock
+            Pencil is out of stock
+        </pre>
+    </div>
+</body>
+</html>

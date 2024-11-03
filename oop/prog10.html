@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>OOPs</h1>
+    <div class="box">
+        <h4>10. Write a Java program to create a class called "Student" with a name, grade, and courses attributes, and methods to add and remove courses.</h4>
+        <pre>
+            import java.util.ArrayList;
+            import java.util.List;
+            
+            class Student {
+                private String name;                  // Student's name
+                private String grade;                 // Student's grade
+                private List courses;         // List of courses
+            
+                // Constructor
+                public Student(String name, String grade) {
+                    this.name = name;
+                    this.grade = grade;
+                    this.courses = new ArrayList&lt>(); // Initialize the courses list
+                }
+            
+                // Method to add a course
+                public void addCourse(String course) {
+                    if (!courses.contains(course)) {
+                        courses.add(course);
+                        System.out.println("Course " + course + " added for " + name);
+                    } else {
+                        System.out.println("Course " + course + " already exists for " + name);
+                    }
+                }
+            
+                // Method to remove a course
+                public void removeCourse(String course) {
+                    if (courses.contains(course)) {
+                        courses.remove(course);
+                        System.out.println("Course " + course + " removed for " + name);
+                    } else {
+                        System.out.println("Course " + course + " not found for " + name);
+                    }
+                }
+            
+                // Method to display student details
+                public void displayDetails() {
+                    System.out.println("Name: " + name);
+                    System.out.println("Grade: " + grade);
+                    System.out.println("Courses: " + courses);
+                }
+            }
+            
+            public class StudentManagement {
+                public static void main(String[] args) {
+                    // Create a Student object
+                    Student student = new Student("Neha", "10th Grade");
+            
+                    // Display student details
+                    student.displayDetails();
+            
+                    // Add courses
+                    student.addCourse("Mathematics");
+                    student.addCourse("Science");
+                    student.addCourse("English");
+            
+                    // Display student details after adding courses
+                    student.displayDetails();
+            
+                    // Remove a course
+                    student.removeCourse("Science");
+            
+                    // Display student details after removing a course
+                    student.displayDetails();
+            
+                    // Attempt to remove a course that doesn't exist
+                    student.removeCourse("History");
+                }
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Name: Neha
+            Grade: 10th Grade
+            Courses: []
+            Course Mathematics added for Neha
+            Course Science added for Neha
+            Course English added for Neha
+            Name: Neha
+            Grade: 10th Grade
+            Courses: [Mathematics, Science, English]
+            Course Science removed for Neha
+            Name: Neha
+            Grade: 10th Grade
+            Courses: [Mathematics, English]
+            Course History not found for Neha
+        </pre>
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>BASIC CONSTRUCTS</h1>
+    <div class="box">
+        <h4>24.How to convert Timestamp to Date</h4>
+        <pre>
+            import java.sql.Timestamp;
+            import java.util.Date;
+                    
+            public class TimestampToDate {
+                public static void main(String[] args) {
+                    Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+                    Date date = new Date(timestamp.getTime());
+                    System.out.println(date);
+                }
+            }   
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Sun Oct 20 00:00:00 IST 2024
+        </pre>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>OOPs</h1>
+    <div class="box">
+        <h4>25. Create a class, entering the command line arguments from the user and show all the arguments as output</h4>
+        <pre>
+            class Main{
+                public static void main(String[] args){
+                    if(args.length == 0){
+                        System.out.println("Command Line Argument Not Entered");
+                    }
+                    else{	
+                        System.out.print("Entered Arguments : ");
+                        for(String arg : args){
+                            System.out.print(arg + "\t");
+                        }
+                    }
+                }
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            java Main hello i am command line argument
+
+            Entered Arguments : hello       i       am      command line    argument
+        </pre>
+    </div>
+</body>
+</html>

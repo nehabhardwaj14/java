@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>OOPs</h1>
+    <div class="box">
+        <h4>29. Write a Java program to create a class called Employee with private instance variables employee_id, employee_name, and employee_salary. Provide public getter and setter methods to access and modify the id and name variables, but provide a getter method for the salary variable that returns a formatted string.</h4>
+        <pre>
+            class Employee{
+                private String employee_id, employee_name;
+                private double employee_salary;
+            
+                public void setEmpId(String id){
+                    employee_id = id;
+                }
+                public void setEmpName(String name){
+                    employee_name = name;
+                }
+                public String getEmpId(){
+                    return employee_id;
+                }
+                public String getEmpName(){
+                    return employee_name;
+                }
+                public void setSalary(double salary){
+                    employee_salary = salary;
+                }
+                public String getSalary(){
+                    return String.format("%.2f Rs", employee_salary);
+                }
+            }
+            
+            class Main{
+                public static void main(String[] args){
+                    Employee emp = new Employee();
+                    emp.setEmpId("1011");
+                    emp.setEmpName("Neha");
+                    emp.setSalary(60500.872565);
+                    System.out.println("Employee Id : " + emp.getEmpId());
+                    System.out.println("Employee Name : " + emp.getEmpName());
+                    System.out.println("Employee Salary : " + emp.getSalary());
+                }
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Employee Id : 1011
+            Employee Name : Neha
+            Employee Salary : 60500.87 Rs
+        </pre>
+    </div>
+</body>
+</html>

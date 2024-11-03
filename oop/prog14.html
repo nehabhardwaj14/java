@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>OOPs</h1>
+    <div class="box">
+        <h4>14. Write a Java program to create a class called "School" with attributes for students, teachers, and classes, and methods to add and remove students and teachers, and to create classes.</h4>
+        <pre>
+            import java.util.ArrayList;
+            import java.util.List;
+            
+            class School {
+                private List students;
+                private List teachers;
+                private List classes;
+            
+                public School() {
+                    students = new ArrayList&lt>();
+                    teachers = new ArrayList&lt>();
+                    classes = new ArrayList&lt>();
+                }
+            
+                public void addStudent(String studentName) {
+                    students.add(studentName);
+                    System.out.println("Student " + studentName + " has been added.");
+                }
+            
+                public void removeStudent(String studentName) {
+                    if (students.remove(studentName)) {
+                        System.out.println("Student " + studentName + " has been removed.");
+                    } else {
+                        System.out.println("Student " + studentName + " not found.");
+                    }
+                }
+            
+                public void addTeacher(String teacherName) {
+                    teachers.add(teacherName);
+                    System.out.println("Teacher " + teacherName + " has been added.");
+                }
+            
+                public void removeTeacher(String teacherName) {
+                    if (teachers.remove(teacherName)) {
+                        System.out.println("Teacher " + teacherName + " has been removed.");
+                    } else {
+                        System.out.println("Teacher " + teacherName + " not found.");
+                    }
+                }
+            
+                public void createClass(String className) {
+                    classes.add(className);
+                    System.out.println("Class " + className + " has been created.");
+                }
+            
+                public void displayDetails() {
+                System.out.println();
+                    System.out.println("Students: " + students);
+                    System.out.println("Teachers: " + teachers);
+                    System.out.println("Classes: " + classes);
+                System.out.println();
+                }
+            }
+            class Main{
+                public static void main(String[] args) {
+                        School mySchool = new School();
+                        mySchool.addStudent("Neha");
+                        mySchool.addStudent("Asha");
+                        mySchool.addTeacher("Mr. Rahul");
+                        mySchool.addTeacher("Ms. Sikha");
+                        mySchool.createClass("BCA - 1");
+                        mySchool.createClass("BCOM - 2");
+            
+                        mySchool.displayDetails();
+            
+                        mySchool.removeStudent("Madhu");
+                        mySchool.removeTeacher("Ms. Sikha");
+                        mySchool.displayDetails();
+                }
+            }
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Student Neha has been added.
+            Student Asha has been added.
+            Teacher Mr. Rahul has been added.
+            Teacher Ms. Sikha has been added.
+            Class BCA - 1 has been created.
+            Class BCOM - 2 has been created.
+            
+            Students: [Neha, Asha]
+            Teachers: [Mr. Rahul, Ms. Sikha]
+            Classes: [BCA - 1, BCOM - 2]
+            
+            Student Madhu has been removed.
+            Teacher Ms. Sikha has been removed.
+            
+            Students: [Neha]
+            Teachers: [Mr. Rahul]
+            Classes: [BCA - 1, BCOM - 2]
+        </pre>
+    </div>
+</body>
+</html>

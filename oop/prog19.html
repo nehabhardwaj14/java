@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>OOPs</h1>
+    <div class="box">
+        <h4>19. Write a Java program to create a class with methods to search for flights and hotels, and to book and cancel reservations.</h4>
+        <pre>
+            import java.util.ArrayList;
+            import java.util.List;
+            
+            class ReservationSystem {
+                private List flights;
+                private List hotels;
+                private List flightBookings;
+                private List hotelBookings;
+            
+                public ReservationSystem() {
+                    flights = new ArrayList&lt>();
+                    hotels = new ArrayList&lt>();
+                    flightBookings = new ArrayList&lt>();
+                    hotelBookings = new ArrayList&lt>();
+                    initializeData();
+                }
+            
+                private void initializeData() {
+                    flights.add("Flight 101 - New York to London");
+                    flights.add("Flight 202 - London to Paris");
+                    flights.add("Flight 303 - Paris to Tokyo");
+            
+                    hotels.add("Hotel A - New York");
+                    hotels.add("Hotel B - London");
+                    hotels.add("Hotel C - Paris");
+                }
+            
+                public void searchFlights(String f) {
+                    for (String flight : flights) {
+                        if(flight == f){
+                    System.out.println(flight + " Flight is Avalable");
+                    }
+                    }
+                }
+            
+                public void searchHotels(String h) {
+                    for (String hotel : hotels) {
+                        if(hotel == h){
+                    System.out.println(hotel + " Hotel is Avalable" );
+                    }
+                    }
+                }
+            
+                public void bookFlight(String flight) {
+                    if (flights.contains(flight) && !flightBookings.contains(flight)) {
+                        flightBookings.add(flight);
+                        System.out.println("Successfully booked: " + flight);
+                    } else {
+                        System.out.println("Flight not available or already booked.");
+                    }
+                }
+            
+                public void bookHotel(String hotel) {
+                    if (hotels.contains(hotel) && !hotelBookings.contains(hotel)) {
+                        hotelBookings.add(hotel);
+                        System.out.println("Successfully booked: " + hotel);
+                    } else {
+                        System.out.println("Hotel not available or already booked.");
+                    }
+                }
+            
+                public void cancelFlight(String flight) {
+                    if (flightBookings.contains(flight)) {
+                        flightBookings.remove(flight);
+                        System.out.println("Successfully canceled: " + flight);
+                    } else {
+                        System.out.println("No such flight booking found.");
+                    }
+                }
+            
+                public void cancelHotel(String hotel) {
+                    if (hotelBookings.contains(hotel)) {
+                        hotelBookings.remove(hotel);
+                        System.out.println("Successfully canceled: " + hotel);
+                    } else {
+                        System.out.println("No such hotel booking found.");
+                    }
+                }
+            
+                public static void main(String[] args) {
+                    ReservationSystem reservationSystem = new ReservationSystem();
+                    
+                    reservationSystem.searchFlights("Flight 101 - New York to London");
+                    reservationSystem.searchHotels("Hotel A - New York");
+            
+                    reservationSystem.bookFlight("Flight 101 - New York to London");
+                    reservationSystem.bookHotel("Hotel A - New York");
+            
+                    reservationSystem.bookFlight("Flight 101 - New York to London");
+                    reservationSystem.bookHotel("Hotel A - New York");
+            
+                    reservationSystem.cancelFlight("Flight 101 - New York to London");
+                    reservationSystem.cancelHotel("Hotel A - New York");
+            
+                    reservationSystem.cancelFlight("Flight 101 - New York to London");
+                    reservationSystem.cancelHotel("Hotel A - New York");
+                }
+            }
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Flight 101 - New York to London Flight is Avalable
+            Hotel A - New York Hotel is Avalable
+            Successfully booked: Flight 101 - New York to London
+            Successfully booked: Hotel A - New York
+            Flight not available or already booked.
+            Hotel not available or already booked.
+            Successfully canceled: Flight 101 - New York to London
+            Successfully canceled: Hotel A - New York
+            No such flight booking found.
+            No such hotel booking found.
+        </pre>
+    </div>
+</body>
+</html>

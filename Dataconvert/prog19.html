@@ -9,20 +9,19 @@
 <body>
     <h1>BASIC CONSTRUCTS</h1>
     <div class="box">
-        <h4>9.How to convert  String to Date</h4>
+        <h4>19. How to convert char to int</h4>
         <pre>
-            class StringToDate{
-                public static void main(String st[]) throws java.text.ParseException
-                {
-                    String str = "2024-01-01";
-                    java.time.LocalDate date = java.time.LocalDate.parse(str);
-                    System.out.println("Converted Date : "+date);
+            class CharToInt{
+                public static void main(String st[]){
+                    char c = 'm';
+                    int num = (int)c;
+                    System.out.println("Converted int : "+num);
                 }
             }
         </pre>
         <h4>OUTPUT</h4>
         <pre>
-            Converted Date : 2024-01-01
+            Converted int : 109
         </pre>
     </div>
 </body>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>OOPs</h1>
+    <div class="box">
+        <h4>15. Write a Java program to create a class called "MusicLibrary" with a collection of songs and methods to add and remove songs, and to play a random song.</h4>
+        <pre>
+            class MusicLibrary{
+                java.util.ArrayList songs;
+                MusicLibrary(){
+                    songs = new java.util.ArrayList&lt>();
+                }
+                void addSong(String title){
+                    if(songs.add(title)){
+                        System.out.println(title + " Song Added To Music Library");
+                    }
+                    else{
+                        System.out.println(title + " Song Failed to Add To Music Library");
+                    }
+                }
+                void removeSong(String title){
+                    if(songs.remove(title)){
+                        System.out.println(title + " Song Removed From Music Library");
+                    }
+                    else{
+                        System.out.println(title + " Song not Available in Music Library");
+                    }
+                }
+                void playRandom(){
+                    System.out.println("\nPlaying Random Song");
+                    System.out.println("Playing Song : " + songs.get(new java.util.Random().nextInt(songs.size()-1)));
+                }
+            }
+            class Main{
+                public static void main(String[] args){
+                    MusicLibrary wynk = new MusicLibrary();
+                    wynk.addSong("Dildariyaan");
+                    wynk.addSong("Tum Hi Ho");
+                    wynk.addSong("Pee Loon");
+                    wynk.addSong("Yaariyan");
+                    wynk.addSong("Old Money");
+                    wynk.addSong("College Days");
+                    wynk.addSong("Jatt Shikari");
+                    wynk.playRandom();
+                    wynk.playRandom();
+                    wynk.removeSong("Old Money");
+                    wynk.removeSong("ABC");
+            
+                }
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Dildariyaan Song Added To Music Library
+            Tum Hi Ho Song Added To Music Library
+            Pee Loon Song Added To Music Library
+            Yaariyan Song Added To Music Library
+            Old Money Song Added To Music Library
+            College Days Song Added To Music Library
+            Jatt Shikari Song Added To Music Library
+            
+            Playing Random Song
+            Playing Song : Dildariyaan
+            
+            Playing Random Song
+            Playing Song : Dildariyaan
+            Old Money Song Removed From Music Library
+            ABC Song not Available in Music Library
+        </pre>
+    </div>
+</body>
+</html>

@@ -9,20 +9,19 @@
 <body>
     <h1>BASIC CONSTRUCTS</h1>
     <div class="box">
-        <h4>9.How to convert  String to Date</h4>
+        <h4>16. How to convert long to int</h4>
         <pre>
-            class StringToDate{
-                public static void main(String st[]) throws java.text.ParseException
-                {
-                    String str = "2024-01-01";
-                    java.time.LocalDate date = java.time.LocalDate.parse(str);
-                    System.out.println("Converted Date : "+date);
+            class LongToInt{
+                public static void main(String st[]){
+                    long l  = 23;
+                    int num = (int)l;
+                    System.out.println("Converted long : "+num);
                 }
             }
         </pre>
         <h4>OUTPUT</h4>
         <pre>
-            Converted Date : 2024-01-01
+            Converted long : 23
         </pre>
     </div>
 </body>

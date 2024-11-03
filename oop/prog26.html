@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>OOPs</h1>
+    <div class="box">
+        <h4>26. Write a Java program to create a class called Person with private instance variables name, age. and country. Provide public getter and setter methods to access and modify these variables.</h4>
+        <pre>
+            class Person{
+                private String name, country;
+                private int age;
+                public void setName(String n){
+                    name = n;
+                }
+                public void setCountry(String cntry){
+                    country = cntry;
+                }
+                public void setAge(int a){
+                    age = a;
+                }
+                public String getName(){
+                    return name;
+                }
+                public String getCountry(){
+                    return country;
+                }
+                public int getAge(){
+                    return age;
+                }
+            }
+            
+            class Main{
+                public static void main(String[] args){
+                    Person p1 = new Person();
+                    p1.setName("Neha");
+                    p1.setAge(21);
+                    p1.setCountry("India");
+                    System.out.println("Name : " + p1.getName());
+                    System.out.println("Country : " + p1.getCountry());
+                    System.out.println("Age : " + p1.getAge());
+            
+                }
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Name : Neha
+            Country : India
+            Age : 21
+        </pre>
+    </div>
+</body>
+</html>

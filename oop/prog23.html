@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>OOPs</h1>
+    <div class="box">
+        <h4>23. Create a class entering the rollno, name and class of the student from user but rollno should be automatically generated as we enter the information of 10 students</h4>
+        <pre>
+            class Student{
+                private static int totalStudents;
+                private int rollno;
+                private String studingclass, name;
+                Student(String n, String cl){
+                    name = n;
+                    studingclass = cl;
+                    totalStudents++;
+                    rollno = 4000+totalStudents;
+                }
+                void displayDetails(){
+                    System.out.println("Roll No : " + rollno);
+                    System.out.println("Name : " + name);
+                    System.out.println("Class : " + studingclass);
+                }
+            }
+            class Main{
+                public static void main(String[] args){
+                    Student obj[] = new Student[10];
+                    obj[0] = new Student("Abhishek", "BCA - 3");
+                    obj[1] = new Student("Asha", "BCA - 3");
+                    obj[2] = new Student("Neha", "BBA - 3");
+                    obj[3] = new Student("Gurpreet", "BBA - 2");
+                    obj[4] = new Student("Amandeep", "BCOM - 1");
+                    obj[5] = new Student("Gian", "BCA - 1");
+                    obj[6] = new Student("Rohit", "BCA - 3");
+                    obj[7] = new Student("Mohit", "BCOM - 2");
+                    obj[8] = new Student("Nisha", "BBA - 2");
+                    obj[9] = new Student("Riya", "BA - 2");
+                    for(Student st : obj){
+                        st.displayDetails();
+                        System.out.println();
+                    }
+                }
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Roll No : 4001
+            Name : Abhishek
+            Class : BCA - 3
+            
+            Roll No : 4002
+            Name : Asha
+            Class : BCA - 3
+            
+            Roll No : 4003
+            Name : Neha
+            Class : BBA - 3
+            
+            Roll No : 4004
+            Name : Gurpreet
+            Class : BBA - 2
+            
+            Roll No : 4005
+            Name : Amandeep
+            Class : BCOM - 1
+            
+            Roll No : 4006
+            Name : Gian
+            Class : BCA - 1
+            
+            Roll No : 4007
+            Name : Rohit
+            Class : BCA - 3
+            
+            Roll No : 4008
+            Name : Mohit
+            Class : BCOM - 2
+            
+            Roll No : 4009
+            Name : Nisha
+            Class : BBA - 2
+            
+            Roll No : 4010
+            Name : Riya
+            Class : BA - 2
+        </pre>
+    </div>
+</body>
+</html>

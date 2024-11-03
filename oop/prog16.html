@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>OOPs</h1>
+    <div class="box">
+        <h4>16. Write a Java program to create a class called "Shape" with abstract methods for calculating area and perimeter, and subclasses for "Rectangle", "Circle", and "Triangle".</h4>
+        <pre>
+            abstract class Shape{
+                abstract double area();
+                abstract double perimeter();
+            }
+            class Rectangle extends Shape{
+                private double length, breadth;
+                Rectangle(double l, double b){
+                    length = l;
+                    breadth = b;
+                }
+                double area(){
+                    return (length * breadth);
+                }
+                double perimeter(){
+                    return (2*(length + breadth));
+                }
+            }
+            class Circle extends Shape{
+                private double radius;
+                Circle(double r){
+                    radius = r;
+                }
+                double area(){
+                    return (Math.PI*radius*radius);
+                }
+                double perimeter(){
+                    return (2*Math.PI*radius);
+                }
+            }
+            class Triangle extends Shape{
+                private double side1, side2, side3;
+                Triangle(double s1, double s2, double s3){
+                    side1 = s1;
+                    side2 = s2;
+                    side3 = s3;
+                }
+                double area(){
+                    double s = perimeter()/2;
+                    return Math.sqrt(s*(s-side1)*(s-side2)*(s-side3));
+                }
+                double perimeter(){
+                    return (side1+side2+side3);
+                }
+            }
+            
+            class Main{
+                public static void main(String[] args){
+                    Shape obj;
+                    obj = new Rectangle(10, 5);
+                    System.out.println("Area of Rectangle : " + obj.area());
+                    System.out.println("Perimeter of Rectangle : " + obj.perimeter());
+                    obj = new Circle(5);
+                    System.out.println("Area of Circle : " + obj.area());
+                    System.out.println("Perimeter of Circle : " + obj.perimeter());
+                    obj = new Triangle(5, 2, 6);
+                    System.out.println("Area of Triangle : " + obj.area());
+                    System.out.println("Perimeter of Triangle : " + obj.perimeter());
+            
+                }
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Area of Rectangle : 50.0
+            Perimeter of Rectangle : 30.0
+            Area of Circle : 78.53981633974483
+            Perimeter of Circle : 31.41592653589793
+            Area of Triangle : 4.683748498798798
+            Perimeter of Triangle : 13.0
+        </pre>
+    </div>
+</body>
+</html>

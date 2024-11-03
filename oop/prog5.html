@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>OOPs</h1>
+    <div class="box">
+        <h4>5. Write a Java program to create a class called "Book" with attributes for title, author, and ISBN, and methods to add and remove books from a collection.</h4>
+        <pre>
+            import java.util.ArrayList;
+            import java.util.List;
+                    
+            class Book {
+            private String title;
+            private String author;
+            private String isbn;
+                    
+            // Constructor
+            public Book(String title, String author, String isbn) {
+                this.title = title;
+                this.author = author;
+                this.isbn = isbn;
+            }
+                    
+            // Getters
+            public String getTitle() {
+                return title;
+            }
+                    
+            public String getAuthor() {
+                return author;
+            }
+                    
+            public String getIsbn() {
+                return isbn;
+            }
+            public String toString() {
+                return "Book{" +
+                "title='" + title + ''' +
+                ", author='" + author + ''' +
+                ", isbn='" + isbn + ''' +
+                '}';
+            }
+            }
+                    
+            class BookCollection {
+            private List books;
+                    
+            // Constructor
+            public BookCollection() {
+                books = new ArrayList<>();
+            }
+                    
+            // Method to add a book
+            public void addBook(Book book) {
+                books.add(book);
+                System.out.println("Book added: " + book);
+            }
+                    
+            // Method to remove a book by ISBN
+            public void removeBook(String isbn) {
+                for (int i = 0; i < books.size(); i++) {
+                    if (books.get(i).getIsbn().equals(isbn)) {
+                        System.out.println("Book removed: " + books.get(i));
+                        books.remove(i);
+                        return;
+                    }
+                }
+                System.out.println("Book with ISBN " + isbn + " not found.");
+            }
+                    
+            // Method to display all books
+            public void displayBooks() {
+                if (books.isEmpty()) {
+                    System.out.println("No books in the collection.");
+                    return;
+                }
+                System.out.println("Books in the collection:");
+                for (Book book : books) {
+                    System.out.println(book);
+                }
+            }
+            }
+                    
+            public class BookManagementSystem {
+            public static void main(String[] args) {
+                BookCollection collection = new BookCollection();
+                    
+                // Create some books
+                Book book1 = new Book("Java Programming", "Manjit", "1234567890");
+                Book book2 = new Book("Python Programming", "Sandeep", "0987654321");
+                Book book3 = new Book("C++ Programming", "Abhishek", "1122334455");
+                    
+                // Add books to the collection
+                collection.addBook(book1);
+                collection.addBook(book2);
+                collection.addBook(book3);
+                    
+                // Display all books
+                collection.displayBooks();
+                    
+                // Remove a book
+                collection.removeBook("0987654321");
+                    
+                // Display all books again
+                collection.displayBooks();
+                }
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Book added: Book{title='Java Programming', author='Neha', isbn='1234567890'}
+            Book added: Book{title='Python Programming', author='Sandeep', isbn='0987654321'}
+            Book added: Book{title='C++ Programming', author='Riya', isbn='1122334455'}
+            Books in the collection:
+            Book{title='Java Programming', author='Neha', isbn='1234567890'}
+            Book{title='Python Programming', author='Sandeep', isbn='0987654321'}
+            Book{title='C++ Programming', author='Riya', isbn='1122334455'}
+            Book removed: Book{title='Python Programming', author='Jane Doe', isbn='0987654321'}
+            Books in the collection:
+            Book{title='Java Programming', author='Neha', isbn='1234567890'}
+            Book{title='C++ Programming', author='Riya', isbn='1122334455'}
+        </pre>
+    </div>
+</body>
+</html>

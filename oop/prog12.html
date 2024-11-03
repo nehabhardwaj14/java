@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>OOPs</h1>
+    <div class="box">
+        <h4>12. Write a Java program to create a class called "Airplane" with a flight number, destination, and departure time attributes, and methods to check flight status and delay.</h4>
+        <pre>
+            class Airplane {
+                private String flightNumber;
+                private String destination;
+                private java.util.Date departureTime;
+                private boolean isDelayed;
+            
+                Airplane(String flightNumber, String destination, String departureTime) {
+                    this.flightNumber = flightNumber;
+                    this.destination = destination;
+                    this.departureTime = new java.util.Date(new java.util.Date().parse(departureTime));
+                    this.isDelayed = false;
+                }
+            
+                void delayFlight(int minutes) {
+                    if (minutes > 0) {
+                    departureTime.setTime(departureTime.getTime()+(minutes*60*1000));         
+                        this.isDelayed = true;
+                        System.out.println("Flight delayed by " + minutes + " minutes. New departure time: " + departureTime);
+                    } else {
+                        System.out.println("Invalid delay time.");
+                    }
+                }
+                String checkFlightStatus(){
+                    return (isDelayed ? "Delayed" : "On Time");
+                }	
+            
+                void display(){
+                    System.out.println("Airplane{Flight Number='" + flightNumber + "', Destination='" + destination + "', Departure Time=" + departureTime + ", Status=" + checkFlightStatus() + "}");
+                }
+            }
+            
+            class Main {
+                public static void main(String[] args) {
+                    Airplane flight1 = new Airplane("AA123", "New York", "09/11/2024 14:30:30");
+            
+                    flight1.display();
+            
+                    System.out.println("Flight Status: " + flight1.checkFlightStatus());
+            
+                    flight1.delayFlight(45);
+            
+                    flight1.display();
+            
+                    System.out.println("Updated Flight Status: " + flight1.checkFlightStatus());
+                }
+            }
+            
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Airplane{Flight Number='AA123', Destination='New York', Departure Time=Wed Sep 11 14:30:30 IST 2024, Status=On Time}
+            Flight Status: On Time
+            Flight delayed by 45 minutes. New departure time: Wed Sep 11 15:15:30 IST 2024
+            Airplane{Flight Number='AA123', Destination='New York', Departure Time=Wed Sep 11 15:15:30 IST 2024, Status=Delayed}
+            Updated Flight Status: Delayed  
+              
+        </pre>
+    </div>
+</body>
+</html>

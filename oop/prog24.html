@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>OOPs</h1>
+    <div class="box">
+        <h4>24. Create a class showing the area of circle and rectangle by method overloading.</h4>
+        <pre>
+            class Area{
+                double area(double radius){
+                    return (Math.PI*radius*radius);
+                }
+                double area(double length, double breadth){
+                    return length * breadth;
+                }
+            }
+            class Main{
+                public static void main(String[] args){
+                    Area obj = new Area();
+                    System.out.println("Area of Circle with radius = 5 : " +obj.area(5));
+                    System.out.println("Area of Rectangle with length = 5 and breadth = 9 : " +obj.area(5, 9));
+            
+                }
+            }  
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Area of Circle with radius = 5 : 78.53981633974483
+            Area of Rectangle with length = 5 and breadth = 9 : 45.0
+        </pre>
+    </div>
+</body>
+</html>

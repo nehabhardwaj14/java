@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>OOPs</h1>
+    <div class="box">
+        <h4>17. Write a Java program to create a class called "Movie" with attributes for title, director, actors, and reviews, and methods for adding and retrieving reviews.</h4>
+        <pre>
+            class Movie{
+                private String title, director;
+                private java.util.List actors, reviews;
+                Movie(String name, String dir){
+                    title = name;
+                    director = dir;
+                    actors = new java.util.ArrayList<>();
+                    reviews = new java.util.ArrayList<>();
+                }
+                void addActor(String actor){
+                    if(actors.add(actor)){
+                        System.out.println(actor + " Added To Cast Of " + title);
+                    }
+                    else{
+                        System.out.println(actor + " Failed to Add");
+                    }
+                }
+                void addReview(String review){
+                    if(reviews.add(review)){
+                        System.out.println("Your Review Added for " + title);
+                    }
+                    else{
+                        System.out.println("Failed to Add Review");
+                    }
+                }
+                java.util.List getReviews(){
+                    return reviews;		
+                }
+                void displayMovie(){
+                    System.out.println();
+                    System.out.println("Title : " + title);
+                    System.out.println("Director : " + director);
+                    System.out.println("Actors : " + actors);	
+                }
+            }
+            
+            class Main{
+                public static void main(String[] args){
+                    Movie titanic = new Movie("Titanic", "James Cameron");
+                    titanic.addActor("Kate Winslet");
+                    titanic.addActor("Leonardo DiCaprio");
+                    titanic.addActor("Billy Zane");
+                    titanic.addActor("Kathy Bates");
+                    titanic.addReview("How many times I watch this movie.... It's still the masterpiece.");
+                    titanic.addReview("Titanic masterpiece: an emotional and visual thrill ride");
+                    titanic.addReview("STANDING OVATION! - (10 stars out of 10)");
+            
+                    titanic.displayMovie();
+                    System.out.println("\nDisplaying Reviews\n");
+                    java.util.List reviews = titanic.getReviews();
+                    for(String str : reviews){
+                        System.out.println(str);
+                        System.out.println();
+                    }
+                }
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Kate Winslet Added To Cast Of Titanic
+            Leonardo DiCaprio Added To Cast Of Titanic
+            Billy Zane Added To Cast Of Titanic
+            Kathy Bates Added To Cast Of Titanic
+            Your Review Added for Titanic
+            Your Review Added for Titanic
+            Your Review Added for Titanic
+            
+            Title : Titanic
+            Director : James Cameron
+            Actors : [Kate Winslet, Leonardo DiCaprio, Billy Zane, Kathy Bates]
+            
+            Displaying Reviews
+            
+            How many times I watch this movie.... It's still the masterpiece.
+            
+            Titanic masterpiece: an emotional and visual thrill ride
+            
+            STANDING OVATION! - (10 stars out of 10)
+        </pre>
+    </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ques.css">
+</head>
+<body>
+    <h1>OOPs</h1>
+    <div class="box">
+        <h4>8. Write a Java program to create class called "TrafficLight" with attributes for color and duration, and methods to change the color and check for red or green.</h4>
+        <pre>
+            class TrafficLight {
+                private String color;    t
+                private int duration;    
+                public TrafficLight(String color, int duration) {
+                    this.color = color;
+                    this.duration = duration;
+                }
+                public void changeColor(String newColor, int newDuration) {
+                    this.color = newColor;
+                    this.duration = newDuration;
+                    System.out.println("Traffic light changed to: " + color + " for " + 
+                    duration + " seconds.");
+                }
+                public boolean isRed() {
+                    return color.equalsIgnoreCase("red");
+                }
+                public boolean isGreen() {
+                    return color.equalsIgnoreCase("green");
+                }
+                public void displayStatus() {
+                    System.out.println("Current color: " + color + ", Duration: " +
+                     duration + " seconds.");
+                }
+            }      
+            public class TrafficLightSystem {
+            public static void main(String[] args) {
+                object
+                TrafficLight trafficLight = new TrafficLight("Red", 30);
+                trafficLight.displayStatus();
+                System.out.println("Is the light red? " + trafficLight.isRed());
+                System.out.println("Is the light green? " + trafficLight.isGreen());
+                    
+            
+                trafficLight.changeColor("Green", 45);
+                trafficLight.displayStatus();
+                System.out.println("Is the light red? " + trafficLight.isRed());
+                System.out.println("Is the light green? " + trafficLight.isGreen());
+                }
+            }
+        </pre>
+        <h4>OUTPUT</h4>
+        <pre>
+            Current color: Red, Duration: 30 seconds.
+            Is the light red? true
+            Is the light green? false
+            Traffic light changed to: Green for 45 seconds.
+            Current color: Green, Duration: 45 seconds.
+            Is the light red? false
+            Is the light green? true
+        </pre>
+    </div>
+</body>
+</html>
