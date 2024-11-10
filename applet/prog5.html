@@ -11,20 +11,21 @@
     <div class="box">
         <h4>5. Create an applet in Java to draw a rectangle.</h4>
         <pre>
-            import java.applet.*;
-            import java.awt.*;
-            public class Rectangle extends Applet{
-                public void paint(Graphics g)
+            import java.applet.Applet;
+            import java.awt.Graphics;
+            
+            public class MyApplet3 extends Applet
+            {
+               public void paint(Graphics g)
                 {
-                    g.drawRect(100, 100, 150, 100);
-                }
+                          g.drawRect(150, 150, 200, 100);
+                 }
             }
-            /*
-             <applet code = "Rectangle.class" width = "300" height= "500"></applet>
-             */
+            /*&ltapplet code="MyApplet3.class" width="500" height="500">&lt/applet>*/
+            
         </pre>
         <h4>OUTPUT</h4>
-        <img src="../appletimage/Rectangle.png" alt="rectangle">
+        <img src="../appletimage/rectangle.png" alt="rectangle">
     </div>
 </body>
 </html>

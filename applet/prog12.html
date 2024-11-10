@@ -14,18 +14,18 @@
             import java.applet.Applet;
             import java.awt.Graphics;
             
-            public class RoundedRect extends Applet {
+            public class MyApplet10 extends Applet
+            {
+               public void paint(Graphics g)
+                {
+                          g. drawRoundRect(200, 200, 150, 100, 50, 50);
+                 }
+            }
+            /*&ltapplet code="MyApplet10.class" width="500" height="500">&lt/applet>*/
             
-                public void paint(Graphics g) {
-                    g.drawRoundRect(50, 50, 200, 100, 30, 30);  
-            }
-            }
-            /*
-             <applet code = "RoundedRect.class" width = "300" height= "300"></applet>
-             */
         </pre>
         <h4>OUTPUT</h4>
-        <img src="../appletimage/roundrect.png" alt="roundedrectangle">
+        <img src="../appletimage/roundrectangle.png" alt="roundedrectangle">
     </div>
 </body>
 </html>

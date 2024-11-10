@@ -14,21 +14,18 @@
             import java.applet.Applet;
             import java.awt.Graphics;
             
-            /**
-             * SmileFace
-             */
-            public class SmileFace extends Applet{
-                public void paint(Graphics g)
+            public class MyApplet13 extends Applet
+            {
+               public void paint(Graphics g)
                 {
-                    g.drawOval(100, 100, 200, 200);
-                    g.drawOval(150, 150, 20, 20);
-                    g.drawOval(230, 150, 20, 20);
-                    g.drawArc(150, 200, 100, 50, 200, 150);
-                }
+                          g.drawOval(100, 100, 300, 300);
+                          g.drawOval(200, 200, 30, 40);
+                          g.drawOval(300, 200, 30, 40);
+                          g.drawArc(200, 260, 120, 70, 180, 180);
             }
-            /*
-             <applet code = "smileface.SmileFace.class" width = "300" height= "500"></applet>
-             */
+            }
+            /*&ltapplet code="MyApplet13.class" width="500" height="500">&lt/applet>*/
+            
         </pre>
         <h4>OUTPUT</h4>
         <img src="../appletimage/smile.png" alt="smiley">

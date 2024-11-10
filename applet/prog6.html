@@ -11,18 +11,18 @@
     <div class="box">
         <h4>6. Create an applet in Java to draw a square.</h4>
         <pre>
-            import java.applet.*;
-            import java.awt.*;
-            public class Square extends Applet{
-                
-                public void paint(Graphics g)
+            import java.applet.Applet;
+            import java.awt.Graphics;
+            
+            public class MyApplet4 extends Applet
+            {
+               public void paint(Graphics g)
                 {
-                    g.drawRect(100, 100, 100, 100);
-                }
+                          g.drawRect(150, 150, 200, 200);
+                 }
             }
-            /*
-             <applet code = "Square.class" width = "300" height= "500"></applet>
-             */
+            /*&ltapplet code="MyApplet4.class" width="500" height="500">&lt/applet>*/
+            
         </pre>
         <h4>OUTPUT</h4>
         <img src="../appletimage/square.png" alt="square">

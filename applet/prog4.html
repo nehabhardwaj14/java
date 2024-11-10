@@ -12,18 +12,19 @@
         <h4>4. Create an applet in Java to draw a polygon.</h4>
         <pre>
             import java.applet.Applet;
-            import java.awt.*;
-            public class polygon extends Applet {
-                public void paint(Graphics g)
+            import java.awt.Graphics;
+            
+            public class MyApplet2 extends Applet
+            {
+               public void paint(Graphics g)
                 {
-                    int x[]={100,200,300,400};
-                    int y[]={200,200,300,400};
-                    g.drawPolygon(x, y,4);
-                }
+                      int x[]={100,70,200,300};
+                      int y[]={200,50,90,100};
+                   g.drawPolygon(x, y, 4);
+                 }
             }
-            /*
-             <applet code = "polygon.class" width = "300" height= "500"></applet>
-             */
+            /*&ltapplet code="MyApplet2.class" width="500" height="500">&lt/applet>*/
+            
         </pre>
         <h4>OUTPUT</h4>
        <img src="../appletimage/polygon.png" alt="polygon">
